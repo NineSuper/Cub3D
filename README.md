@@ -2,8 +2,6 @@
 
 **Cub3D** est le second projet de **groupe** à faire en duo  durant le cursus [42](https://42.fr/).
 
-**Cub3D** 
-
 ## 🔭 Roadmap
 
 - Creation du projet
