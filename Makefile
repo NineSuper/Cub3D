@@ -1,6 +1,13 @@
 INC=/usr/include
 INCLIB=$(INC)/../lib
 
+MLX_PATH=libft/mlx/
+
+INC_SRCH_PATH := 
+INC_SRCH_PATH += -I$(MLX_PATH)
+
+LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
+
 NAME = Cub3D
 SRC = main.c
 
@@ -27,7 +34,9 @@ NO_COLOR        =       \033[0m
 
 HEADER_NAME		=		$(HEADER_TOP) $(HEADER_TOP_MID) $(HEADER_MID)$(HEADER_BOT)
 
-HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)Cub3D $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los-\n\n"
+HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)Cub3D $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & ...\n\n"
+
+MLX_READY		=		echo "\n\n📥 $(BOLD)Compilation de la $(BOLD_YELLOW)Mlx$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
 COMP_START      =       printf "\n🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Debut de compilation...\r$(NO_COLOR)"
 
@@ -45,8 +54,10 @@ NORM_H			=		echo "\n📣 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de l
 MAKEFLAGS += --silent
 
 $(NAME): comp_start $(OBJ)
-	@$(CC) $(FLAGS) libft/*/*.c $(OBJ) -o $(NAME)
+	@$(MAKE) -C $(MLX_PATH)
+	@$(CC) $(FLAGS) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
+	@$(MLX_READY)
 	@$(EXE_READY)
 
 all: $(NAME) norminette
