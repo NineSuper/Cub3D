@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/06 22:00:18 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:49:01 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ typedef struct s_key
 
 typedef struct s_map
 {
-	char	**map;
-	int		h;
-	int		w;
+	
 }	t_map;
 
 typedef struct s_menu
@@ -57,6 +55,9 @@ typedef struct s_master
 	t_map	map;
 	char	*mlx;
 	char	*win;
+	int		*m_x;
+	int		*m_y;
+	int screen;
 	int	width;
 	int height;
 }	t_master;
