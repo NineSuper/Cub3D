@@ -9,12 +9,12 @@ INC_SRCH_PATH += -I$(MLX_PATH)
 LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
-SRC = main.c
+SRC = main.c ft_menu.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = 
 
 # ------------------------------ Colors ------------------------------
 
@@ -55,7 +55,7 @@ MAKEFLAGS += --silent
 
 $(NAME): comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
-	@$(CC) $(FLAGS) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
+	@$(CC) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
