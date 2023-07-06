@@ -9,7 +9,7 @@ INC_SRCH_PATH += -I$(MLX_PATH)
 LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
-SRC = main.c ft_menu.c
+SRC = main.c ft_menu.c ft_bar_loader.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc

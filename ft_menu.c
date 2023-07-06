@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:39:28 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:48:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:38:36 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@
 char    *ft_menu(t_master *s_m)
 {
     s_m->mlx = mlx_init();
-    s_m->win = mlx_new_window(s_m->mlx, 1920, 1080, "Cub3D");
+    s_m->width = 1080;
+    s_m->height = 720;
+    s_m->win = mlx_new_window(s_m->mlx, s_m->width, s_m->height, "Cub3D");
+    ft_loader_b(s_m, s_m->mlx, s_m->win);
+	//mlx_clear_window(s_m->mlx, s_m->win);
 }

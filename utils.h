@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/06 13:26:38 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:00:18 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "libft/gnl/get_next_line.h"
 # include "libft/mlx/mlx.h"
 # include "libft/mlx/mlx_int.h"
+/*		String		*/
+#define text_load "Chargement des textures.."
+#define map_load "Chargement de la map"
 
 // * Struct M
 
@@ -54,8 +57,11 @@ typedef struct s_master
 	t_map	map;
 	char	*mlx;
 	char	*win;
+	int	width;
+	int height;
 }	t_master;
 
 char    *ft_menu(t_master *s_m);
+void	ft_loader_b(t_master *s_m, void *mlx, void *win);
 
 #endif
