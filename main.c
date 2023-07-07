@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/06 22:55:16 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 16:23:01 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 * Check toutes les map : ft_check_map.c -> return (1) si ERROR
-* Faire un menu : ft_menu.c -> return (*map)
+* Faire un menu : ft_menu.c -> change map dans t_m->map.map
 * Faire le ray-casting : ft_raycast.c
 ? Mettre des textures sur les murs
 ? Faire Bouger la camera
@@ -27,10 +27,10 @@
 int	main(void)
 {
 	t_master	*s_m;
-	char	*map;
 
 	s_m = ft_calloc(sizeof(t_master), 1);
 	// ? check_map avant
-	map = ft_menu(s_m);
+	ft_menu(s_m);
+	mlx_key_hook(s_m->win, deal_key, s_m);
 	mlx_loop(s_m->mlx);
 }

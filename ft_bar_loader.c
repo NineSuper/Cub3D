@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 10:47:25 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:12:19 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_bar_loader(t_master *s_m, int width, int height)
 		usleep(400 * 10);
 		j = y - 1;
 		while (++j < y + height)
-			mlx_pixel_put(s_m->mlx, s_m->win, i, j, 0xFFFFFF);
+			mlx_pixel_put(s_m->mlx, s_m->win, i, j, 0xFFFFF);
 	}
 	usleep(400 * 1000);
 	mlx_clear_window(s_m->mlx, s_m->win);
@@ -48,7 +48,7 @@ void	ft_loader_b(t_master *s_m, void *mlx, void *win)
 	s_m->menu.borderSize = 6;
 	i = x - s_m->menu.borderSize - 1;
 	mlx_set_font(mlx, win, "-*-fixed-bold-*-*-*-18-*-*-*-*-*-*-*");
-	mlx_string_put(mlx, win, x + 80, y - 15, 0xFFFFFF, text_load);
+	mlx_string_put(mlx, win, x + 80, y - 15, 0xFFFFF, text_load);
 	while (++i < x + s_m->menu.width + s_m->menu.borderSize)
 	{
 		j = y - s_m->menu.borderSize - 1;

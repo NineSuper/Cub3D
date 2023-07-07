@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 10:25:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 16:22:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,18 @@
 /*		String		*/
 #define text_load "Chargement des textures.."
 #define map_load "Chargement de la map"
-
-// * Struct M
+/*		Texture		*/
+#define MENU_1 "texture/menu/menu_1.xpm"
+#define MENU_2 "texture/menu/menu_2.xpm"
+#define MENU_3 "texture/menu/menu_3.xpm"
+#define MENU_4 "texture/menu/menu_4.xpm"
 
 typedef struct s_key
 {
-	int	f; //* front
-	int b; //* back
-	int l; //* gauche 
-	int r; //* droite
+	int	w;
+	int q;
+	int s;
+	int d;
 }	t_key;
 
 typedef struct s_map
@@ -39,9 +42,16 @@ typedef struct s_map
 
 typedef struct s_menu
 {
-	int	borderSize;
-	int width;
-	int height;
+	char	*menu_d; // menu par defaut
+	char	*menu_p;
+	char	*menu_o;
+	char	*menu_q;
+	int		borderSize;
+	int 	width;
+	int 	height;
+	int		choose;
+	int 	w;
+	int 	h;
 }	t_menu;
 
 typedef struct s_player
@@ -64,7 +74,9 @@ typedef struct s_master
 	int height;
 }	t_master;
 
-char    *ft_menu(t_master *s_m);
+void    ft_menu(t_master *s_m);
 void	ft_loader_b(t_master *s_m, void *mlx, void *win);
+void	imgs_load_menu(t_master *s_m);
+int		deal_key(int key, t_master *s_m);
 
 #endif
