@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:39:28 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/06 22:55:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:34:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int s_m->screen
 ? lorsque le joueur choisi une map, return (*map) | "exit" si 'Quit'
 */
 
-char    *ft_menu(t_master *s_m)
+char	*ft_menu(t_master *s_m)
 {
-    s_m->mlx = mlx_init();
-    s_m->width = 1080;
-    s_m->height = 720;
-    s_m->win = mlx_new_window(s_m->mlx, s_m->width, s_m->height, "Cub3D");
-    ft_loader_b(s_m, s_m->mlx, s_m->win);
+	s_m->mlx = mlx_init();
+	s_m->width = 1920 * 1.5;
+	s_m->height = 1080 * 1.5;
+	s_m->win = mlx_new_window(s_m->mlx, s_m->width, s_m->height, "Cub3D");
+	ft_loader_b(s_m, s_m->mlx, s_m->win);
 	s_m->screen = 1;
 }
