@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:39:28 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 16:23:08 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 19:27:04 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,20 @@ int s_m->screen
 
 ? lorsque le joueur choisi une map, return (*map) | "exit" si 'Quit'
 */
+
+
+void	ft_get_menu(int i, t_master *s_m)
+{
+	s_m->screen = 1;
+	if (i == 0)
+		mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->menu.menu_d, 0, 0);
+	if (i == 1)
+		mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->menu.menu_p, 0, 0);
+	if (i == 2)
+		mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->menu.menu_o, 0, 0);
+	if (i == 3)
+		mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->menu.menu_q, 0, 0);
+}
 
 void	ft_choose_menu(t_master *s_m)
 {

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 16:16:38 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:42:09 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_key_menu(int key, t_master *s_m)
 		s_m->menu.choose++;
 	if (s_m->menu.choose > 3 || s_m->menu.choose < 1)
 		s_m->menu.choose = 1;
-	//* mettre l'image correspondant a "s_m->menu.choose"
+	ft_get_menu(s_m->menu.choose, s_m);
 	// if (key == 65293)
 	// {
 	// 	if (s_m->menu.choose == 1)

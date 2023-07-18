@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 17:12:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:27:47 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_bar_loader(t_master *s_m, int width, int height)
 		while (++j < y + height)
 			mlx_pixel_put(s_m->mlx, s_m->win, i, j, 0xFFFFF);
 	}
-	usleep(400 * 1000);
+	usleep(200 * 1000);
 	mlx_clear_window(s_m->mlx, s_m->win);
 }
 

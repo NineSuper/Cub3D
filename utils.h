@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 16:22:35 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:21:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_master
 	int height;
 }	t_master;
 
+void	ft_get_menu(int i, t_master *s_m);
 void    ft_menu(t_master *s_m);
 void	ft_loader_b(t_master *s_m, void *mlx, void *win);
 void	imgs_load_menu(t_master *s_m);
