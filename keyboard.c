@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/07 18:42:09 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/20 22:32:09 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ void	ft_key_menu(int key, t_master *s_m)
 	if (s_m->menu.choose > 3 || s_m->menu.choose < 1)
 		s_m->menu.choose = 1;
 	ft_get_menu(s_m->menu.choose, s_m);
-	// if (key == 65293)
-	// {
-	// 	if (s_m->menu.choose == 1)
-	// 	 	//? play
-	// 	 if (s_m->menu.choose == 2)
-	// 	 	//? option
-	// 	 if (s_m->menu.choose == 3)
-	// 		//? quit
-	//! ENTRER alors aller dans le menu suivant
-	// }
+	if (key == 65293)
+	{
+	/*! ENTRER alors aller dans le menu suivant
+	 	if (s_m->menu.choose == 1)
+	 	 	? play
+		if (s_m->menu.choose == 2)*/
+	 	 	//? option
+		if (s_m->menu.choose == 3)
+			ft_exit_menu(s_m);
+	}
 }
 
 int	deal_key(int key, t_master *s_m)
