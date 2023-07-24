@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:24:25 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 14:56:30 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/24 15:23:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	get_rgb(char *str)
 	if (!str[i])
 		return (-1);
 	color = ft_atoi(str);
+	if (color > 255)
+		return (-1);
 	return (color);
 }
 

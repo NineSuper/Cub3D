@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 15:06:38 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:58:12 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 * Check maps.cub
 * Commencer par check_textures
 * Check les colors puis les convertir en hexadecimal
-? Check toute la map 
-? tout doit etre entouree de 1
-? Char = '1' '0' 'B' 'P' ('N' | 'S' | 'W' | 'E')
-? UNIQUEMENT une lettre parmis celles-ci : N | S | W | E
-? La sortie : B
-? La porte : P
+* Check toute la map 
+* tout doit etre entouree de 1
+* Char = '1' '0' 'B' 'P' ('N' | 'S' | 'W' | 'E')
+* UNIQUEMENT une lettre parmis celles-ci : N | S | W | E
+* La sortie : B
+* La porte : P
 * tout free une fois fini
 */
 
@@ -74,5 +74,5 @@ void	ft_check_map(t_master *s_m, char *map)
 	s_m->map.level = map;
 	s_m->map.fd = open(s_m->map.level, O_RDONLY);
 	ft_read_map(s_m->map.fd, &s_m->map, s_m);
-	ft_check_tab(s_m, &s_m->map);
+	ft_check_tab(s_m, &s_m->map, s_m->map.map);
 }

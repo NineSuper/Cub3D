@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 15:05:05 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/24 16:55:20 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 #define ERROR_T "textures/couleurs pas a la norme"
 #define ARGC "Pas assez d'argument"
 #define ERROR_C "une couleur n'est pas bonne"
+#define MAP_NO "merci de mettre une map a la norme"
 /*		Texture		*/
 #define MENU_1 "texture/menu/menu_1.xpm"
 #define MENU_2 "texture/menu/menu_2.xpm"
@@ -53,6 +54,8 @@ typedef struct s_map
 	int		c_f;
 	int		c_c;
 	int		fd;
+	int		len;
+	int		player;
 }	t_map;
 
 typedef struct s_menu
@@ -100,7 +103,8 @@ void	ft_exit_menu(t_master *s_m);
 void	ft_check_map(t_master *s_m, char *map);
 void	ft_error_map(char *error, t_master *s_m);
 void    free_tab(char **tab);
-void	ft_check_tab(t_master *s_m, t_map *s_map);
+void	ft_check_tab(t_master *s_m, t_map *s_map, char **map);
+void	ft_play(t_master *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
 int		ft_msg(char *str, t_master *s_m);

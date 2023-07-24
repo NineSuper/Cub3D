@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/20 22:29:37 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:14:57 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,13 @@ void	ft_loader_b(t_master *s_m, void *mlx, void *win)
 	int	j;
 
 	s_m->screen = 4;
+	mlx_clear_window(s_m->mlx, s_m->win);
 	x = (s_m->width / 2) - 200;
 	y = (s_m->height / 2) - 15;
 	s_m->menu.width = 400;
 	s_m->menu.height = 30;
 	s_m->menu.borderSize = 6;
 	i = x - s_m->menu.borderSize - 1;
-	mlx_set_font(mlx, win, "-*-fixed-bold-*-*-*-18-*-*-*-*-*-*-*");
-	mlx_string_put(mlx, win, x + 80, y - 15, 0xFFFFF, text_load);
 	while (++i < x + s_m->menu.width + s_m->menu.borderSize)
 	{
 		j = y - s_m->menu.borderSize - 1;
