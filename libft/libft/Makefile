@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tde-los- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 11:20:15 by tde-los-          #+#    #+#              #
-#    Updated: 2023/02/14 10:58:36 by tde-los-         ###   ########.fr        #
+#    Updated: 2023/07/24 13:09:34 by tde-los-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS	= ft_isalnum.c ft_isprint.c ft_memmove.c ft_putnbr_fd.c ft_strjoin.c ft_str
 	  ft_strlcat.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memcmp.c \
 	  ft_putchar_fd.c ft_strchr.c ft_strlcpy.c ft_strrchr.c ft_calloc.c ft_isdigit.c \
 	  ft_memcpy.c ft_putendl_fd.c ft_strdup.c ft_strlen.c ft_substr.c ft_strtrim.c \
-	  ft_itoa.c ft_split.c ft_strmapi.c ft_striteri.c
+	  ft_itoa.c ft_split.c ft_strmapi.c ft_striteri.c ft_atoi_base.c
 
 OBS	= $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/20 21:05:07 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/24 15:05:05 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,18 @@
 /*		String		*/
 #define text_load "Chargement des textures.."
 #define map_load "Chargement de la map"
+#define READ_ERR "n'existe pas"
+#define ERROR_T "textures/couleurs pas a la norme"
+#define ARGC "Pas assez d'argument"
+#define ERROR_C "une couleur n'est pas bonne"
 /*		Texture		*/
 #define MENU_1 "texture/menu/menu_1.xpm"
 #define MENU_2 "texture/menu/menu_2.xpm"
 #define MENU_3 "texture/menu/menu_3.xpm"
 #define MENU_4 "texture/menu/menu_4.xpm"
+/*		Color		*/
+#define C_GREEN "\033[1;32m"
+#define C_RED "\033[1;41m"
 
 typedef struct s_key
 {
@@ -37,7 +44,15 @@ typedef struct s_key
 
 typedef struct s_map
 {
-	
+	char	**map;
+	char	*level;
+	char	*EA;
+	char	*NO;
+	char	*SO;
+	char	*WE;
+	int		c_f;
+	int		c_c;
+	int		fd;
 }	t_map;
 
 typedef struct s_menu
@@ -74,11 +89,22 @@ typedef struct s_master
 	int height;
 }	t_master;
 
+
+char	*ft_split_text(char *str, t_master *s_m);
+void	ft_print_tab(char **tab);
 void	ft_get_menu(int i, t_master *s_m);
 void    ft_menu(t_master *s_m);
 void	ft_loader_b(t_master *s_m, void *mlx, void *win);
 void	imgs_load_menu(t_master *s_m);
 void	ft_exit_menu(t_master *s_m);
+void	ft_check_map(t_master *s_m, char *map);
+void	ft_error_map(char *error, t_master *s_m);
+void    free_tab(char **tab);
+void	ft_check_tab(t_master *s_m, t_map *s_map);
 int		deal_key(int key, t_master *s_m);
+int		ft_check_color(t_master *s_m, char **tab, int i);
+int		ft_msg(char *str, t_master *s_m);
+int		check_test(t_master *s_m);
+int		check_texture(char *NO, char *EA, char *SO, char *WE);
 
 #endif
