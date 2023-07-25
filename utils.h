@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:24:20 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 06:41:25 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ typedef struct s_master
 	t_map	map;
 	char	*mlx;
 	char	*win;
+	char	*EA;
+	char	*NO;
+	char	*SO;
+	char	*WE;
 	int		m_x;
 	int		m_y;
 	int screen;
