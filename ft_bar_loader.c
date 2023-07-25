@@ -6,11 +6,20 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 19:18:16 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:37:12 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+void	ft_usleep(void)
+{
+	long int	i;
+
+	i = 0;
+	while (i <= 1000000)
+		i++;
+}
 
 void	ft_bar_loader(t_master *s_m, int width, int height)
 {
@@ -22,14 +31,15 @@ void	ft_bar_loader(t_master *s_m, int width, int height)
 	x = (s_m->width / 2) - 200;
 	y = (s_m->height / 2) - 15;
 	i = x - 1;
+	ft_usleep();
 	while (++i < x + width)
 	{
-		usleep(400 * 10);
+		ft_usleep();
 		j = y - 1;
 		while (++j < y + height)
 			mlx_pixel_put(s_m->mlx, s_m->win, i, j, 0xFFFFF);
 	}
-	usleep(200 * 1000);
+	ft_usleep();
 	mlx_clear_window(s_m->mlx, s_m->win);
 }
 

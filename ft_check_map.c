@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 16:58:12 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:45:57 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 void	ft_check_arg(t_map *s_map, t_master *s_m, char **tab)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = -1;
 	j = 0;
@@ -75,4 +75,5 @@ void	ft_check_map(t_master *s_m, char *map)
 	s_m->map.fd = open(s_m->map.level, O_RDONLY);
 	ft_read_map(s_m->map.fd, &s_m->map, s_m);
 	ft_check_tab(s_m, &s_m->map, s_m->map.map);
+	ft_menu(s_m);
 }

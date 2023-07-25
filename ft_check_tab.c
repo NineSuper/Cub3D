@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 16:43:52 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:37:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int	ft_char_map(t_master *s_m, char *str)
 			s_m->map.player++;
 			return (0);
 		}
-		else if (str[i] != '1' && str[i] != '0' && str[i] != 'B' && str[i] != ' ')
+		else if (str[i] != '1' && str[i] != '0' && \
+			str[i] != 'B' && str[i] != ' ')
 			return (1);
 	}
 	ft_printf("\033[1;33m%s\033[0m\n", str);
@@ -68,6 +69,7 @@ void	ft_check_tab(t_master *s_m, t_map *s_map, char **map)
 	if (!map[i])
 		ft_free_error(s_m);
 	s_m->map.player = 0;
+	s_map->len = i;
 	check_one_map(s_m, map[i]);
 	while (map[i])
 	{

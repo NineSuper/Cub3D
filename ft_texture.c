@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 14:31:27 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/22 16:56:27 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:40:02 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_split_text(char *str, t_master *s_m)
 	char	**tab;
 	char	*new;
 
-
 	tab = ft_split(str, ' ');
 	if (!tab[1])
 	{
@@ -42,4 +41,3 @@ char	*ft_split_text(char *str, t_master *s_m)
 	free_tab(tab);
 	return (new);
 }
-

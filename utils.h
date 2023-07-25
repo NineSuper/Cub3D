@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 16:55:20 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:05:00 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_menu
 
 typedef struct s_player
 {
-
+	
 }	t_player;
 
 typedef struct s_master
@@ -85,8 +85,8 @@ typedef struct s_master
 	t_map	map;
 	char	*mlx;
 	char	*win;
-	int		*m_x;
-	int		*m_y;
+	int		m_x;
+	int		m_y;
 	int screen;
 	int	width;
 	int height;
@@ -102,9 +102,11 @@ void	imgs_load_menu(t_master *s_m);
 void	ft_exit_menu(t_master *s_m);
 void	ft_check_map(t_master *s_m, char *map);
 void	ft_error_map(char *error, t_master *s_m);
-void    free_tab(char **tab);
+void	free_tab(char **tab);
 void	ft_check_tab(t_master *s_m, t_map *s_map, char **map);
 void	ft_play(t_master *s_m);
+void	ft_raycast(t_master *s_m, char **map);
+int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
 int		ft_msg(char *str, t_master *s_m);

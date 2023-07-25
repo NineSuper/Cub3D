@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 12:38:51 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/22 16:51:32 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 05:40:18 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_print_tab(char **tab)
 	while (tab[++i])
 		ft_printf("%s\n", tab[i]);
 }
-
 
 int	ft_msg(char *str, t_master *s_m)
 {
