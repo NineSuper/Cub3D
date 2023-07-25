@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:38:21 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/07/25 06:54:49 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int s_m->screen
 
 int	ft_loop(t_master *s_m)
 {
-	// if (s_m->screen == 5)
-	// 	ft_play(s_m);
 	mlx_mouse_get_pos(s_m->mlx, s_m->win, &s_m->m_x, &s_m->m_y);
 }
 
