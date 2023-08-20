@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:36:43 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/20 17:04:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ void	check_one_map(t_master *s_m, char *str)
 	}
 }
 
+void	ft_set_dir(t_master *s_m, char c)
+{
+	if (c == 'N')
+		s_m->player.dir = 0;
+	if (c == 'S')
+		s_m->player.dir = 180;
+	if (c == 'E')
+		s_m->player.dir = 90;
+	if (c == 'O')
+		s_m->player.dir = 270;
+}
+
 int	ft_char_map(t_master *s_m, char *str)
 {
 	int	i;
@@ -46,6 +58,7 @@ int	ft_char_map(t_master *s_m, char *str)
 	{
 		if (str[i] == 'N' || str[i] == 'S' || str[i] == 'E' || str[i] == 'W')
 		{
+			ft_set_dir(s_m, str[i]);
 			s_m->map.player++;
 			return (0);
 		}
