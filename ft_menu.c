@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:39:28 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:16:03 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:49:16 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ft_choose_menu(t_master *s_m)
 void	ft_menu(t_master *s_m)
 {
 	s_m->mlx = mlx_init();
-	s_m->width = 1920;
-	s_m->height = 1080;
+	s_m->width = 1920 / 2;
+	s_m->height = 1080 / 2;
 	imgs_load_menu(s_m);
 	s_m->win = mlx_new_window(s_m->mlx, s_m->width, s_m->height, "Cub3D");
 	ft_choose_menu(s_m);

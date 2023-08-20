@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:41:25 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/20 16:01:00 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,11 @@ void	free_tab(char **tab);
 void	ft_check_tab(t_master *s_m, t_map *s_map, char **map);
 void	ft_play(t_master *s_m);
 void	ft_raycast(t_master *s_m, char **map);
+void	ft_minimap(t_master *s_m, char **map);
 int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
+int		create_trgb(int t, int r, int g, int b);
 int		ft_msg(char *str, t_master *s_m);
 int		check_test(t_master *s_m);
 int		check_texture(char *NO, char *EA, char *SO, char *WE);
