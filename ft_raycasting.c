@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:06:03 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:01:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,32 @@
 ? Collision avec les murs
 ? Minimap
 ? Systeme de porte (ouverture/fermeture)
+! width / X = largeur
+! height / Y = Hauteur
 */
+
+void	ft_skyflor(t_master *s_m)
+{
+	int	x;
+	int	y;
+
+	y = -1;
+	while (++y < s_m->height)
+	{
+		x = -1;
+		while (++x < s_m->width)
+		{
+			if (y < s_m->height / 2)
+				mlx_pixel_put(s_m->mlx, s_m->win, x, y, s_m->map.c_c);
+			else
+				mlx_pixel_put(s_m->mlx, s_m->win, x, y, s_m->map.c_f);
+		}
+	}
+}
 
 void	ft_raycast(t_master *s_m, char **map)
 {
 	ft_printf("dir : %d\n", s_m->player.dir); // ? Debug
+	ft_skyflor(s_m);
 	ft_minimap(s_m, map);
 }
