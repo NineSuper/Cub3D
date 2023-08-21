@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 12:38:49 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:25:18 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ void	ft_check_tab(t_master *s_m, t_map *s_map, char **map);
 void	ft_play(t_master *s_m);
 void	ft_raycast(t_master *s_m, char **map);
 void	ft_minimap(t_master *s_m, char **map);
+void	ft_mac_mouse_menu(int x, int y, t_master *s_m);
 int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 12:47:39 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:28:23 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	ft_key_menu(int key, t_master *s_m)
 
 void	ft_mouse_menu(int x, int y, t_master *s_m)
 {
+	if (s_m->width < 1920)
+		ft_mac_mouse_menu(x, y, s_m);
 	if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
 		ft_play(s_m);
 	if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
@@ -89,6 +91,7 @@ int	ft_mouse(int button, int x, int y, void *data)
 	s_m = data;
 	s_m->m_x = x;
 	s_m->m_y = y;
+	printf("%d %d\n", x, y);
 	if (s_m->screen == 1)
 		ft_mouse_menu(s_m->m_x, s_m->m_y, s_m);
 }
