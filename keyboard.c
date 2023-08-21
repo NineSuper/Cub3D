@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:54:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:28:10 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	deal_key(int key, t_master *s_m)
 	if (s_m->screen == 1)
 		ft_key_menu(key, s_m);
 	else
-		ft_printf("s_m->screen: %d\n", s_m->screen);
+		ft_raycast(s_m, s_m->map.map + s_m->map.len);
+		//ft_printf("s_m->screen: %d\n", s_m->screen);
 	//ft_printf("KEY : [%d]\n", key);
 }

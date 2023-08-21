@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/20 20:01:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:32:07 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	ft_skyflor(t_master *s_m)
 	}
 }
 
+
 void	ft_raycast(t_master *s_m, char **map)
 {
-	ft_printf("dir : %d\n", s_m->player.dir); // ? Debug
 	ft_skyflor(s_m);
-	ft_minimap(s_m, map);
+	ft_minimap(s_m, s_m->map.map + s_m->map.len);
 }

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:04:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:22:19 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	check_one_map(t_master *s_m, char *str)
 void	ft_set_dir(t_master *s_m, char c)
 {
 	if (c == 'N')
-		s_m->player.dir = 0;
+		s_m->player.dirx = -1;
 	if (c == 'S')
-		s_m->player.dir = 180;
+		s_m->player.dirx = 1;
 	if (c == 'E')
-		s_m->player.dir = 90;
-	if (c == 'O')
-		s_m->player.dir = 270;
+		s_m->player.diry = 1;
+	if (c == 'W')
+		s_m->player.diry = -1;
 }
 
 int	ft_char_map(t_master *s_m, char *str)

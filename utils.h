@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/20 17:06:17 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:14:51 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ typedef struct s_menu
 
 typedef struct s_player
 {
-	int		dir;
+	double		posx;
+	double		posy;
+	double		dirx;
+	double		diry;
 }	t_player;
 
 typedef struct s_master
@@ -116,7 +119,6 @@ int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
 int		create_trgb(int t, int r, int g, int b);
 int		ft_msg(char *str, t_master *s_m);
-int		check_test(t_master *s_m);
 int		check_texture(char *NO, char *EA, char *SO, char *WE);
 
 #endif
