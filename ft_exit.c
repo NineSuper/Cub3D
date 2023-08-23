@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:56:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 06:50:32 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:08:14 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	ft_exit_menu(t_master *s_m)
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_p);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_o);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_q);
+	if (s_m->img.mlx_img)
+		mlx_destroy_image(s_m->mlx, s_m->img.mlx_img);
 	mlx_destroy_window(s_m->mlx, s_m->win);
 	mlx_destroy_display(s_m->mlx);
 	mlx_loop_end(s_m->mlx);

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:34:58 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 16:41:10 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:06:18 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	img_pix_put(t_imgs *img, int x, int y, int color)
 
 void	ft_new_img(t_imgs *img, t_master *s_m)
 {
+	if (img->mlx_img)
+		mlx_destroy_image(s_m->mlx, img->mlx_img);
 	img->mlx_img = mlx_new_image(s_m->mlx, s_m->width, s_m->height);
 	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_len, &img->endian);
-	img_pix_put(img, 60, 60, 255);
 }
