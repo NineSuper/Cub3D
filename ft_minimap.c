@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 10:30:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/23 16:34:10 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 		{
 			w = j + x * 8;
 			if (c == 1)
-				mlx_pixel_put(s_m->mlx, s_m->win, w, h, create_trgb(0, 111, 30, 255));
+				img_pix_put(&s_m->img, w, h, create_trgb(0, 111, 30, 255));
             else if (c == 2)
-                mlx_pixel_put(s_m->mlx, s_m->win, w, h, create_trgb(0, 0, 255, 0));
+				img_pix_put(&s_m->img, w, h, create_trgb(0, 0, 255, 0));
 		}
 	}
 }
