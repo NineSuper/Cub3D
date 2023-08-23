@@ -4,20 +4,20 @@
 
 ## 🔭 Roadmap
 
-- Creation du projet
-- Verifier la map
-- Faire un menu utilisateur (choisir la map/quitter le jeu/options, ect...)
-- Faire le ray-casting
-- Faire bouger le joueur
-- Faire bouger la camera avec fleches et la souris
-- Mettre des textures sur les murs/sols/plafond
+- Creation du projet ✅
+- Verifier la map ✅
+- Faire un menu utilisateur (choisir la map/quitter le jeu/options, ect...) ✅
+- Faire le ray-casting ❌
+- Faire bouger le joueur ❌
+- Faire bouger la camera avec fleches et la souris ❌
+- Mettre des textures sur les murs/sols/plafond ❌
 
 ## 👾 Bonus
 
-- Collision avec les murs/sprites
-- Minimap
-- Sprites sur la map
-- Systeme de porte (ouverture/fermeture)
+- Collision avec les murs/sprites ❌
+- Minimap ✅
+- Sprites sur la map ❌
+- Systeme de porte (ouverture/fermeture) ❌
 
 ## 🎮 Lance notre Cub3D !
 
@@ -41,7 +41,7 @@ Compile le projet
 Lance l'executable
 
 ```bash
-  ./Cub3D
+  ./Cub3D maps/normal.cub
 ```
 ## 📝 Auteurs
 
