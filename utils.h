@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 16:35:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:51:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 #define text_load "Chargement des textures.."
 #define map_load "Chargement de la map"
 #define READ_ERR "n'existe pas"
+#define MSG_SIZE "Séléctionnez une résolution :\n1: 1920x1080\n2: 960x540\n"
 #define ERROR_T "textures/couleurs pas a la norme"
-#define ARGC "Pas assez d'argument"
+#define ARGC "./Cub3D maps/(.cub)"
 #define ERROR_C "une couleur n'est pas bonne"
 #define MAP_NO "merci de mettre une map a la norme"
 /*		Texture		*/
