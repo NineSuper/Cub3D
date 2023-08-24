@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 18:28:23 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/24 17:41:14 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 * Q : 97
 * S : 115 
 * D : 100
+* M 109
 * Key hook en fonction de l'ecran sur lequels en se trouve :
 
 ! 		s_m->screen = 1 : menu
@@ -94,6 +95,8 @@ int	ft_mouse(int button, int x, int y, void *data)
 	printf("%d %d\n", x, y);
 	if (s_m->screen == 1)
 		ft_mouse_menu(s_m->m_x, s_m->m_y, s_m);
+	if (s_m->screen == 5)
+		ft_mouse_play(button, x, y, s_m);
 }
 
 int	deal_key(int key, t_master *s_m)
@@ -102,6 +105,8 @@ int	deal_key(int key, t_master *s_m)
 		ft_exit_menu(s_m);
 	if (s_m->screen == 1)
 		ft_key_menu(key, s_m);
+	if (s_m->screen == 5)
+		ft_key_player(key, s_m);
 	else
 		ft_printf("s_m->screen: %d\n", s_m->screen);
 	ft_printf("KEY : [%d]\n", key);

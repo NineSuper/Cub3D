@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 17:51:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/08/24 17:40:53 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct s_player
 	double		posy;
 	double		dirx;
 	double		diry;
+	int	life;
 }	t_player;
 
 typedef	struct s_imgs
@@ -109,9 +110,10 @@ typedef struct s_master
 	char	*WE;
 	int		m_x;
 	int		m_y;
-	int screen;
-	int	width;
-	int height;
+	int		minimap;
+	int		screen;
+	int		width;
+	int 	height;
 }	t_master;
 
 
@@ -132,6 +134,8 @@ void	ft_minimap(t_master *s_m, char **map);
 void	ft_mac_mouse_menu(int x, int y, t_master *s_m);
 void	img_pix_put(t_imgs *imgs, int x, int y, int color);
 void	ft_new_img(t_imgs *img, t_master *s_m);
+void    ft_key_player(int key, t_master *s_m);
+void    ft_mouse_play(int button, int x, int y, t_master *s_m);
 int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
