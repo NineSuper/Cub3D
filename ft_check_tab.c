@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 11:44:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:01:14 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_char_map(t_master *s_m, char *str)
 			return (0);
 		}
 		else if (str[i] != '1' && str[i] != '0' && \
-			str[i] != 'B' && str[i] != ' ')
+			str[i] != 'D' && str[i] != ' ')
 			return (1);
 	}
 	ft_printf("\033[1;33m%s\033[0m\n", str);
