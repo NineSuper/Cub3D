@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 09:36:46 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:37:38 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_set_dir(t_master *s_m, char c, char *str)
 		s_m->player.diry = -1;
 	if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
 		str[0] = 'P';
-	printf("%d\n", str[0]);
+	printf("%c\n", str[0]);
 }
 
 int	ft_char_map(t_master *s_m, char *str)
