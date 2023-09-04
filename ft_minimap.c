@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 14:15:15 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:19:49 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,6 @@ void	ft_map(t_master *s_m, int x, int y, int c)
 	}
 }
 
-void	ft_color_door(t_master *s_m, int x, int y)
-{
-	if (s_m->minimap)
-	{
-		y * 16;
-		x * 16;
-	}
-	else
-	{
-		y * 8;
-		x * 8;
-	}
-	img_pix_put(&s_m->img, x, y, create_trgb(0, 255, 255, 255));
-}
-
 void	ft_draw_square(t_master *s_m, int x, int y, int c)
 {
 	int	i;
@@ -75,6 +60,7 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 			while (++j <= 16)
 			{
 				w = j + x * 8;
+				img_pix_put(&s_m->img, w, h, create_trgb(0, 255, 255, 255));
 				if (c == 1)
 					img_pix_put(&s_m->img, w, h, create_trgb(0, 107, 107, 107));
             	else if (c == 2)
@@ -100,7 +86,7 @@ void	ft_minimap(t_master *s_m, char **map)
 			else if (map[y][x] == 'P')
 				ft_draw_square(s_m, x, y, 2);
 			else if (map[y][x] == 'D')
-				ft_color_door(s_m, x, y);
+				ft_draw_square(s_m, x, y, 0);
 		}
 	}
 }
