@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/26 13:01:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:31:18 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ typedef struct s_player
 	double		posy;
 	double		dirx;
 	double		diry;
+	int	x;
+	int	y;
 	int	life;
 }	t_player;
 

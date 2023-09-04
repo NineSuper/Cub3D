@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 10:22:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:36:46 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_one_map(t_master *s_m, char *str)
 	}
 }
 
-void	ft_set_dir(t_master *s_m, char c)
+void	ft_set_dir(t_master *s_m, char c, char *str)
 {
 	if (c == 'N')
 		s_m->player.dirx = -1;
@@ -42,6 +42,9 @@ void	ft_set_dir(t_master *s_m, char c)
 		s_m->player.diry = 1;
 	if (c == 'W')
 		s_m->player.diry = -1;
+	if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
+		str[0] = 'P';
+	printf("%d\n", str[0]);
 }
 
 int	ft_char_map(t_master *s_m, char *str)
@@ -58,7 +61,7 @@ int	ft_char_map(t_master *s_m, char *str)
 	{
 		if (str[i] == 'N' || str[i] == 'S' || str[i] == 'E' || str[i] == 'W')
 		{
-			ft_set_dir(s_m, str[i]);
+			ft_set_dir(s_m, str[i], str + i);
 			s_m->map.player++;
 			return (0);
 		}
