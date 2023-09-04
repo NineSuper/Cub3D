@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 09:31:18 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 11:44:27 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,12 @@ typedef struct s_menu
 
 typedef struct s_player
 {
-	double		posx;
-	double		posy;
-	double		dirx;
-	double		diry;
-	int	x;
-	int	y;
-	int	life;
+	double	posX;
+	double	posY;
+	double	dirx;
+	double	diry;
+	double	planeX;
+	double	planeY;
 }	t_player;
 
 typedef	struct s_imgs
@@ -120,6 +119,7 @@ typedef struct s_master
 
 
 char	*ft_split_text(char *str, t_master *s_m);
+void	ft_set_dir(t_master *s_m, char c, char *str);
 void	ft_print_tab(char **tab);
 void	ft_get_menu(int i, t_master *s_m);
 void    ft_menu(t_master *s_m);
