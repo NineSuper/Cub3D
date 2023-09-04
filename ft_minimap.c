@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 14:19:49 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:20:45 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_map(t_master *s_m, int x, int y, int c)
 				img_pix_put(&s_m->img, w, h, create_trgb(0, 107, 107, 107));
             else if (c == 2)
 				img_pix_put(&s_m->img, w, h, create_trgb(0, 0, 255, 0));
+			else
+				img_pix_put(&s_m->img, w, h, create_trgb(0, 255, 255, 255));
 		}
 	}
 }
