@@ -62,7 +62,7 @@ $(NAME): comp_start $(OBJ)
 
 all: $(NAME) norminette
 
-macos: $(NAME) comp_start $(OBJ)
+macos: comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
 	@$(CC) -D WIDTH=960 -D HEIGHT=540 libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
