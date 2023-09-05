@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 21:03:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 21:05:08 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@
 # define MENU_5 "texture/menu/menu_5.xpm"
 # define MENU_6 "texture/menu/menu_6.xpm"
 # define MENU_7 "texture/menu/menu_7.xpm"
-# define MENU_8 "texture/menu/menu_8.xpm"D
+# define MENU_8 "texture/menu/menu_8.xpm"
 /*		Color		*/
 # define C_GREEN "\033[1;32m"
 # define C_RED "\033[1;41m"
