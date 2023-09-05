@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 20:25:03 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 20:49:15 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:49:36 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_text(t_master *s_m)
 	else
 	{
 		mlx_string_put(s_m->mlx, s_m->win, 4, 262 * 2, 0xFFFFFF, "M: Map");
-		mlx_string_put(s_m->mlx, s_m->win, 4, 282 * 2, 0xFFFFFF, "ESC: Exit");
-		mlx_string_put(s_m->mlx, s_m->win, 4, 302 * 2, 0xFFFFFF, "H: on/off help");
+		mlx_string_put(s_m->mlx, s_m->win, 4, 272 * 2, 0xFFFFFF, "ESC: Exit");
+		mlx_string_put(s_m->mlx, s_m->win, 4, 282 * 2, 0xFFFFFF, "H: on/off help");
 	}
 }
