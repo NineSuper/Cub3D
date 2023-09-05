@@ -6,12 +6,20 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 11:44:27 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:15:12 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
+/*		Screen Size	 */
+# ifndef WIDTH
+#  define WIDTH 1920
+# endif
+
+# ifndef HEIGHT
+#  define HEIGHT 1080
+# endif
 /*      Libft       */
 # include "libft/libft/libft.h"
 # include "libft/ft_printf/ft_printf.h"
