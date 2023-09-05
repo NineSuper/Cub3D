@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 21:05:08 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 21:25:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define ARGC "./Cub3D maps/(.cub)"
 # define ERROR_C "une couleur n'est pas bonne"
 # define MAP_NO "merci de mettre une map a la norme"
-/*		Help string	*/
+/*		Help string		*/
 # define H_MAP "M: MAP"
 # define H_HELP "H: on/off help"
 # define H_ESC "ESC: Exit"
