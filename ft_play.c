@@ -6,16 +6,11 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:45:53 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 16:40:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:19:26 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-
-/*
-? Faire le ray-casting : ft_raycast.c
-? Minimap
-*/
 
 void	ft_play(t_master *s_m)
 {
