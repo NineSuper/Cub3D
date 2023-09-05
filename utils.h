@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 20:52:11 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:57:58 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define UTILS_H
 /*		Screen Size	 */
 # ifndef WIDTH
-#  define WIDTH 1920 / 2
+#  define WIDTH 1920
 # endif
 
 # ifndef HEIGHT
-#  define HEIGHT 1080 / 2
+#  define HEIGHT 1080
 # endif
 /*      Libft       */
 # include "libft/libft/libft.h"
