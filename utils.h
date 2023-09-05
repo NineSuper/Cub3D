@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 14:10:10 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:52:11 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define UTILS_H
 /*		Screen Size	 */
 # ifndef WIDTH
-#  define WIDTH 1920
+#  define WIDTH 1920 / 2
 # endif
 
 # ifndef HEIGHT
-#  define HEIGHT 1080
+#  define HEIGHT 1080 / 2
 # endif
 /*      Libft       */
 # include "libft/libft/libft.h"
@@ -123,6 +123,7 @@ typedef struct s_master
 	int		screen;
 	int		width;
 	int 	height;
+	int		help;
 }	t_master;
 
 
@@ -146,6 +147,7 @@ void	img_pix_put(t_imgs *imgs, int x, int y, int color);
 void	ft_new_img(t_imgs *img, t_master *s_m);
 void    ft_key_player(int key, t_master *s_m);
 void    ft_mouse_play(int button, int x, int y, t_master *s_m);
+void	ft_text(t_master *s_m);
 int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
