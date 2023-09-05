@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 20:57:58 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 21:03:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,30 @@
 # include "libft/mlx/mlx.h"
 # include "libft/mlx/mlx_int.h"
 /*		String		*/
-#define text_load "Chargement des textures.."
-#define map_load "Chargement de la map"
-#define READ_ERR "n'existe pas"
-#define MSG_SIZE "Séléctionnez une résolution :\n1: 1920x1080\n2: 960x540\n"
-#define ERROR_T "textures/couleurs pas a la norme"
-#define ARGC "./Cub3D maps/(.cub)"
-#define ERROR_C "une couleur n'est pas bonne"
-#define MAP_NO "merci de mettre une map a la norme"
+# define text_load "Chargement des textures.."
+# define map_load "Chargement de la map"
+# define READ_ERR "n'existe pas"
+# define MSG_SIZE "Séléctionnez une résolution :\n1: 1920x1080\n2: 960x540\n"
+# define ERROR_T "textures/couleurs pas a la norme"
+# define ARGC "./Cub3D maps/(.cub)"
+# define ERROR_C "une couleur n'est pas bonne"
+# define MAP_NO "merci de mettre une map a la norme"
+/*		Help string	*/
+# define H_MAP "M: MAP"
+# define H_HELP "H: on/off help"
+# define H_ESC "ESC: Exit"
 /*		Texture		*/
-#define MENU_1 "texture/menu/menu_1.xpm"
-#define MENU_2 "texture/menu/menu_2.xpm"
-#define MENU_3 "texture/menu/menu_3.xpm"
-#define MENU_4 "texture/menu/menu_4.xpm"
-#define MENU_5 "texture/menu/menu_5.xpm"
-#define MENU_6 "texture/menu/menu_6.xpm"
-#define MENU_7 "texture/menu/menu_7.xpm"
-#define MENU_8 "texture/menu/menu_8.xpm"
+# define MENU_1 "texture/menu/menu_1.xpm"
+# define MENU_2 "texture/menu/menu_2.xpm"
+# define MENU_3 "texture/menu/menu_3.xpm"
+# define MENU_4 "texture/menu/menu_4.xpm"
+# define MENU_5 "texture/menu/menu_5.xpm"
+# define MENU_6 "texture/menu/menu_6.xpm"
+# define MENU_7 "texture/menu/menu_7.xpm"
+# define MENU_8 "texture/menu/menu_8.xpm"D
 /*		Color		*/
-#define C_GREEN "\033[1;32m"
-#define C_RED "\033[1;41m"
+# define C_GREEN "\033[1;32m"
+# define C_RED "\033[1;41m"
 
 typedef struct s_key
 {
