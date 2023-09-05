@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 20:27:57 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 20:46:28 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	ft_loop(t_master *s_m)
 	mlx_mouse_get_pos(s_m->mlx, s_m->win, &s_m->m_x, &s_m->m_y);
 	if (s_m->screen == 5)
 		ft_raycast(s_m, s_m->map.map + s_m->map.len);
+	if (!s_m->help)
+		ft_text(s_m);
 }
 
 int	main(int argc, char **argv)
