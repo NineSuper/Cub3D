@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/24 17:41:14 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:21:17 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_key_menu(int key, t_master *s_m)
 	{
 		if (s_m->menu.choose == 1)
 			ft_play(s_m);
-		/* 
+		/*
 		if (s_m->menu.choose == 2)
 	 	 	? option
 		*/

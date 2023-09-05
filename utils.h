@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 09:15:12 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:10:10 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,11 @@ typedef struct s_player
 
 typedef	struct s_imgs
 {
-    void	*mlx_img;
+    void	*m_img;
     char	*addr;
     int		bpp;
-    int		line_len;
-    int		endian;
+    int		l_len;
+    int		end;
 }	t_imgs;
 
 typedef struct s_master

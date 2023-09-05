@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/21 13:01:26 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:19:22 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	imgs_load_mac(t_master *s_m)
 	s_m->menu.menu_d = mlx_xpm_file_to_image(s_m->mlx, MENU_5, &w, &h);
 	s_m->menu.menu_p = mlx_xpm_file_to_image(s_m->mlx, MENU_6, &w, &h);
 	s_m->menu.menu_o = mlx_xpm_file_to_image(s_m->mlx, MENU_7, &w, &h);
-	s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_8, &w, &h);	
+	s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_8, &w, &h);
 }
 
 void	imgs_load_menu(t_master *s_m)

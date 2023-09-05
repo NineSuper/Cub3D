@@ -9,7 +9,10 @@ INC_SRCH_PATH += -I$(MLX_PATH)
 LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
-SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c ft_utils_2.c
+SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c \
+	ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c \
+	ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c \
+	ft_utils_2.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
@@ -64,14 +67,14 @@ all: $(NAME) norminette
 
 macos: comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
-	@$(CC) -D WIDTH=960 -D HEIGHT=540 libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
+	@$(CC) -D WIDTH=960 -D HEIGHT=520 libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
 
 norminette:
 	$(NORM)
-	norminette *.c
+	norminette libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c *.c
 	$(NORM_H)
 	norminette -R checkDefine utils.h
 	echo "\n"

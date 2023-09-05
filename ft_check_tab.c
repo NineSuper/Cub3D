@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/04 14:01:14 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:45:54 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	check_one_map(t_master *s_m, char *str)
 			ft_free_error(s_m);
 	}
 }
-
 
 int	ft_char_map(t_master *s_m, char *str)
 {

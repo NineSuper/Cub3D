@@ -6,14 +6,15 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/24 17:40:07 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:19:40 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
 /*
-* Ft_press(int key) est une fonction lorsqu'on appuis sur la "key" la valeur sera soit 1 ou 0
+? Ft_press(int key) est une fonction lorsqu'on appuis sur 
+? la "key" la valeur sera soit 1 ou 0
 * 65361 : gauche
 * 65363 : droite
 * 65362 : haut
@@ -31,21 +32,21 @@
 * M : 109
 */
 
-int    ft_press(int key)
+int	ft_press(int key)
 {
-    if (key)
-        return(0);
-    else
-        return(1);
+	if (key)
+		return (0);
+	else
+		return (1);
 }
 
-void    ft_mouse_play(int button, int x, int y, t_master *s_m)
+void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 {
-    ft_printf("ok\n");
+	ft_printf("ok\n");
 }
 
-void    ft_key_player(int key, t_master *s_m)
+void	ft_key_player(int key, t_master *s_m)
 {
-    if (key == 109)
-        s_m->minimap = ft_press(s_m->minimap);
+	if (key == 109)
+		s_m->minimap = ft_press(s_m->minimap);
 }
