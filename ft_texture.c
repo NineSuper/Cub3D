@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 14:31:27 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:13:16 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:19:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	check_texture(char *NO, char *ea, char *SO, char *WE)
 {
 	if (!ft_strncmp("ERROR", ea, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", NO, 5))
+	if (!ft_strncmp("ERROR", no, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", SO, 5))
+	if (!ft_strncmp("ERROR", so, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", WE, 5))
+	if (!ft_strncmp("ERROR", we, 5))
 		return (1);
 	return (0);
 }
