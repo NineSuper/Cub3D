@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:59:12 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:59:52 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,23 +111,23 @@ typedef struct s_imgs
 typedef struct s_master
 {
 	t_player	player;
-	t_menu	menu;
-	t_key	key;
-	t_map	map;
-	t_imgs	img;
-	char	*mlx;
-	char	*win;
-	char	*EA;
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	int		m_x;
-	int		m_y;
-	int		minimap;
-	int		screen;
-	int		width;
-	int 	height;
-	int		help;
+	t_menu		menu;
+	t_key		key;
+	t_map		map;
+	t_imgs		img;
+	char		*mlx;
+	char		*win;
+	char		*EA;
+	char		*NO;
+	char		*SO;
+	char		*WE;
+	int			m_x;
+	int			m_y;
+	int			minimap;
+	int			screen;
+	int			width;
+	int 		height;
+	int			help;
 }	t_master;
 
 
