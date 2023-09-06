@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:03:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:57:55 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # include "libft/mlx/mlx.h"
 # include "libft/mlx/mlx_int.h"
 /*		String		*/
-# define text_load "Chargement des textures.."
-# define map_load "Chargement de la map"
+# define TEXT_LOAD "Chargement des textures.."
+# define MAP_LOAD "Chargement de la map"
 # define READ_ERR "n'existe pas"
 # define MSG_SIZE "Séléctionnez une résolution :\n1: 1920x1080\n2: 960x540\n"
 # define ERROR_T "textures/couleurs pas a la norme"
@@ -55,9 +55,9 @@
 typedef struct s_key
 {
 	int	w;
-	int q;
-	int s;
-	int d;
+	int	q;
+	int	s;
+	int	d;
 }	t_key;
 
 typedef struct s_map
@@ -82,11 +82,11 @@ typedef struct s_menu
 	char	*menu_o;
 	char	*menu_q;
 	int		borderSize;
-	int 	width;
-	int 	height;
+	int		width;
+	int		height;
 	int		choose;
-	int 	w;
-	int 	h;
+	int		w;
+	int		h;
 }	t_menu;
 
 typedef struct s_player
@@ -99,7 +99,7 @@ typedef struct s_player
 	double	planeY;
 }	t_player;
 
-typedef	struct s_imgs
+typedef struct s_imgs
 {
     void	*m_img;
     char	*addr;
