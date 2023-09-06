@@ -6,21 +6,21 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 14:31:27 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:27:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:29:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	check_texture(char *no, char *ea, char *so, char *we)
+int	check_texture(char *noo, char *eaa, char *soo, char *wee)
 {
-	if (!ft_strncmp("ERROR", ea, 5))
+	if (!ft_strncmp("ERROR", eaa, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", no, 5))
+	if (!ft_strncmp("ERROR", noo, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", so, 5))
+	if (!ft_strncmp("ERROR", soo, 5))
 		return (1);
-	if (!ft_strncmp("ERROR", we, 5))
+	if (!ft_strncmp("ERROR", wee, 5))
 		return (1);
 	return (0);
 }
