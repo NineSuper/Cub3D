@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:56:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:03:05 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:10:03 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_tab(char **tab)
 void	free_map(t_map *s_map)
 {
 	free(s_map->NO);
-	free(s_map->EA);
+	free(s_map->ea);
 	free(s_map->SO);
 	free(s_map->WE);
 }
@@ -56,7 +56,7 @@ int	ft_exit_menu(t_master *s_m)
 	free(s_m->WE);
 	free(s_m->NO);
 	free(s_m->SO);
-	free(s_m->EA);
+	free(s_m->ea);
 	free(s_m->mlx);
 	free(s_m);
 	exit (0);
