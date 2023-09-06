@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 14:31:27 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:29:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:30:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	check_texture(char *noo, char *eaa, char *soo, char *wee)
 {
+	printf("%s\n", soo);
 	if (!ft_strncmp("ERROR", eaa, 5))
 		return (1);
 	if (!ft_strncmp("ERROR", noo, 5))
