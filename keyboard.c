@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 11:40:37 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:14:22 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void	ft_mouse_menu(int x, int y, t_master *s_m)
 {
 	if (s_m->width < 1920)
 		ft_mac_mouse_menu(x, y, s_m);
-	if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
+	else if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
 		ft_play(s_m);
-	if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
+	else if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
 		printf("option\n");
-	if (x >= 849 && x <= 1123 && y >= 611 && y <= 691)
+	else if (x >= 849 && x <= 1123 && y >= 611 && y <= 691)
 		ft_exit_menu(s_m);
 }
 
@@ -107,7 +107,5 @@ int	deal_key(int key, t_master *s_m)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
-	else
-		ft_printf("s_m->screen: %d\n", s_m->screen);
 	ft_printf("KEY : [%d]\n", key);
 }
