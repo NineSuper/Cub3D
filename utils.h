@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:21:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:03:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # include "libft/mlx/mlx.h"
 # include "libft/mlx/mlx_int.h"
 /*		String		*/
-# define TEXT_LOAD "Chargement des textures.."
-# define MAP_LOAD "Chargement de la map"
+# define text_load "Chargement des textures.."
+# define map_load "Chargement de la map"
 # define READ_ERR "n'existe pas"
 # define MSG_SIZE "Séléctionnez une résolution :\n1: 1920x1080\n2: 960x540\n"
 # define ERROR_T "textures/couleurs pas a la norme"
@@ -55,19 +55,19 @@
 typedef struct s_key
 {
 	int	w;
-	int	q;
-	int	s;
-	int	d;
+	int q;
+	int s;
+	int d;
 }	t_key;
 
 typedef struct s_map
 {
 	char	**map;
 	char	*level;
-	char	*ea;
-	char	*no;
-	char	*so;
-	char	*we;
+	char	*EA;
+	char	*NO;
+	char	*SO;
+	char	*WE;
 	int		c_f;
 	int		c_c;
 	int		fd;
@@ -117,10 +117,10 @@ typedef struct s_master
 	t_imgs	img;
 	char	*mlx;
 	char	*win;
-	char	*ea;
-	char	*no;
-	char	*so;
-	char	*we;
+	char	*EA;
+	char	*NO;
+	char	*SO;
+	char	*WE;
 	int		m_x;
 	int		m_y;
 	int		minimap;
@@ -157,6 +157,6 @@ int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
 int		create_trgb(int t, int r, int g, int b);
 int		ft_msg(char *str, t_master *s_m);
-int		check_texture(char *no, char *ea, char *so, char *we);
+int		check_texture(char *NO, char *EA, char *SO, char *WE);
 
 #endif
