@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:13:16 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:15:55 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_check_arg(t_map *s_map, t_master *s_m, char **tab)
 	while (tab[++i])
 		j += ft_msg(tab[i], s_m);
 	ft_printf("--------------------------------\n");
-	j += check_texture(s_map->NO, s_map->ea, s_map->SO, s_map->WE);
+	j += check_texture(s_map->no, s_map->ea, s_map->so, s_map->we);
 	if (j != 4 || ft_check_color(s_m, s_m->map.map, -1))
 	{	
 		free_tab(s_map->map);
