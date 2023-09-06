@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 21:25:44 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:03:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,6 @@ void	ft_get_menu(int i, t_master *s_m);
 void    ft_menu(t_master *s_m);
 void	ft_loader_b(t_master *s_m, void *mlx, void *win);
 void	imgs_load_menu(t_master *s_m);
-void	ft_exit_menu(t_master *s_m);
 void	ft_check_map(t_master *s_m, char *map);
 void	ft_error_map(char *error, t_master *s_m);
 void	free_tab(char **tab);
@@ -152,6 +151,7 @@ void	ft_new_img(t_imgs *img, t_master *s_m);
 void    ft_key_player(int key, t_master *s_m);
 void    ft_mouse_play(int button, int x, int y, t_master *s_m);
 void	ft_text(t_master *s_m);
+int		ft_exit_menu(t_master *s_m);
 int		ft_mouse(int button, int x, int y, void *s_m);
 int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
