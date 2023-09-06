@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:14:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:21:41 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,6 @@ int		deal_key(int key, t_master *s_m);
 int		ft_check_color(t_master *s_m, char **tab, int i);
 int		create_trgb(int t, int r, int g, int b);
 int		ft_msg(char *str, t_master *s_m);
-int		check_texture(char *NO, char *ea, char *SO, char *WE);
+int		check_texture(char *no, char *ea, char *so, char *we);
 
 #endif
