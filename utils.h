@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:09:44 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:30:52 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ typedef struct s_player
 	double	diry;
 	double	planex;
 	double	planey;
+	int		x;
+	int		y;
 }	t_player;
 
 typedef struct s_imgs
