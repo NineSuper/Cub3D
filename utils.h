@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:03:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 08:09:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_menu
 	char	*menu_p;
 	char	*menu_o;
 	char	*menu_q;
-	int		borderSize;
+	int		bordersize;
 	int		width;
 	int		height;
 	int		choose;
@@ -91,12 +91,12 @@ typedef struct s_menu
 
 typedef struct s_player
 {
-	double	posX;
-	double	posY;
+	double	posx;
+	double	posy;
 	double	dirx;
 	double	diry;
-	double	planeX;
-	double	planeY;
+	double	planex;
+	double	planey;
 }	t_player;
 
 typedef struct s_imgs

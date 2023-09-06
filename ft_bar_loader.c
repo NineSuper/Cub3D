@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 17:04:54 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 08:08:47 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	ft_loader_b(t_master *s_m, void *mlx, void *win)
 	y = (s_m->height / 2) - 15;
 	s_m->menu.width = 400;
 	s_m->menu.height = 30;
-	s_m->menu.borderSize = 6;
-	i = x - s_m->menu.borderSize - 1;
-	while (++i < x + s_m->menu.width + s_m->menu.borderSize)
+	s_m->menu.bordersize = 6;
+	i = x - s_m->menu.bordersize - 1;
+	while (++i < x + s_m->menu.width + s_m->menu.bordersize)
 	{
-		j = y - s_m->menu.borderSize - 1;
-		while (++j < y + s_m->menu.height + s_m->menu.borderSize)
+		j = y - s_m->menu.bordersize - 1;
+		while (++j < y + s_m->menu.height + s_m->menu.bordersize)
 			mlx_pixel_put(mlx, win, i, j, 0x3e4648);
 	}
 	ft_bar_loader(s_m, s_m->menu.width, s_m->menu.height);

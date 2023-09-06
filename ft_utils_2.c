@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 14:19:02 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 08:09:19 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_set_cam(t_master *s_m, int dirx, int diry, int posx)
 {
 	s_m->player.dirx = dirx;
 	s_m->player.diry = diry;
-	s_m->player.posX = posx;
-	s_m->player.posY = 0.66;
+	s_m->player.posx = posx;
+	s_m->player.posy = 0.66;
 }
 
 void	ft_set_dir(t_master *s_m, char c, char *str)
