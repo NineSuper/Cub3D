@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 11:21:06 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:22:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	color_case(int c)
 	if (c == 3)
 		return (create_trgb(0, 255, 255, 255));
 	if (c == 4)
-		return (create_trgb(0, 0, 0, 0));
+		return (create_trgb(0, 0, 162, 255));
 }
 
 void	ft_map(t_master *s_m, int x, int y, int c)
