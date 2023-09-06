@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 12:22:43 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:23:28 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,4 @@ void	ft_key_player(int key, t_master *s_m)
 		s_m->minimap = ft_press(s_m->minimap);
 	if (key == 104)
 		s_m->help = ft_press(s_m->help);
-	if (key == 119)
-	{
-		s_m->map.map[1][1] = 'P';
-		s_m->map.map[3][3] = 'P';
-	}
 }
