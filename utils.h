@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:01:08 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 08:03:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ typedef struct s_map
 {
 	char	**map;
 	char	*level;
-	char	*EA;
-	char	*NO;
-	char	*SO;
-	char	*WE;
+	char	*ea;
+	char	*no;
+	char	*so;
+	char	*we;
 	int		c_f;
 	int		c_c;
 	int		fd;
@@ -117,10 +117,10 @@ typedef struct s_master
 	t_imgs		img;
 	char		*mlx;
 	char		*win;
-	char		*EA;
-	char		*NO;
-	char		*SO;
-	char		*WE;
+	char		*ea;
+	char		*no;
+	char		*so;
+	char		*we;
 	int			m_x;
 	int			m_y;
 	int			minimap;
