@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 07:10:15 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:14:19 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,9 @@ typedef struct s_master
 	char	*mlx;
 	char	*win;
 	char	*ea;
-	char	*NO;
-	char	*SO;
-	char	*WE;
+	char	*no;
+	char	*so;
+	char	*we;
 	int		m_x;
 	int		m_y;
 	int		minimap;
