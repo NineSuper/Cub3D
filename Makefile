@@ -56,6 +56,7 @@ NORM_H			=		echo "\n📣 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de l
 # ------------------------------ Rules ------------------------------
 MAKEFLAGS += --silent
 
+
 $(NAME): comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
 	@$(CC) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
@@ -65,12 +66,16 @@ $(NAME): comp_start $(OBJ)
 
 all: $(NAME) norminette
 
-macos: comp_start $(OBJ)
+macos: set_win_size comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
-	@$(CC) -D WIDTH=960 -D HEIGHT=520 libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
+	@$(CC) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
+
+WIN_SIZE	=	-D WIDTH=1920 -D HEIGHT=1080
+set_win_size:
+	$(eval WIN_SIZE=-D WIDTH=960 -D HEIGHT=520)
 
 norminette:
 	$(NORM)
@@ -95,4 +100,4 @@ re: clean all
 
 %.o: %.c
 	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)Compilation des fichiers :$(BOLD_CYAN) %-33.33s\r$(NO_COLOR)" $@
-	@${CC} ${FLAGS} -c $< -o $@
+	@${CC} ${FLAGS} $(WIN_SIZE) -c $< -o $@
