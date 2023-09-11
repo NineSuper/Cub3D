@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 12:30:52 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:04:50 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 # define MENU_6 "texture/menu/menu_6.xpm"
 # define MENU_7 "texture/menu/menu_7.xpm"
 # define MENU_8 "texture/menu/menu_8.xpm"
+# define CROSS	"texture/crosshair/geen.xpm"
 /*		Color		*/
 # define C_GREEN "\033[1;32m"
 # define C_RED "\033[1;41m"
@@ -91,6 +92,7 @@ typedef struct s_menu
 
 typedef struct s_player
 {
+	char	*cross;
 	double	posx;
 	double	posy;
 	double	dirx;

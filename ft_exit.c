@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:56:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:06:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:07:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_exit_menu(t_master *s_m)
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_p);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_o);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_q);
+	mlx_destroy_image(s_m->mlx, s_m->player.cross);
 	if (s_m->img.m_img)
 		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
 	mlx_destroy_window(s_m->mlx, s_m->win);
