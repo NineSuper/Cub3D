@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 12:55:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:04:38 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ typedef struct s_master
 	t_map		map;
 	t_imgs		img;
 	t_imgs		cursor;
+	t_imgs		skyfloor;
 	char		*mlx;
 	char		*win;
 	char		*ea;

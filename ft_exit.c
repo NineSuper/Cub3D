@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:56:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 13:48:18 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:09:26 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ void	ft_error_map(char *error, t_master *s_m)
 
 int	ft_exit_menu(t_master *s_m)
 {
-	//mlx_mouse_show(s_m->mlx, s_m->win);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_d);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_p);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_o);
 	mlx_destroy_image(s_m->mlx, s_m->menu.menu_q);
 	mlx_destroy_image(s_m->mlx, s_m->player.cross.m_img);
 	mlx_destroy_image(s_m->mlx, s_m->cursor.m_img);
+	mlx_destroy_image(s_m->mlx, s_m->skyfloor.m_img);
 	if (s_m->img.m_img)
 		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
 	mlx_destroy_window(s_m->mlx, s_m->win);

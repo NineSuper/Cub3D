@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:34:01 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:42:45 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:06:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ t_imgs	new_img(int w, int h, t_master *s_m)
 {
 	t_imgs	image;
 
-	if (s_m->img.m_img)
-		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
 	image.win = s_m->win;
 	image.mlx = s_m->mlx;
 	image.m_img = mlx_new_image(s_m->mlx, w, h);
