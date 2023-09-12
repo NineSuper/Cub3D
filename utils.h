@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:53:26 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:55:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@
 # define MENU_7 "texture/menu/menu_7.xpm"
 # define MENU_8 "texture/menu/menu_8.xpm"
 # define CROSS	"texture/crosshair/green.xpm"
+# define CURSOR "texture/cursor.xpm"
 /*		Color		*/
 # define C_GREEN "\033[1;32m"
 # define C_RED "\033[1;41m"
@@ -123,6 +124,7 @@ typedef struct s_master
 	t_key		key;
 	t_map		map;
 	t_imgs		img;
+	t_imgs		cursor;
 	char		*mlx;
 	char		*win;
 	char		*ea;

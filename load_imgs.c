@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:34:43 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:54:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	imgs_load_mac(t_master *s_m)
 void	load_hud(t_master *s_m)
 {
 	s_m->player.cross = new_file_img(CROSS, s_m);
+	s_m->cursor = new_file_img(CURSOR, s_m);
 }
 
 void	imgs_load_menu(t_master *s_m)

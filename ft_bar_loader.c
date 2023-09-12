@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:10:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:08:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:38:38 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 void	ft_usleep(void)
 {
-	long int	i;
-
-	i = 0;
-	while (i <= 600000)
-		i++;
+	usleep(500);
 }
 
 void	ft_bar_loader(t_master *s_m, int width, int height)
