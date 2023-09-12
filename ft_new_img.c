@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:34:58 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:32:55 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:43:20 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ unsigned int	get_pixel_img(t_imgs img, int x, int y)
 
 t_imgs	new_file_img(char *path, t_master *s_m)
 {
-	t_imgs image;
+	t_imgs	image;
 
 	image.win = s_m->win;
 	image.mlx = s_m->mlx;
 	image.m_img = mlx_xpm_file_to_image(s_m->mlx, path, &image.w, &image.h);
 	image.addr = mlx_get_data_addr(image.m_img, &(image.bpp),
-		&(image.l_len), &(image.end));
+			&(image.l_len), &(image.end));
 	return (image);
 }
 

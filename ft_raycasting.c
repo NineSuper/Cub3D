@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:34:33 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:50:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ void	ft_skyflor(t_master *s_m)
 
 void	ft_hud(t_master *s_m)
 {
-	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 64, (HEIGHT/ 2) - 64);
+	if (WIDTH != 1920)
+		return (ft_mac_hud(s_m));
+	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 64, \
+		(HEIGHT / 2) - 64);
 }
 
 void	ft_raycast(t_master *s_m, char **map)

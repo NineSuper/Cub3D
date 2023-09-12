@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:35:02 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:53:26 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ typedef struct s_menu
 }	t_menu;
 
 typedef struct s_imgs
-{ 
+{
 	void	*win;
 	void	*mlx;
 	void	*m_img;
@@ -139,37 +139,38 @@ typedef struct s_master
 	int			hud;
 }	t_master;
 
-t_imgs	new_img(int w, int h, t_master *s_m);
-t_imgs	new_file_img(char *path, t_master *s_m);
-char	*ft_split_text(char *str, t_master *s_m);
-void	ft_set_dir(t_master *s_m, char c, char *str);
-void	put_pixel_img(t_imgs img, int x, int y, int color);
-void	put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);
-void	ft_print_tab(char **tab);
-void	ft_get_menu(int i, t_master *s_m);
-void	ft_menu(t_master *s_m);
-void	ft_loader_b(t_master *s_m, void *mlx, void *win);
-void	imgs_load_menu(t_master *s_m);
-void	ft_check_map(t_master *s_m, char *map);
-void	ft_error_map(char *error, t_master *s_m);
-void	free_tab(char **tab);
-void	ft_check_tab(t_master *s_m, t_map *s_map, char **map);
-void	ft_play(t_master *s_m);
-void	ft_raycast(t_master *s_m, char **map);
-void	ft_minimap(t_master *s_m, char **map);
-void	ft_mac_mouse_menu(int x, int y, t_master *s_m);
-void	img_pix_put(t_imgs *imgs, int x, int y, int color);
-void	ft_new_img(t_imgs *img, t_master *s_m);
-void	ft_key_player(int key, t_master *s_m);
-void	ft_mouse_play(int button, int x, int y, t_master *s_m);
-void	ft_text(t_master *s_m);
-int		ft_exit_menu(t_master *s_m);
-int		ft_mouse(int button, int x, int y, void *s_m);
-int		deal_key(int key, t_master *s_m);
-int		ft_check_color(t_master *s_m, char **tab, int i);
-int		create_trgb(int t, int r, int g, int b);
-int		ft_msg(char *str, t_master *s_m);
-int		check_texture(char *NO, char *EA, char *SO, char *WE);
 unsigned int	get_pixel_img(t_imgs img, int x, int y);
+t_imgs			new_img(int w, int h, t_master *s_m);
+t_imgs			new_file_img(char *path, t_master *s_m);
+char			*ft_split_text(char *str, t_master *s_m);
+void			ft_set_dir(t_master *s_m, char c, char *str);
+void			put_pixel_img(t_imgs img, int x, int y, int color);
+void			put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);
+void			ft_print_tab(char **tab);
+void			ft_get_menu(int i, t_master *s_m);
+void			ft_menu(t_master *s_m);
+void			ft_loader_b(t_master *s_m, void *mlx, void *win);
+void			imgs_load_menu(t_master *s_m);
+void			ft_check_map(t_master *s_m, char *map);
+void			ft_error_map(char *error, t_master *s_m);
+void			free_tab(char **tab);
+void			ft_check_tab(t_master *s_m, t_map *s_map, char **map);
+void			ft_play(t_master *s_m);
+void			ft_raycast(t_master *s_m, char **map);
+void			ft_minimap(t_master *s_m, char **map);
+void			ft_mac_mouse_menu(int x, int y, t_master *s_m);
+void			img_pix_put(t_imgs *imgs, int x, int y, int color);
+void			ft_new_img(t_imgs *img, t_master *s_m);
+void			ft_key_player(int key, t_master *s_m);
+void			ft_mouse_play(int button, int x, int y, t_master *s_m);
+void			ft_text(t_master *s_m);
+void			ft_mac_hud(t_master *s_m);
+int				ft_exit_menu(t_master *s_m);
+int				ft_mouse(int button, int x, int y, void *s_m);
+int				deal_key(int key, t_master *s_m);
+int				ft_check_color(t_master *s_m, char **tab, int i);
+int				create_trgb(int t, int r, int g, int b);
+int				ft_msg(char *str, t_master *s_m);
+int				check_texture(char *NO, char *EA, char *SO, char *WE);
 
 #endif
