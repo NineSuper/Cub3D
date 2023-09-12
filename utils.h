@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:11:55 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:35:02 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,22 @@ typedef struct s_menu
 	int		h;
 }	t_menu;
 
+typedef struct s_imgs
+{ 
+	void	*win;
+	void	*mlx;
+	void	*m_img;
+	char	*addr;
+	int		h;
+	int		w;
+	int		bpp;
+	int		l_len;
+	int		end;
+}	t_imgs;
+
 typedef struct s_player
 {
-	char	*cross;
+	t_imgs	cross;
 	double	posx;
 	double	posy;
 	double	dirx;
@@ -102,15 +115,6 @@ typedef struct s_player
 	int		x;
 	int		y;
 }	t_player;
-
-typedef struct s_imgs
-{
-	void	*m_img;
-	char	*addr;
-	int		bpp;
-	int		l_len;
-	int		end;
-}	t_imgs;
 
 typedef struct s_master
 {
@@ -132,10 +136,15 @@ typedef struct s_master
 	int			width;
 	int			height;
 	int			help;
+	int			hud;
 }	t_master;
 
+t_imgs	new_img(int w, int h, t_master *s_m);
+t_imgs	new_file_img(char *path, t_master *s_m);
 char	*ft_split_text(char *str, t_master *s_m);
 void	ft_set_dir(t_master *s_m, char c, char *str);
+void	put_pixel_img(t_imgs img, int x, int y, int color);
+void	put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);
 void	ft_print_tab(char **tab);
 void	ft_get_menu(int i, t_master *s_m);
 void	ft_menu(t_master *s_m);
@@ -161,5 +170,6 @@ int		ft_check_color(t_master *s_m, char **tab, int i);
 int		create_trgb(int t, int r, int g, int b);
 int		ft_msg(char *str, t_master *s_m);
 int		check_texture(char *NO, char *EA, char *SO, char *WE);
+unsigned int	get_pixel_img(t_imgs img, int x, int y);
 
 #endif

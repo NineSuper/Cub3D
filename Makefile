@@ -12,7 +12,7 @@ NAME = Cub3D
 SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c \
 	ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c \
 	ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c \
-	ft_utils_2.c ft_text.c
+	ft_utils_2.c ft_text.c ft_img_2.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc

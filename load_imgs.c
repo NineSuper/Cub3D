@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:07:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:34:43 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	imgs_load_mac(t_master *s_m)
 	s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_8, &w, &h);
 }
 
+void	load_hud(t_master *s_m)
+{
+	s_m->player.cross = new_file_img(CROSS, s_m);
+}
+
 void	imgs_load_menu(t_master *s_m)
 {
 	int	w;
@@ -48,9 +53,8 @@ void	imgs_load_menu(t_master *s_m)
 		s_m->menu.menu_o = mlx_xpm_file_to_image(s_m->mlx, MENU_3, &w, &h);
 		s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_4, &w, &h);
 	}
-	w = 32;
-	s_m->player.cross = mlx_xpm_file_to_image(s_m->mlx, CROSS, &w, &w);
 	w = 1024;
+	load_hud(s_m);
 	s_m->ea = mlx_xpm_file_to_image(s_m->mlx, s_m->map.ea, &w, &w);
 	s_m->so = mlx_xpm_file_to_image(s_m->mlx, s_m->map.so, &w, &w);
 	s_m->no = mlx_xpm_file_to_image(s_m->mlx, s_m->map.no, &w, &w);

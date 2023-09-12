@@ -6,11 +6,42 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:34:58 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 14:12:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:32:55 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+void	put_pixel_img(t_imgs img, int x, int y, int color)
+{
+	char	*dst;
+
+	if (color == (int)0xFF000000)
+		return ;
+	if (x >= 0 && y >= 0 && x < img.w && y < img.h)
+	{
+		dst = img.addr + (y * img.l_len + x * (img.bpp / 8));
+		*(unsigned int *) dst = color;
+	}
+}
+
+unsigned int	get_pixel_img(t_imgs img, int x, int y)
+{
+	return (*(unsigned int *)((img.addr
+			+ (y * img.l_len) + (x * img.bpp / 8))));
+}
+
+t_imgs	new_file_img(char *path, t_master *s_m)
+{
+	t_imgs image;
+
+	image.win = s_m->win;
+	image.mlx = s_m->mlx;
+	image.m_img = mlx_xpm_file_to_image(s_m->mlx, path, &image.w, &image.h);
+	image.addr = mlx_get_data_addr(image.m_img, &(image.bpp),
+		&(image.l_len), &(image.end));
+	return (image);
+}
 
 void	img_pix_put(t_imgs *img, int x, int y, int color)
 {
