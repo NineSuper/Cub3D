@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:45:53 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 16:53:54 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/13 10:15:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_skyflor(t_master *s_m)
 void	ft_play(t_master *s_m)
 {
 	ft_loader_b(s_m, s_m->mlx, s_m->win);
-	mlx_mouse_hide(s_m->mlx, s_m->win);
 	ft_skyflor(s_m);
 	s_m->screen = 5;
 }
