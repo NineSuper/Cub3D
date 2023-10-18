@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:34:58 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 11:43:20 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:01:54 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ t_imgs	new_file_img(char *path, t_master *s_m)
 	image.win = s_m->win;
 	image.mlx = s_m->mlx;
 	image.m_img = mlx_xpm_file_to_image(s_m->mlx, path, &image.w, &image.h);
+	if (!image.m_img)
+	{
+		printf("\033[1;41mERROR: %s n'existe pas\033[00m\n", path);
+		ft_exit_menu(s_m);
+	}
 	image.addr = mlx_get_data_addr(image.m_img, &(image.bpp),
 			&(image.l_len), &(image.end));
 	return (image);

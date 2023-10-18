@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:56:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 15:09:26 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:59:40 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,33 @@ void	ft_error_map(char *error, t_master *s_m)
 	exit (0);
 }
 
+void	ft_destroy_img(void *mlx, char *img)
+{
+	if (img)
+		mlx_destroy_image(mlx, img);
+}
+
 int	ft_exit_menu(t_master *s_m)
 {
-	mlx_destroy_image(s_m->mlx, s_m->menu.menu_d);
-	mlx_destroy_image(s_m->mlx, s_m->menu.menu_p);
-	mlx_destroy_image(s_m->mlx, s_m->menu.menu_o);
-	mlx_destroy_image(s_m->mlx, s_m->menu.menu_q);
-	mlx_destroy_image(s_m->mlx, s_m->player.cross.m_img);
-	mlx_destroy_image(s_m->mlx, s_m->cursor.m_img);
-	mlx_destroy_image(s_m->mlx, s_m->skyfloor.m_img);
-	if (s_m->img.m_img)
-		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
-	mlx_destroy_window(s_m->mlx, s_m->win);
+	ft_destroy_img(s_m->mlx, s_m->menu.menu_d);
+	ft_destroy_img(s_m->mlx, s_m->menu.menu_p);
+	ft_destroy_img(s_m->mlx, s_m->menu.menu_o);
+	ft_destroy_img(s_m->mlx, s_m->menu.menu_q);
+	ft_destroy_img(s_m->mlx, s_m->player.cross.m_img);
+	ft_destroy_img(s_m->mlx, s_m->cursor.m_img);
+	ft_destroy_img(s_m->mlx, s_m->skyfloor.m_img);
+	ft_destroy_img(s_m->mlx, s_m->we.m_img);
+	ft_destroy_img(s_m->mlx, s_m->so.m_img);
+	ft_destroy_img(s_m->mlx, s_m->no.m_img);
+	ft_destroy_img(s_m->mlx, s_m->ea.m_img);
+	ft_destroy_img(s_m->mlx, s_m->img.m_img);
+	if (s_m->win)
+		mlx_destroy_window(s_m->mlx, s_m->win);
 	mlx_destroy_display(s_m->mlx);
 	mlx_loop_end(s_m->mlx);
 	if (s_m->map.map)
 		free_tab(s_m->map.map);
 	free_map(&s_m->map);
-	free(s_m->we);
-	free(s_m->no);
-	free(s_m->so);
-	free(s_m->ea);
 	free(s_m->mlx);
 	free(s_m);
 	exit (0);

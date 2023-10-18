@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/18 14:21:38 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:41:53 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ Si 'O' : angle 270°
 
 void	ft_hud(t_master *s_m)
 {
-	put_img_to_img(s_m->img, s_m->cursor, s_m->m_x, s_m->m_y);
+	//put_img_to_img(s_m->img, s_m->cursor, s_m->m_x, s_m->m_y);
 	if (WIDTH != 1920)
 		return (ft_mac_hud(s_m));
-	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 32, \
-		(HEIGHT / 2) - 32);
+	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 64, \
+		(HEIGHT / 2) - 64);
 }
 
 void	ft_raycast(t_master *s_m, char **map)
