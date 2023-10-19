@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 12:30:20 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:15:51 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,12 @@ void	ft_minimap(t_master *s_m, char **map)
 		{
 			if (map[y][x] == '1')
 				ft_draw_square(s_m, x, y, 1);
-			else if (map[y][x] == 'P')
-			{
-				ft_draw_square(s_m, x, y, 2);
-				s_m->player.x = x;
-				s_m->player.y = y;
-			}
 			else if (map[y][x] == 'D')
 				ft_draw_square(s_m, x, y, 3);
 			else if (map[y][x] == 'B')
 				ft_draw_square(s_m, x, y, 4);
+			else if (map[y][x] == 'P')
+				ft_draw_square(s_m, s_m->player.x, s_m->player.y, 2);
 		}
 	}
 }

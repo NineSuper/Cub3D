@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:45:53 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/13 10:15:39 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:00:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,31 @@ void	ft_skyflor(t_master *s_m)
 	}
 }
 
+void	ft_player_pos(t_master *s_m, char **map)
+{
+	int	x;
+	int	y;
+
+	y = -1;
+	while (map[++y])
+	{
+		x = -1;
+		while (map[y][++x])
+		{
+			if (map[y][x] == 'P')
+			{
+				s_m->player.x = x;
+				s_m->player.y = y;
+			}
+		}
+	}
+}
+
 void	ft_play(t_master *s_m)
 {
 	ft_loader_b(s_m, s_m->mlx, s_m->win);
 	ft_skyflor(s_m);
+	if (!s_m->player.x || !s_m->player.y)
+	 	ft_player_pos(s_m, s_m->map.map + s_m->map.len);
 	s_m->screen = 5;
 }

@@ -9,17 +9,21 @@ INC_SRCH_PATH += -I$(MLX_PATH)
 LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
+
 SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c \
 	ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c \
 	ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c \
 	ft_utils_2.c ft_text.c ft_img_2.c
+
+LIB = libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c
+HEADER_FILE = utils.h libft/ft_printf/ft_printf.h libft/libft/libft.h libft/gnl/get_next_line.h
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
 
 FLAGS = 
 
-# ------------------------------ Colors ------------------------------
+# ------------------------------ Couleurs ------------------------------
 
 BOLD_RED		=		\033[1;31m
 
@@ -37,13 +41,13 @@ NO_COLOR        =       \033[0m
 
 HEADER_NAME		=		$(HEADER_TOP) $(HEADER_TOP_MID) $(HEADER_MID)$(HEADER_BOT)
 
-HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)Cub3D $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & ...\n\n"
+HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)$(NAME) $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & ...\n\n"
 
 MLX_READY		=		echo "\n\n📥 $(BOLD)Compilation de la $(BOLD_YELLOW)Mlx$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
 COMP_START      =       printf "\n🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Debut de compilation...\r$(NO_COLOR)"
 
-EXE_READY       =       echo "\n\n🎮 $(BOLD)Compilation de $(BOLD_PURPLE)Cub3D$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
+EXE_READY       =       echo "\n\n🎮 $(BOLD)Compilation de $(BOLD_PURPLE)$(NAME)$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
 CLEANED         =       echo "\n💧 $(BOLD_YELLOW)Clean: $(NO_COLOR)Suppression des fichiers .o et de l'executable \n"
 
@@ -51,15 +55,17 @@ FCLEANED        =       echo "\n🧼 $(BOLD_YELLOW)Fclean: $(NO_COLOR)Suppressio
 
 NORM			= 		echo "\n📢 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme de tous les fichiers en .c !\n$(BOLD_PURPLE)"
 
+NORM_LIB		= 		echo "\n📢 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme du dossier $(BOLD_PURPLE)libft $(BOLD_YELLOW)!\n$(BOLD_YELLOW)"
+
 NORM_H			=		echo "\n📣 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme du .h\n$(BOLD_PURPLE)"
 
-# ------------------------------ Rules ------------------------------
+# ------------------------------ Regles ------------------------------
 MAKEFLAGS += --silent
 
 
 $(NAME): comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
-	@$(CC) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
+	@$(CC) $(LIB) $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
@@ -68,7 +74,7 @@ all: $(NAME) norminette
 
 macos: set_win_size comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
-	@$(CC) libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
+	@$(CC) $(LIB) $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
@@ -78,10 +84,12 @@ set_win_size:
 	$(eval WIN_SIZE=-D WIDTH=960 -D HEIGHT=520)
 
 norminette:
+	$(NORM_LIB)
+	norminette $(LIB)
 	$(NORM)
-	norminette libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c *.c
+	norminette *.c
 	$(NORM_H)
-	norminette -R checkDefine utils.h
+	norminette -R checkDefine $(HEADER_FILE)
 	echo "\n"
 
 comp_start:
@@ -99,5 +107,5 @@ fclean:
 re: clean all
 
 %.o: %.c
-	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)Compilation des fichiers :$(BOLD_CYAN) %-33.33s\r$(NO_COLOR)" $@
+	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Compilation des fichiers :$(BOLD_CYAN) %-33.33s\r$(NO_COLOR)" $@
 	@${CC} ${FLAGS} $(WIN_SIZE) -c $< -o $@
