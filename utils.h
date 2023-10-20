@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/20 15:30:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:30:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,9 @@ unsigned int	get_pixel_img(t_imgs img, int x, int y);
 t_imgs			new_img(int w, int h, t_master *s_m);
 t_imgs			new_file_img(char *path, t_master *s_m);
 t_imgs			ft_img_resize(t_master *s_m, t_imgs img, int h, int w);
+t_coords		ft_coords(int h, int w, int x, int y);
 char			*ft_split_text(char *str, t_master *s_m);
+void			ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, t_coords coords);
 void			ft_set_dir(t_master *s_m, char c, char *str);
 void			put_pixel_img(t_imgs img, int x, int y, int color);
 void			put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);

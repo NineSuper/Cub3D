@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:30:00 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,6 @@ void	ft_hud(t_master *s_m)
 	* puis detruire l'image tempon
 */
 
-void	ft_coords(int h, int w, int x, int y)
-{
-	// t_coords coords;
-
-	// coords.h = h;
-	// coords.w = w;
-	// coords.x = x;
-	// coords.y = y;
-	// return (coords);
-}
-
-void	ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, void (*f)(int))
-{
-	t_imgs temp;
-
-	temp = ft_img_resize(s_m, src, s_m->player.x  + 50, s_m->player.x + 50);
-	ft_put_destroy(temp, dest, 200, 200);
-}
-
 void	ft_raycast(t_master *s_m, char **map)
 {
 	if (s_m->img.m_img)
@@ -77,7 +58,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
-	ft_rplace(s_m, s_m->ea, s_m->img, ft_coords);
+	ft_rplace(s_m, s_m->ea, s_m->img, ft_coords(300, 500, 500, 500));
 
 	ft_minimap(s_m, s_m->map.map + s_m->map.len);
 	ft_hud(s_m);
