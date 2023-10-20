@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/19 09:16:46 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 10:06:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,17 @@ void	ft_key_player(int key, t_master *s_m)
 		s_m->minimap = ft_press(s_m->minimap);
 	if (key == 104)
 		s_m->help = ft_press(s_m->help);
+	/*
+		! A REVOIR LORS DES DEPLACEMENTS DU JOUEUR
+		* Deplacement joueur -> minimap [ok]
+		? Deplacement joueur -> 3D [NON]
+	*/
+	if (key == 119)
+		s_m->player.y--;
+	if (key == 115)
+		s_m->player.y++;
+	if (key == 100)
+		s_m->player.x++;
+	if (key == 97)
+		s_m->player.x--;
 }

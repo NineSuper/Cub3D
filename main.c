@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/12 20:13:46 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 09:50:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,15 @@ int s_m->screen
 			= 5 Jeu;
 */
 
+
 int	ft_loop(t_master *s_m)
 {
 	mlx_hook(s_m->win, 17, 1L << 5, ft_exit_menu, s_m);
 	mlx_mouse_get_pos(s_m->mlx, s_m->win, &s_m->m_x, &s_m->m_y);
 	if (s_m->screen == 5)
+	{
 		ft_raycast(s_m, s_m->map.map + s_m->map.len);
+	}
 	return (0);
 }
 
@@ -48,7 +51,7 @@ int	main(int argc, char **argv)
 	s_m = ft_calloc(sizeof(t_master), 22);
 	ft_check_map(s_m, argv[1]);
 	mlx_mouse_hook(s_m->win, ft_mouse, (void *) s_m);
-	mlx_key_hook(s_m->win, deal_key, (void *) s_m);
+	mlx_hook(s_m->win, 2, 1L << 0, deal_key, s_m);
 	mlx_loop_hook(s_m->mlx, ft_loop, (void *) s_m);
 	mlx_loop(s_m->mlx);
 }

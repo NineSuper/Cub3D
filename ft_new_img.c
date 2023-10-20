@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 16:34:58 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/19 12:01:54 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 10:31:46 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void	img_pix_put(t_imgs *img, int x, int y, int color)
 	}
 }
 
-void	ft_new_img(t_imgs *img, t_master *s_m)
+void	ft_new_img(t_imgs *img, t_master *s_m, int width, int height)
 {
 	if (img->m_img)
 		mlx_destroy_image(s_m->mlx, img->m_img);
-	img->m_img = mlx_new_image(s_m->mlx, s_m->width, s_m->height);
+	img->m_img = mlx_new_image(s_m->mlx, width, height);
 	img->addr = mlx_get_data_addr(img->m_img, &img->bpp, \
 		&img->l_len, &img->end);
 }

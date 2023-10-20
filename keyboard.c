@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/19 08:40:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:36:28 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,5 @@ int	deal_key(int key, t_master *s_m)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
-	ft_printf("KEY : [%d]\n", key);
+	//ft_printf("KEY : [%d]\n", key);
 }
