@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/20 16:38:14 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:56:26 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ void	ft_raycast(t_master *s_m, char **map)
 		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
+
 	ft_rplace(s_m, s_m->ea, s_m->img, ft_coords(256, 256, 200, 200));
+	
 	ft_minimap(s_m, s_m->map.map + s_m->map.len);
 	ft_hud(s_m);
 	mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->img.m_img, 0, 0);
