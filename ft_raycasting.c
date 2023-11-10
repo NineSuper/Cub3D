@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/09 15:56:26 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:45:23 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,6 @@ void	ft_hud(t_master *s_m)
 		(HEIGHT / 2) - 64);
 }
 
-
-/*
-?	creer une fonction ft_rplace(t_data *data, t_imgs img, (*f)(h, w, x, y))
-
-	* cette fonction va resize une image ft_img_resize(data, src, height, weight)
-	* puis la put_img_to_img(src, dest, x, y,)
-	* puis detruire l'image tempon
-*/
-
 void	ft_raycast(t_master *s_m, char **map)
 {
 	if (s_m->img.m_img)
@@ -58,7 +49,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
-	ft_rplace(s_m, s_m->ea, s_m->img, ft_coords(256, 256, 200, 200));
+	ft_rplace(s_m, s_m->we, s_m->img, ft_coords(s_m->player.x * 12, s_m->player.y * 12, 500, 0));
 	
 	ft_minimap(s_m, s_m->map.map + s_m->map.len);
 	ft_hud(s_m);

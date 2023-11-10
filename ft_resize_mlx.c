@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:28:22 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/20 16:35:32 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:45:57 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ void	ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, t_coords coords)
 	ft_put_destroy(temp, dest, coords.x, coords.y);
 }
 
+/*
+	* ft_put_destroy = place une image (src) sur une image (dest) 
+	* au coords x et y
+	* puis detruit la memoire de l'image source
+*/
+
 void	ft_put_destroy(t_imgs src, t_imgs dest, int x, int y)
 {
 	put_img_to_img(dest, src, x, y);
@@ -60,14 +66,8 @@ t_imgs	ft_img_resize(t_master *s_m, t_imgs img, int h, int w)
 	int		y;
 	int		color;
 
-	if (h >= img.h)
-		h = img.h;
-	if (w >= img.w)
-		w = img.w;
-	if (h <= 1)
-		h = 1;
-	if (w <= 1)
-		w = 1;
+	h = ft_check_resized(h, img.h);
+	w = ft_check_resized(w, img.w);
 	img_resized = new_img(w, h, s_m);
 	y = -1;
 	while (++y < h)

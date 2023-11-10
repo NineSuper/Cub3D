@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/19 12:03:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:54:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,11 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 		{
 			j = 7;
 			h = i + y * 8;
+			h = ft_check_x_y(h, 'y');
 			while (++j <= 16)
 			{
 				w = j + x * 8;
+				w = ft_check_x_y(w, 'x');
 				img_pix_put(&s_m->img, w, h, color_case(c));
 			}
 		}

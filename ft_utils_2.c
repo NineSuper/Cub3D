@@ -6,11 +6,30 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 08:09:19 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:46:00 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+int	ft_check_resized(int base, int comp)
+{
+	if (base <= 1)
+		return (1);
+	else
+		return (base);
+}
+
+int	ft_check_x_y(int x, char c)
+{
+	if (x < 1)
+		return (1);
+	if (c == 'y' && x >= HEIGHT)
+		return (HEIGHT);
+	if (c == 'x' && x >= WIDTH)
+		return (WIDTH);
+	return (x);
+}
 
 void	ft_set_cam(t_master *s_m, int dirx, int diry, int posx)
 {
