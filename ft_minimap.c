@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/13 08:13:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/13 08:22:41 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,3 +112,34 @@ void	ft_minimap(t_master *s_m, char **map)
 		}*/
 	}
 }
+
+/*
+#define MINIMAP_WIDTH 200
+#define MINIMAP_HEIGHT 150
+
+void draw_minimap_border(void *mlx, void *win)
+{
+    int x, y;
+
+    // Dessiner le contour supérieur
+    x = (WIDTH - MINIMAP_WIDTH) / 2;
+    for (y = 0; y < MINIMAP_HEIGHT; ++y)
+        mlx_pixel_put(mlx, win, x, y, 0xFFFFFF);
+
+    // Dessiner le contour inférieur
+    x = (WIDTH - MINIMAP_WIDTH) / 2 + MINIMAP_WIDTH;
+    for (y = 0; y < MINIMAP_HEIGHT; ++y)
+        mlx_pixel_put(mlx, win, x, y, 0xFFFFFF);
+
+    // Dessiner le contour gauche
+    y = 0;
+    for (x = (WIDTH - MINIMAP_WIDTH) / 2; x < (WIDTH - MINIMAP_WIDTH) / 2 + MINIMAP_WIDTH; ++x)
+        mlx_pixel_put(mlx, win, x, y, 0xFFFFFF);
+
+    // Dessiner le contour droit
+    y = MINIMAP_HEIGHT;
+    for (x = (WIDTH - MINIMAP_WIDTH) / 2; x < (WIDTH - MINIMAP_WIDTH) / 2 + MINIMAP_WIDTH; ++x)
+        mlx_pixel_put(mlx, win, x, y, 0xFFFFFF);
+}
+
+*/
