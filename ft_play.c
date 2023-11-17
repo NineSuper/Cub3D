@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:45:53 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/19 09:34:37 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:39:43 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	ft_play(t_master *s_m)
 	ft_loader_b(s_m, s_m->mlx, s_m->win);
 	ft_skyflor(s_m);
 	if (!s_m->player.x || !s_m->player.y)
-	 	ft_player_pos(s_m, s_m->map.map + s_m->map.len);
+		ft_player_pos(s_m, s_m->map.map + s_m->map.len);
 	s_m->screen = 5;
 }

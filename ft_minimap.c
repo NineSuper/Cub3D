@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/15 16:37:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:39:07 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 void	ft_border(t_master *s_m)
 {
 	int	x;
-	int y;
+	int	y;
 
 	x = -1;
 	while (++x < 14)
@@ -102,7 +102,6 @@ void	ft_minimap(t_master *s_m, char **map)
 	int	y;
 
 	y = -1;
-	map[s_m->player.y][s_m->player.x] = 'P';
 	while (map[++y])
 	{
 		x = -1;
@@ -114,10 +113,8 @@ void	ft_minimap(t_master *s_m, char **map)
 				ft_draw_square(s_m, x, y, 3);
 			else if (map[y][x] == 'B')
 				ft_draw_square(s_m, x, y, 4);
-			else if (map[y][x] == 'P')
-				ft_draw_square(s_m, x, y, 2);
+			else
+				ft_draw_square(s_m, s_m->player.x, s_m->player.y, 2);
 		}
 	}
-	ft_border(s_m);
-	free_tab(map);
 }

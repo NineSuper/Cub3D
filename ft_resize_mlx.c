@@ -6,20 +6,21 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:28:22 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/13 11:34:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:41:08 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
 /*
-    *   ft_coords = renvoie une structure avec la hauteur/largeur puis les coordonnes x et y
+    *   ft_coords = renvoie une structure avec la 
+	*	hauteur/largeur puis les coordonnes x et y
     *   d'un element
 */
 
 t_coords	ft_coords(int h, int w, int x, int y)
 {
-	t_coords coords;
+	t_coords	coords;
 
 	coords.h = h;
 	coords.w = w;
@@ -36,7 +37,7 @@ t_coords	ft_coords(int h, int w, int x, int y)
 
 void	ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, t_coords coords)
 {
-	t_imgs temp;
+	t_imgs	temp;
 
 	temp = ft_img_resize(s_m, src, coords.h, coords.w);
 	ft_put_destroy(temp, dest, coords.x, coords.y);
