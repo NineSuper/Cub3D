@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/10 16:46:09 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:34:46 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,6 @@ int				create_trgb(int t, int r, int g, int b);
 int				ft_msg(char *str, t_master *s_m);
 int				check_texture(char *NO, char *EA, char *SO, char *WE);
 int				ft_check_x_y(int x, char c);
-int				ft_check_resized(int base, int comp);
+int				ft_check_resized(int base);
 
 #endif

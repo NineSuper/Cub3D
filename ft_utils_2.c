@@ -6,13 +6,13 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/10 16:46:00 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:34:33 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	ft_check_resized(int base, int comp)
+int	ft_check_resized(int base)
 {
 	if (base <= 1)
 		return (1);

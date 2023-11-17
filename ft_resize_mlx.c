@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:28:22 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/13 07:26:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:34:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ t_imgs	ft_img_resize(t_master *s_m, t_imgs img, int h, int w)
 	int		y;
 	int		color;
 
-	h = ft_check_resized(h, img.h);
-	w = ft_check_resized(w, img.w);
+	h = ft_check_resized(h);
+	w = ft_check_resized(w);
 	img_resized = new_img(w, h, s_m);
 	y = -1;
 	while (++y < h)
 	{
 		x = -1;
-		while (++x < w + 1)
+		while (++x < w)
 		{
 			color = get_pixel_img(img, (x * img.w) / w, (y * img.h) / h);
 			put_pixel_img(img_resized, x, y, color);
