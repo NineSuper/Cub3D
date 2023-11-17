@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:39:07 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:00:24 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,9 @@ void	ft_minimap(t_master *s_m, char **map)
 				ft_draw_square(s_m, x, y, 3);
 			else if (map[y][x] == 'B')
 				ft_draw_square(s_m, x, y, 4);
-			else
-				ft_draw_square(s_m, s_m->player.x, s_m->player.y, 2);
+			else if (map[y][x] == 'P')
+				ft_draw_square(s_m, x, y, 2);
 		}
 	}
+	free_tab(map);
 }

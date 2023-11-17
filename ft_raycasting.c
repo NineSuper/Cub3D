@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:38:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:28:55 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,27 @@ void	ft_hud(t_master *s_m)
 		(HEIGHT / 2) - 64);
 }
 
-/*
-* Faire une fonction qui va creer une map temporaire
-? Elle prendra la position du joueur
-todo 	Centrer le joueur
-* x = 7;   y = 5;
-? player.y - 6 < a > player.y + 6 =  13
-? player.x - 5 < a > player.x + 5 =  11
-todo  	free map_temp
-* x = 15 y = 12
-*/
+char	**ft_backmap(t_master *s_m, char **map)
+{
+	char	**temp_map;
+	int		i;
+	int		j;
+	int		x;
+
+	temp_map = ft_calloc(27, sizeof(char *) + 1);
+	map += s_m->map.len;
+	map[s_m->player.y][s_m->player.x] = 'P';
+	i = s_m->player.y - 3;
+	if (i < 0)
+		i = 0;
+	j = 0;
+	x = s_m->player.x - 6;
+	if (x < 0)
+		x = 0;
+	while (map[i] && i < s_m->player.y + 5)
+		temp_map[j++] = ft_substr(map[i++], x, x + 8);
+	return (temp_map);
+}
 
 void	ft_raycast(t_master *s_m, char **map)
 {
@@ -60,9 +71,9 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
-	ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
+	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
-	ft_minimap(s_m, s_m->map.map + s_m->map.len);
+	ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));
 	ft_hud(s_m);
 	mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->img.m_img, 0, 0);
 	if (!s_m->help)
