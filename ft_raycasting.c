@@ -6,11 +6,12 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:28:55 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/21 15:46:10 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+#include <math.h>
 
 /*
 Si 'N' : angle 0°
@@ -64,6 +65,119 @@ char	**ft_backmap(t_master *s_m, char **map)
 	return (temp_map);
 }
 
+void	ft_verline(t_master *s_m, int x, int drawstart, int drawend, int color)
+{
+	while (++drawstart < drawend)
+	{
+		put_pixel_img(s_m->img, drawstart, drawend, color);
+		ft_printf("%d/%d\n", drawstart, drawend);
+	}
+}
+
+void	ft_ray(t_master *s_m)
+{
+	double	posX = 7;
+	double	posY = 7;
+	double	dirX = -1.0;
+	double	dirY = 0.0;
+	double	planeX = 0;
+	double	planeY = 0.66;
+	double	time = 0;
+	double	oldTime = 0;
+
+	int x = -1;
+	while (++x < WIDTH)
+	{
+		double	cameraX = 2 * x / (double)WIDTH - 1;
+		double	rayDirX = dirX + planeX * cameraX;
+		double	rayDirY = dirY + planeY * cameraX;
+
+		int	mapX = (int)posX;
+		int mapY = (int)posY;
+
+		double sideDistX;
+		double sideDistY;
+
+		double deltaDistX = (rayDirX == 0) ? 1e30 : fabs(1 / rayDirX);
+		double deltaDistY = (rayDirY == 0) ? 1e30 : fabs(1 / rayDirY);
+
+		double	perpWallDist;
+
+		int	stepX;
+		int	stepY;
+
+		int	hit = 0;
+		int	side;
+
+		if (rayDirX < 0)
+		{
+			stepX = -1;
+			sideDistX = (posX - mapX) * deltaDistX;
+		}
+		else
+		{
+			stepX = 1;
+			sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+		}
+		if (rayDirY < 0)
+		{
+			stepY = -1;
+			sideDistY = (posY - mapY) * deltaDistY;
+		}
+		else
+		{
+			stepY = 1;
+			sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+		}
+		while (hit == 0)
+		{
+			if (sideDistX < sideDistY)
+			{
+				sideDistX += deltaDistX;
+				mapX += stepX;
+				side = 0;
+			}
+			else
+			{
+				sideDistY += deltaDistY;
+				mapY += stepY;
+				side = 1;
+			}
+			if (s_m->map.map[mapX][mapY] > 0)
+				hit = 1;
+		}
+		if (side == 0)
+			perpWallDist = (sideDistX - deltaDistX);
+		else
+			perpWallDist = (sideDistY - deltaDistY);
+
+		int lineHeight = (int)(HEIGHT / perpWallDist);
+
+		int drawStart = -lineHeight / 2 + HEIGHT / 2;
+		if (drawStart < 0)
+			drawStart = 0;
+		
+		int drawEnd = lineHeight / 2 + HEIGHT / 2;
+		if (drawEnd >= HEIGHT)
+			drawEnd = HEIGHT - 1;
+
+		int	color = create_trgb(0, 255, 0, 0);
+
+		if (side == 1)
+			{color = color / 2;}
+
+		printf("perpWallDist %f ", perpWallDist);
+		printf("sideDistx %f ", sideDistX);
+		printf("sideDistY %f ", sideDistY);
+		printf("deltaDistX %f ", deltaDistX);
+		printf("deltaDistY %f ", deltaDistY);
+		printf("DrawStart : %d ", drawStart);
+		printf("DrawEnd : %d\n\n", drawEnd);
+
+		ft_verline(s_m, x, drawStart, drawEnd, color);
+	}
+}
+
 void	ft_raycast(t_master *s_m, char **map)
 {
 	if (s_m->img.m_img)
@@ -71,6 +185,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
+	ft_ray(s_m);
 	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
 	ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));
