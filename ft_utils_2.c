@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 15:22:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:41:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_set_cam(t_master *s_m, t_dir dir)
 void	ft_set_dir(t_master *s_m, char c, char *str)
 {
 	if (c == 'N')
-		ft_set_cam(s_m, (t_dir){0, -1, 1.66, 0});
+		ft_set_cam(s_m, (t_dir){0, -1, 1, 0});
 	if (c == 'S')
 		ft_set_cam(s_m, (t_dir){0, 1, -0.66, 0});
 	if (c == 'E')

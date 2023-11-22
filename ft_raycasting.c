@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 15:14:50 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:36:04 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 	}
 	while (++x < WIDTH)
 	{
-		player->cameraX = 2 * x / (double)WIDTH - 1;
+		player->cameraX = 2 * (double)x / (double)WIDTH - 1;
 		player->rayDirX = player->dirX + player->planeX * player->cameraX;
 		player->rayDirY = player->dirY + player->planeY * player->cameraX;
 
@@ -74,8 +74,8 @@ void	ft_ray(t_master *s_m, t_player *player)
 		double sideDistX;
 		double sideDistY;
 
-		double deltaDistX = (player->rayDirX == 0) ? 1e30 : fabs(1 / player->rayDirX);
-		double deltaDistY = (player->rayDirY == 0) ? 1e30 : fabs(1 / player->rayDirY);
+		double deltaDistX = (1 / player->rayDirX) * (1 - (2 * (1 / player->rayDirX < 0)));
+		double deltaDistY = (1 / player->rayDirY) * (1 - (2 * (1 / player->rayDirY < 0)));
 
 		double	perpWallDist;
 
