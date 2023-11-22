@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/21 15:46:10 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:11:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,18 @@ char	**ft_backmap(t_master *s_m, char **map)
 
 void	ft_verline(t_master *s_m, int x, int drawstart, int drawend, int color)
 {
-	while (++drawstart < drawend)
-	{
-		put_pixel_img(s_m->img, drawstart, drawend, color);
-		ft_printf("%d/%d\n", drawstart, drawend);
-	}
+	while (drawstart++ <= drawend)
+		put_pixel_img(s_m->img, x, drawstart, color);
 }
 
 void	ft_ray(t_master *s_m)
 {
-	double	posX = 7;
-	double	posY = 7;
-	double	dirX = -1.0;
-	double	dirY = 0.0;
+	double	posX = s_m->player.x;
+	double	posY = s_m->player.y;
+	double	dirX = -1;
+	double	dirY = 0;
 	double	planeX = 0;
 	double	planeY = 0.66;
-	double	time = 0;
-	double	oldTime = 0;
 
 	int x = -1;
 	while (++x < WIDTH)
@@ -98,8 +93,8 @@ void	ft_ray(t_master *s_m)
 		double sideDistX;
 		double sideDistY;
 
-		double deltaDistX = (rayDirX == 0) ? 1e30 : fabs(1 / rayDirX);
-		double deltaDistY = (rayDirY == 0) ? 1e30 : fabs(1 / rayDirY);
+		double deltaDistX = sqrt(1 + (rayDirY * rayDirY) / (rayDirX * rayDirX));
+		double deltaDistY = sqrt(1 + (rayDirX * rayDirX) / (rayDirY * rayDirY));
 
 		double	perpWallDist;
 
@@ -143,21 +138,26 @@ void	ft_ray(t_master *s_m)
 				mapY += stepY;
 				side = 1;
 			}
-			if (s_m->map.map[mapX][mapY] > 0)
+			if (s_m->map.map[mapX][mapY] == '1')
+			{
+				printf("%c\n", s_m->map.map[mapY][mapX]);
 				hit = 1;
+			}
 		}
 		if (side == 0)
-			perpWallDist = (sideDistX - deltaDistX);
+			perpWallDist = (sideDistX + deltaDistX);
 		else
-			perpWallDist = (sideDistY - deltaDistY);
+			perpWallDist = (sideDistY + deltaDistY);
 
-		int lineHeight = (int)(HEIGHT / perpWallDist);
+		int lineHeight = (perpWallDist != 0) ? (int)(HEIGHT / perpWallDist) : HEIGHT;
 
-		int drawStart = -lineHeight / 2 + HEIGHT / 2;
+		int drawStart;
+		drawStart = -lineHeight / 2 + HEIGHT / 2;
 		if (drawStart < 0)
 			drawStart = 0;
 		
-		int drawEnd = lineHeight / 2 + HEIGHT / 2;
+		int drawEnd;
+		drawEnd = lineHeight / 2 + HEIGHT / 2;
 		if (drawEnd >= HEIGHT)
 			drawEnd = HEIGHT - 1;
 
@@ -165,15 +165,6 @@ void	ft_ray(t_master *s_m)
 
 		if (side == 1)
 			{color = color / 2;}
-
-		printf("perpWallDist %f ", perpWallDist);
-		printf("sideDistx %f ", sideDistX);
-		printf("sideDistY %f ", sideDistY);
-		printf("deltaDistX %f ", deltaDistX);
-		printf("deltaDistY %f ", deltaDistY);
-		printf("DrawStart : %d ", drawStart);
-		printf("DrawEnd : %d\n\n", drawEnd);
-
 		ft_verline(s_m, x, drawStart, drawEnd, color);
 	}
 }
