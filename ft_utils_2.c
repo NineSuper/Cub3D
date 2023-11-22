@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:02:15 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:42:40 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,24 @@ int	ft_check_x_y(int x, char c)
 	return (x);
 }
 
-void	ft_set_cam(t_master *s_m, int dirx, int diry, int posx)
+void	ft_set_cam(t_master *s_m, t_dir dir)
 {
-	ft_printf("\033[1;41mFT_SET_CAM !\033[00m\n");
+	s_m->player.dirX = dir.dirX;
+	s_m->player.dirY = dir.dirY;
+	s_m->player.planeX = dir.planeX;
+	s_m->player.planeY = dir.dirY;
 }
 
 void	ft_set_dir(t_master *s_m, char c, char *str)
 {
 	if (c == 'N')
-		ft_set_cam(s_m, 0, -1, 0);
+		ft_set_cam(s_m, (t_dir){0, -1, 0.66, 0});
 	if (c == 'S')
-		ft_set_cam(s_m, 0, 1, 0);
+		ft_set_cam(s_m, (t_dir){0, 1, -0.66, 0});
 	if (c == 'E')
-		ft_set_cam(s_m, 1, 0, 0);
+		ft_set_cam(s_m, (t_dir){1, 0, 0, 0.66});
 	if (c == 'W')
-		ft_set_cam(s_m, -1, 0, 0);
+		ft_set_cam(s_m, (t_dir){-1, 0, 0, -0.66});
 	if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
 		str[0] = 'P';
 }

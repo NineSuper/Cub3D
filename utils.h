@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 10:47:44 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:37:04 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@ typedef struct s_key
 	int	s;
 	int	d;
 }	t_key;
+
+typedef	struct s_dir
+{
+	double	dirX;
+	double	dirY;
+	double	planeX;
+	double	planeY;
+}	t_dir;
+
 
 typedef struct s_map
 {

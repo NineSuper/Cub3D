@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 12:33:13 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:39:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 	{
 		player->posX = player->x;
 		player->posY = player->y;
-		player->dirX = 1;
-		player->dirY = 0;
-		player->planeX = 0;
-		player->planeY = 0.66;
 	}
-
 	int x = -1;
 	while (++x < WIDTH)
 	{
