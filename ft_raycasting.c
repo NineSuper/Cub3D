@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:39:11 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:33:13 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void	ft_ray(t_master *s_m, t_player *player)
 	{
 		player->posX = player->x;
 		player->posY = player->y;
+		player->dirX = 1;
+		player->dirY = 0;
+		player->planeX = 0;
+		player->planeY = 0.66;
 	}
-	player->dirX = 1;
-	player->dirY = -1;
-	player->planeX = 0;
-	player->planeY = 0.66;
 
 	int x = -1;
 	while (++x < WIDTH)
@@ -181,7 +181,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	ft_ray(s_m, &s_m->player);
 	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
-	//ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));
+	ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));
 	ft_hud(s_m);
 	mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->img.m_img, 0, 0);
 	if (!s_m->help)
