@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 12:39:35 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:14:50 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,51 +39,34 @@ void	ft_hud(t_master *s_m)
 {
 	if (WIDTH != 1920)
 		return (ft_mac_hud(s_m));
-	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 64, \
-		(HEIGHT / 2) - 64);
-}
-
-char	**ft_backmap(t_master *s_m, char **map)
-{
-	char	**temp_map;
-	int		i;
-	int		j;
-	int		x;
-
-	temp_map = ft_calloc(27, sizeof(char *) + 1);
-	map += s_m->map.len;
-	map[s_m->player.y][s_m->player.x] = 'P';
-	i = s_m->player.y - 3;
-	if (i < 0)
-		i = 0;
-	j = 0;
-	x = s_m->player.x - 6;
-	if (x < 0)
-		x = 0;
-	while (map[i] && i < s_m->player.y + 5)
-		temp_map[j++] = ft_substr(map[i++], x, x + 8);
-	return (temp_map);
+	put_img_to_img(s_m->img, s_m->player.cross, (WIDTH / 2) - 32, \
+		(HEIGHT / 2) - 32);
 }
 
 void	ft_verline(t_master *s_m, int x, int drawstart, int drawend, int color)
 {
-	while (drawstart++ <= drawend)
+	while (drawstart <= drawend)
+	{
 		put_pixel_img(s_m->img, x, drawstart, color);
+		drawstart++;
+	}
 }
 
 void	ft_ray(t_master *s_m, t_player *player)
 {
+	int	x;
+
+	x = -1;
 	if (!player->posX && !player->posY)
 	{
 		player->posX = player->x;
 		player->posY = player->y;
 	}
-	int x = -1;
 	while (++x < WIDTH)
 	{
-		double	cameraX = 2 * x / (double)WIDTH - 1;
-		double	rayDirX = player->dirX + player->planeX * cameraX;
-		double	rayDirY = player->dirY + player->planeY * cameraX;
+		player->cameraX = 2 * x / (double)WIDTH - 1;
+		player->rayDirX = player->dirX + player->planeX * player->cameraX;
+		player->rayDirY = player->dirY + player->planeY * player->cameraX;
 
 		int	mapX = (int)player->posX;
 		int mapY = (int)player->posY;
@@ -91,8 +74,8 @@ void	ft_ray(t_master *s_m, t_player *player)
 		double sideDistX;
 		double sideDistY;
 
-		double deltaDistX = (rayDirX == 0) ? 1e30 : fabs(1 / rayDirX);
-		double deltaDistY = (rayDirY == 0) ? 1e30 : fabs(1 / rayDirY);
+		double deltaDistX = (player->rayDirX == 0) ? 1e30 : fabs(1 / player->rayDirX);
+		double deltaDistY = (player->rayDirY == 0) ? 1e30 : fabs(1 / player->rayDirY);
 
 		double	perpWallDist;
 
@@ -102,7 +85,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 		int	hit = 0;
 		int	side;
 
-		if (rayDirX < 0)
+		if (player->rayDirX < 0)
 		{
 			stepX = -1;
 			sideDistX = (player->posX - mapX) * deltaDistX;
@@ -112,7 +95,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 			stepX = 1;
 			sideDistX = (mapX + 1.0 - player->posX) * deltaDistX;
 		}
-		if (rayDirY < 0)
+		if (player->rayDirY < 0)
 		{
 			stepY = -1;
 			sideDistY = (player->posY - mapY) * deltaDistY;
@@ -125,7 +108,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 		while (hit == 0)
 		{
 			if (sideDistX < sideDistY)
-			{
+			{	
 				sideDistX += deltaDistX;
 				mapX += stepX;
 				side = 0;
@@ -137,16 +120,14 @@ void	ft_ray(t_master *s_m, t_player *player)
 				side = 1;
 			}
 			if (s_m->map.map[mapY][mapX] == '1')
-			{
 				hit = 1;
-			}
-		}
+		};
 		if (side == 0)
-			perpWallDist = (sideDistX + deltaDistX);
+			perpWallDist = (sideDistX - deltaDistX);
 		else
-			perpWallDist = (sideDistY + deltaDistY);
-
-		int lineHeight = (perpWallDist != 0) ? (int)(HEIGHT / perpWallDist) : HEIGHT;
+			perpWallDist = (sideDistY - deltaDistY);
+		//int lineHeight = (perpWallDist != 0) ? (int)(HEIGHT / perpWallDist) : HEIGHT;
+		int	lineHeight = (int)(HEIGHT / perpWallDist);
 
 		int drawStart = -lineHeight / 2 + HEIGHT / 2;
 		if (drawStart < 0)
@@ -156,7 +137,7 @@ void	ft_ray(t_master *s_m, t_player *player)
 		if (drawEnd >= HEIGHT)
 			drawEnd = HEIGHT - 1;
 
-		int	color = create_trgb(0, 0, 0, 255);
+		int	color = create_trgb(0, 0, 153, 51);
 
 		if (side == 1)
 			color = color / 2;
@@ -176,7 +157,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	ft_ray(s_m, &s_m->player);
 	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
-	ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));
+	//ft_minimap(s_m, s_m->map.map + s_m->map.len);
 	ft_hud(s_m);
 	mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->img.m_img, 0, 0);
 	if (!s_m->help)

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 12:37:04 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:12:43 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct s_map
 	int		fd;
 	int		len;
 	int		player;
+	int		width;
 }	t_map;
 
 typedef struct s_menu
@@ -127,6 +128,7 @@ typedef struct s_player
 	double	rayDirY;
 	double	sideDistX;
 	double	sideDistY;
+	double	perpWallDist;
 	int		mapX;
 	int		mapY;
 	int		x;

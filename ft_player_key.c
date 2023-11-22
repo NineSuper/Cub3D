@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 12:24:05 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:46:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 
 void	ft_key_player(int key, t_master *s_m)
 {
-	double	rotSpeed = 0.08;
+	double	rotSpeed = 0.09;
+	t_player	*player;
 
+	player = &s_m->player;
 	if (key == 109)
 		s_m->minimap = ft_press(s_m->minimap);
 	if (key == 104)
@@ -64,13 +66,11 @@ void	ft_key_player(int key, t_master *s_m)
 	{
 		s_m->player.posX += s_m->player.dirX / 10;
 		s_m->player.posY += s_m->player.dirY / 10;
-		//s_m->player.y--;
 	}
 	if (key == 115)
 	{
 		s_m->player.posX -= s_m->player.dirX / 10;
 		s_m->player.posY -= s_m->player.dirY / 10;
-		//s_m->player.y++;
 	}
 	if (key == 100)
 	{
@@ -81,7 +81,6 @@ void	ft_key_player(int key, t_master *s_m)
 		double	oldPlaneY = s_m->player.planeY;
 		s_m->player.planeY = s_m->player.planeY * cos(-rotSpeed) - s_m->player.planeX * sin(-rotSpeed);
 		s_m->player.planeX = oldPlaneY * sin(-rotSpeed) + s_m->player.planeX * cos(rotSpeed);
-		//s_m->player.x++;
 	}
 	if (key == 97)
 	{
@@ -91,6 +90,5 @@ void	ft_key_player(int key, t_master *s_m)
 		double	oldPlaneY = s_m->player.planeY;
 		s_m->player.planeY = s_m->player.planeY * cos(rotSpeed) - s_m->player.planeX * sin(rotSpeed);
 		s_m->player.planeX = oldPlaneY * sin(rotSpeed) + s_m->player.planeX * cos(-rotSpeed);
-		//s_m->player.x--;
 	}
 }
