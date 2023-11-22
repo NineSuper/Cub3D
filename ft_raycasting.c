@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 10:11:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:19:14 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,9 +138,9 @@ void	ft_ray(t_master *s_m)
 				mapY += stepY;
 				side = 1;
 			}
-			if (s_m->map.map[mapX][mapY] == '1')
+			// printf("%c\n", s_m->map.map[mapY][mapX]);
+			if (s_m->map.map[mapY][mapX] == '1')
 			{
-				printf("%c\n", s_m->map.map[mapY][mapX]);
 				hit = 1;
 			}
 		}
