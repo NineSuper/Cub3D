@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:40:08 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:30:38 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,27 @@ void	ft_key_player(int key, t_master *s_m)
 	if (key == 104)
 		s_m->help = ft_press(s_m->help);
 	if (key == 119)
-		s_m->player.y--;
+	{
+		if (s_m->map.map[(int)(s_m->player.posY + s_m->player.dirY)][(int)(s_m->player.posX)] != '1')
+		{
+			s_m->player.posY += s_m->player.dirY + 0.5;
+			s_m->player.y--;
+		}
+	}
 	if (key == 115)
-		s_m->player.y++;
+	{
+		if (s_m->map.map[(int)(s_m->player.posY - s_m->player.dirY)][(int)(s_m->player.posX)] != '1')
+		{
+			s_m->player.posY -= s_m->player.dirY + 0.5;
+			s_m->player.y++;
+		}
+	}
 	if (key == 100)
+	{
 		s_m->player.x++;
+	}
 	if (key == 97)
+	{
 		s_m->player.x--;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 10:25:17 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:32:11 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,24 +71,32 @@ void	ft_verline(t_master *s_m, int x, int drawstart, int drawend, int color)
 		put_pixel_img(s_m->img, x, drawstart, color);
 }
 
-void	ft_ray(t_master *s_m)
+void	ft_ray(t_master *s_m, t_player *player)
 {
-	double	posX = s_m->player.x;
-	double	posY = s_m->player.y;
-	double	dirX = -1;
-	double	dirY = 0;
-	double	planeX = 0;
-	double	planeY = 0.66;
+	if (!player->posX && !player->posY)
+	{
+		player->posX = player->x;
+		player->posY = player->y;
+	}
+	else
+	{
+		player->posX = player->posX;
+		player->posY = player->posY;
+	}
+	player->dirX = 0;
+	player->dirY = 1;
+	player->planeX = 0;
+	player->planeY = 0.66;
 
 	int x = -1;
 	while (++x < WIDTH)
 	{
 		double	cameraX = 2 * x / (double)WIDTH - 1;
-		double	rayDirX = dirX + planeX * cameraX;
-		double	rayDirY = dirY + planeY * cameraX;
+		double	rayDirX = player->dirX + player->planeX * cameraX;
+		double	rayDirY = player->dirY + player->planeY * cameraX;
 
-		int	mapX = (int)posX;
-		int mapY = (int)posY;
+		int	mapX = (int)player->posX;
+		int mapY = (int)player->posY;
 
 		double sideDistX;
 		double sideDistY;
@@ -107,22 +115,22 @@ void	ft_ray(t_master *s_m)
 		if (rayDirX < 0)
 		{
 			stepX = -1;
-			sideDistX = (posX - mapX) * deltaDistX;
+			sideDistX = (player->posX - mapX) * deltaDistX;
 		}
 		else
 		{
 			stepX = 1;
-			sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+			sideDistX = (mapX + 1.0 - player->posX) * deltaDistX;
 		}
 		if (rayDirY < 0)
 		{
 			stepY = -1;
-			sideDistY = (posY - mapY) * deltaDistY;
+			sideDistY = (player->posY - mapY) * deltaDistY;
 		}
 		else
 		{
 			stepY = 1;
-			sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+			sideDistY = (mapY + 1.0 - player->posY) * deltaDistY;
 		}
 		while (hit == 0)
 		{
@@ -138,7 +146,7 @@ void	ft_ray(t_master *s_m)
 				mapY += stepY;
 				side = 1;
 			}
-			if (s_m->map.map[mapX][mapY] == '1')
+			if (s_m->map.map[mapY][mapX] == '1')
 			{
 				hit = 1;
 			}
@@ -158,7 +166,7 @@ void	ft_ray(t_master *s_m)
 		if (drawEnd >= HEIGHT)
 			drawEnd = HEIGHT - 1;
 
-		int	color = create_trgb(0, 255, 0, 0);
+		int	color = create_trgb(0, 0, 0, 255);
 
 		if (side == 1)
 			color = color / 2;
@@ -175,7 +183,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
-	ft_ray(s_m);
+	ft_ray(s_m, &s_m->player);
 	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
 	ft_minimap(s_m, ft_backmap(s_m, s_m->map.map));

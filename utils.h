@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/13 11:34:46 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:47:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,12 +107,19 @@ typedef struct s_imgs
 typedef struct s_player
 {
 	t_imgs	cross;
-	double	posx;
-	double	posy;
-	double	dirx;
-	double	diry;
-	double	planex;
-	double	planey;
+	double	posX;
+	double	posY;
+	double	dirX;
+	double	dirY;
+	double	planeX;
+	double	planeY;
+	double	cameraX;
+	double	rayDirX;
+	double	rayDirY;
+	double	sideDistX;
+	double	sideDistY;
+	int		mapX;
+	int		mapY;
 	int		x;
 	int		y;
 }	t_player;
