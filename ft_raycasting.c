@@ -93,8 +93,8 @@ void	ft_ray(t_master *s_m)
 		double sideDistX;
 		double sideDistY;
 
-		double deltaDistX = sqrt(1 + (rayDirY * rayDirY) / (rayDirX * rayDirX));
-		double deltaDistY = sqrt(1 + (rayDirX * rayDirX) / (rayDirY * rayDirY));
+		double deltaDistX = (rayDirX == 0) ? 1e30 : fabs(1 / rayDirX);
+		double deltaDistY = (rayDirY == 0) ? 1e30 : fabs(1 / rayDirY);
 
 		double	perpWallDist;
 
@@ -138,8 +138,7 @@ void	ft_ray(t_master *s_m)
 				mapY += stepY;
 				side = 1;
 			}
-			// printf("%c\n", s_m->map.map[mapY][mapX]);
-			if (s_m->map.map[mapY][mapX] == '1')
+			if (s_m->map.map[mapX][mapY] == '1')
 			{
 				hit = 1;
 			}
@@ -151,23 +150,23 @@ void	ft_ray(t_master *s_m)
 
 		int lineHeight = (perpWallDist != 0) ? (int)(HEIGHT / perpWallDist) : HEIGHT;
 
-		int drawStart;
-		drawStart = -lineHeight / 2 + HEIGHT / 2;
+		int drawStart = -lineHeight / 2 + HEIGHT / 2;
 		if (drawStart < 0)
 			drawStart = 0;
 		
-		int drawEnd;
-		drawEnd = lineHeight / 2 + HEIGHT / 2;
+		int drawEnd = lineHeight / 2 + HEIGHT / 2;
 		if (drawEnd >= HEIGHT)
 			drawEnd = HEIGHT - 1;
 
 		int	color = create_trgb(0, 255, 0, 0);
 
 		if (side == 1)
-			{color = color / 2;}
+			color = color / 2;
+
 		ft_verline(s_m, x, drawStart, drawEnd, color);
 	}
 }
+
 
 void	ft_raycast(t_master *s_m, char **map)
 {
