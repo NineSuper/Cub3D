@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:47:15 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:50:42 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ void	ft_key_player(int key, t_master *s_m)
 	{
 		double	oldDirY = s_m->player.dirY;
 
-		s_m->player.dirY = s_m->player.dirY * cos(-rotSpeed) - s_m->player.dirX * sin(rotSpeed);
+		s_m->player.dirY = s_m->player.dirY * cos(-rotSpeed) - s_m->player.dirX * sin(-rotSpeed);
 		s_m->player.dirX = oldDirY * sin(-rotSpeed) + s_m->player.dirX * cos(-rotSpeed);
-		ft_printf("ok\n");
 		s_m->player.x++;
 	}
 	if (key == 97)
