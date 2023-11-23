@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/10/19 11:36:28 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:45:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,6 @@ void	ft_key_menu(int key, t_master *s_m)
 	{
 		if (s_m->menu.choose == 1)
 			ft_play(s_m);
-		/*
-		if (s_m->menu.choose == 2)
-	 	 	? option
-		*/
 		if (s_m->menu.choose == 3)
 			ft_exit_menu(s_m);
 	}
@@ -107,5 +103,4 @@ int	deal_key(int key, t_master *s_m)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
-	//ft_printf("KEY : [%d]\n", key);
 }

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 13:12:43 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:43:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ typedef	struct s_dir
 	double	planeY;
 }	t_dir;
 
+typedef struct s_draw
+{
+	int	drawstart;
+	int	drawend;
+}	t_draw;
 
 typedef struct s_map
 {
@@ -129,10 +134,15 @@ typedef struct s_player
 	double	sideDistX;
 	double	sideDistY;
 	double	perpWallDist;
+	double deltaDistX;
+	double deltaDistY;
 	int		mapX;
 	int		mapY;
+	int		stepX;
+	int		stepY;
 	int		x;
 	int		y;
+	int		side;
 }	t_player;
 
 typedef struct s_coods
@@ -199,6 +209,9 @@ void			ft_text(t_master *s_m);
 void			ft_mac_hud(t_master *s_m);
 void			ft_destroy_img(void *mlx, char *img);
 void			ft_put_destroy(t_imgs src, t_imgs dest, int x, int y);
+void			ft_hud(t_master *s_m);
+void			ft_ray(t_master *s_m, t_player *player, char **map);
+void			ft_verline(t_master *s_m, int x, t_draw draw);
 int				ft_exit_menu(t_master *s_m);
 int				ft_mouse(int button, int x, int y, void *s_m);
 int				deal_key(int key, t_master *s_m);
