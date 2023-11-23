@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 13:57:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:31:25 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,8 @@ void	ft_step(t_player *player)
 
 void	ft_dda(t_player *player, char **map)
 {
-	int	hit;
-
-	hit = 0;
-	while (hit == 0)
+	player->hit = 0;
+	while (player->hit == 0)
 	{
 		if (player->sidedistx < player->sidedisty)
 		{	
@@ -93,7 +91,9 @@ void	ft_dda(t_player *player, char **map)
 			player->side = 1;
 		}
 		if (map[player->mapy][player->mapx] == '1')
-			hit = 1;
+			player->hit = 1;
+		if (map[player->mapy][player->mapx] == 'D')
+			player->hit = 2;
 	}
 }
 

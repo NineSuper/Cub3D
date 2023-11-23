@@ -72,16 +72,16 @@ $(NAME): comp_start $(OBJ)
 
 all: $(NAME) norminette
 
-macos: set_win_size comp_start $(OBJ)
+big: set_win_size comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
 	@$(CC) $(LIB) $(OBJ) -o $(NAME) $(INC_SRCH_PATH) $(LFLAGS)
 	echo "\n"
 	@$(MLX_READY)
 	@$(EXE_READY)
 
-WIN_SIZE	=	-D WIDTH=1920 -D HEIGHT=1080
+WIN_SIZE	=	-D WIDTH=960 -D HEIGHT=520
 set_win_size:
-	$(eval WIN_SIZE=-D WIDTH=960 -D HEIGHT=520)
+	$(eval WIN_SIZE=-D WIDTH=1920 -D HEIGHT=1080)
 
 norminette:
 	$(NORM_LIB)

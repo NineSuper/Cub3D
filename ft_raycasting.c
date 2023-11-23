@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 13:55:09 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:33:24 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@
 ? Systeme de porte (ouverture/fermeture)
 ! width / X = largeur
 ! height / Y = Hauteur
+* HIT == 1 (MUR)
+* HIT == 2 (PORTE)
 */
 
 void	ft_verline(t_master *s_m, int x, t_draw draw)
 {
 	int	color;
 
-	color = create_trgb(0, 255, 153, 51);
+	color = create_trgb(0, 80, 80, 80);
+	if (s_m->player.hit == 2)
+		color = create_trgb(0, 0, 0, 255);
 	if (s_m->player.side == 1)
 			color = color / 2;
 	while (draw.drawstart <= draw.drawend)

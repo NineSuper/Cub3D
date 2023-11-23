@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:45:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:16:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int	ft_mouse(int button, int x, int y, void *data)
 	s_m = data;
 	s_m->m_x = x;
 	s_m->m_y = y;
-	printf("%d %d\n", x, y);
 	if (s_m->screen == 1)
 		ft_mouse_menu(s_m->m_x, s_m->m_y, s_m);
 	if (s_m->screen == 5)

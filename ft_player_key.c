@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 13:57:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:53:32 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,43 @@ int	ft_press(int key)
 		return (1);
 }
 
+void	ft_cam(int key, t_player *player)
+{
+	double	rotSpeed = 0.06;
+
+	if (key == 97)
+	{
+		double oldDirX = player->dirx;
+		player->dirx = player->dirx * cos(-rotSpeed) - player->diry * sin(-rotSpeed);
+		player->diry = oldDirX * sin(-rotSpeed) + player->diry * cos(-rotSpeed);
+
+		double oldPlaneX = player->planex;
+		player->planex = player->planex * cos(-rotSpeed) - player->planey * sin(-rotSpeed);
+		player->planey = oldPlaneX * sin(-rotSpeed) + player->planey * cos(-rotSpeed);
+	}
+	if (key == 100)
+	{
+		double oldDirX = player->dirx;
+		player->dirx = player->dirx * cos(rotSpeed) - player->diry * sin(rotSpeed);
+		player->diry = oldDirX * sin(rotSpeed) + player->diry * cos(rotSpeed);
+
+		double oldPlaneX = player->planex;
+		player->planex = player->planex * cos(rotSpeed) - player->planey * sin(rotSpeed);
+		player->planey = oldPlaneX * sin(rotSpeed) + player->planey * cos(rotSpeed);
+	}
+}
+
 void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 {
-	ft_printf("ok\n");
+	if (button == 7)
+		ft_cam(100, &s_m->player);
+	if (button == 6)
+		ft_cam(97, &s_m->player);
+	//ft_printf("%d\n", button);
 }
 
 void	ft_key_player(int key, t_master *s_m)
 {
-	double	rotSpeed = 0.11;
 	t_player	*player;
 
 	player = &s_m->player;
@@ -70,24 +99,7 @@ void	ft_key_player(int key, t_master *s_m)
 		player->posy -= player->diry / 10;
 	}
 	if (key == 97)
-	{
-		double oldDirX = player->dirx;
-		player->dirx = player->dirx * cos(-rotSpeed) - player->diry * sin(-rotSpeed);
-		player->diry = oldDirX * sin(-rotSpeed) + player->diry * cos(-rotSpeed);
-
-		double oldPlaneX = player->planex;
-		player->planex = player->planex * cos(-rotSpeed) - player->planey * sin(-rotSpeed);
-		player->planey = oldPlaneX * sin(-rotSpeed) + player->planey * cos(-rotSpeed);
-	}
-
+		ft_cam(97, player);
 	if (key == 100)
-	{
-		double oldDirX = player->dirx;
-		player->dirx = player->dirx * cos(rotSpeed) - player->diry * sin(rotSpeed);
-		player->diry = oldDirX * sin(rotSpeed) + player->diry * cos(rotSpeed);
-
-		double oldPlaneX = player->planex;
-		player->planex = player->planex * cos(rotSpeed) - player->planey * sin(rotSpeed);
-		player->planey = oldPlaneX * sin(rotSpeed) + player->planey * cos(rotSpeed);
-	}
+		ft_cam(100, player);
 }
