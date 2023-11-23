@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 15:36:04 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 10:26:05 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_verline(t_master *s_m, int x, int drawstart, int drawend, int color)
 	}
 }
 
-void	ft_ray(t_master *s_m, t_player *player)
+void	ft_ray(t_master *s_m, t_player *player, char **map)
 {
 	int	x;
 
@@ -123,10 +123,10 @@ void	ft_ray(t_master *s_m, t_player *player)
 				hit = 1;
 		};
 		if (side == 0)
-			perpWallDist = (sideDistX - deltaDistX);
+			perpWallDist = fabs((mapX - player->posX + (1 - stepX) / 2) / player->rayDirX);
 		else
-			perpWallDist = (sideDistY - deltaDistY);
-		//int lineHeight = (perpWallDist != 0) ? (int)(HEIGHT / perpWallDist) : HEIGHT;
+			perpWallDist = fabs((mapY - player->posY + (1 - stepY) / 2) / player->rayDirY);
+
 		int	lineHeight = (int)(HEIGHT / perpWallDist);
 
 		int drawStart = -lineHeight / 2 + HEIGHT / 2;
@@ -137,11 +137,10 @@ void	ft_ray(t_master *s_m, t_player *player)
 		if (drawEnd >= HEIGHT)
 			drawEnd = HEIGHT - 1;
 
-		int	color = create_trgb(0, 0, 153, 51);
+		int	color = create_trgb(0, 255, 153, 51);
 
 		if (side == 1)
 			color = color / 2;
-
 		ft_verline(s_m, x, drawStart, drawEnd, color);
 	}
 }
@@ -154,7 +153,7 @@ void	ft_raycast(t_master *s_m, char **map)
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
 	put_img_to_img(s_m->img, s_m->skyfloor, 0, 0);
 
-	ft_ray(s_m, &s_m->player);
+	ft_ray(s_m, &s_m->player, s_m->map.map + s_m->map.len);
 	//ft_rplace(s_m, s_m->no, s_m->img, (t_coords){30, 80, 800, 800});
 	
 	//ft_minimap(s_m, s_m->map.map + s_m->map.len);
