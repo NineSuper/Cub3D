@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 09:55:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 10:31:12 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,25 +72,25 @@ void	ft_key_player(int key, t_master *s_m)
 		s_m->player.posX -= s_m->player.dirX / 10;
 		s_m->player.posY -= s_m->player.dirY / 10;
 	}
-if (key == SDLK_RIGHT)
-{
-    double oldDirX = s_m->player.dirX;
-    s_m->player.dirX = s_m->player.dirX * cos(-rotSpeed) - s_m->player.dirY * sin(-rotSpeed);
-    s_m->player.dirY = oldDirX * sin(-rotSpeed) + s_m->player.dirY * cos(-rotSpeed);
+	if (key == 97)
+	{
+		double oldDirX = s_m->player.dirX;
+		s_m->player.dirX = s_m->player.dirX * cos(-rotSpeed) - s_m->player.dirY * sin(-rotSpeed);
+		s_m->player.dirY = oldDirX * sin(-rotSpeed) + s_m->player.dirY * cos(-rotSpeed);
 
-    double oldPlaneX = s_m->player.planeX;
-    s_m->player.planeX = s_m->player.planeX * cos(-rotSpeed) - s_m->player.planeY * sin(-rotSpeed);
-    s_m->player.planeY = oldPlaneX * sin(-rotSpeed) + s_m->player.planeY * cos(-rotSpeed);
-}
+		double oldPlaneX = s_m->player.planeX;
+		s_m->player.planeX = s_m->player.planeX * cos(-rotSpeed) - s_m->player.planeY * sin(-rotSpeed);
+		s_m->player.planeY = oldPlaneX * sin(-rotSpeed) + s_m->player.planeY * cos(-rotSpeed);
+	}
 
-if (key == SDLK_LEFT)
-{
-    double oldDirX = s_m->player.dirX;
-    s_m->player.dirX = s_m->player.dirX * cos(rotSpeed) - s_m->player.dirY * sin(rotSpeed);
-    s_m->player.dirY = oldDirX * sin(rotSpeed) + s_m->player.dirY * cos(rotSpeed);
+	if (key == 100)
+	{
+		double oldDirX = s_m->player.dirX;
+		s_m->player.dirX = s_m->player.dirX * cos(rotSpeed) - s_m->player.dirY * sin(rotSpeed);
+		s_m->player.dirY = oldDirX * sin(rotSpeed) + s_m->player.dirY * cos(rotSpeed);
 
-    double oldPlaneX = s_m->player.planeX;
-    s_m->player.planeX = s_m->player.planeX * cos(rotSpeed) - s_m->player.planeY * sin(rotSpeed);
-    s_m->player.planeY = oldPlaneX * sin(rotSpeed) + s_m->player.planeY * cos(rotSpeed);
-}
+		double oldPlaneX = s_m->player.planeX;
+		s_m->player.planeX = s_m->player.planeX * cos(rotSpeed) - s_m->player.planeY * sin(rotSpeed);
+		s_m->player.planeY = oldPlaneX * sin(rotSpeed) + s_m->player.planeY * cos(rotSpeed);
+	}
 }
