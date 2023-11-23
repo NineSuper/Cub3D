@@ -72,22 +72,25 @@ void	ft_key_player(int key, t_master *s_m)
 		s_m->player.posX -= s_m->player.dirX / 10;
 		s_m->player.posY -= s_m->player.dirY / 10;
 	}
-	if (key == 97)
-	{
-		double oldDirX = s_m->player.dirX;
-		s_m->player.dirX = s_m->player.dirX * cos(-rotSpeed) - s_m->player.dirY * sin(-rotSpeed);
-		s_m->player.dirY = oldDirX * sin(-rotSpeed) + s_m->player.dirY * cos(-rotSpeed);
-		double oldPlaneX = s_m->player.planeX;
-		s_m->player.planeX = s_m->player.planeX * cos(-rotSpeed) - s_m->player.planeY * sin(-rotSpeed);
-		s_m->player.planeY = oldPlaneX * sin(-rotSpeed) + s_m->player.planeY * cos(-rotSpeed);
-	}
-	if (key == 100)
-	{
-		double oldDirX = s_m->player.dirX;
-		s_m->player.dirX = s_m->player.dirX * cos(rotSpeed) - s_m->player.dirY * sin(rotSpeed);
-		s_m->player.dirY = oldDirX * sin(rotSpeed) + s_m->player.dirY * cos(rotSpeed);
-		double oldPlaneX = s_m->player.planeX;
-		s_m->player.planeX = s_m->player.planeX * cos(rotSpeed) - s_m->player.planeY * sin(rotSpeed);
-		s_m->player.planeY = oldPlaneX * sin(rotSpeed) + s_m->player.planeY * cos(rotSpeed);
-	}
+if (key == SDLK_RIGHT)
+{
+    double oldDirX = s_m->player.dirX;
+    s_m->player.dirX = s_m->player.dirX * cos(-rotSpeed) - s_m->player.dirY * sin(-rotSpeed);
+    s_m->player.dirY = oldDirX * sin(-rotSpeed) + s_m->player.dirY * cos(-rotSpeed);
+
+    double oldPlaneX = s_m->player.planeX;
+    s_m->player.planeX = s_m->player.planeX * cos(-rotSpeed) - s_m->player.planeY * sin(-rotSpeed);
+    s_m->player.planeY = oldPlaneX * sin(-rotSpeed) + s_m->player.planeY * cos(-rotSpeed);
+}
+
+if (key == SDLK_LEFT)
+{
+    double oldDirX = s_m->player.dirX;
+    s_m->player.dirX = s_m->player.dirX * cos(rotSpeed) - s_m->player.dirY * sin(rotSpeed);
+    s_m->player.dirY = oldDirX * sin(rotSpeed) + s_m->player.dirY * cos(rotSpeed);
+
+    double oldPlaneX = s_m->player.planeX;
+    s_m->player.planeX = s_m->player.planeX * cos(rotSpeed) - s_m->player.planeY * sin(rotSpeed);
+    s_m->player.planeY = oldPlaneX * sin(rotSpeed) + s_m->player.planeY * cos(rotSpeed);
+}
 }
