@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 10:38:01 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:53:22 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	ft_check_x_y(int x, char c)
 
 void	ft_set_cam(t_master *s_m, t_dir dir)
 {
-	s_m->player.dirX = dir.dirX;
-	s_m->player.dirY = dir.dirY;
-	s_m->player.planeX = dir.planeX;
-	s_m->player.planeY = dir.planeY;
+	s_m->player.dirx = dir.dirx;
+	s_m->player.diry = dir.diry;
+	s_m->player.planex = dir.planex;
+	s_m->player.planey = dir.planey;
 }
 
 void	ft_set_dir(t_master *s_m, char c, char *str)

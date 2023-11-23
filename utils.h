@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 11:43:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:58:33 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ typedef struct s_key
 	int	d;
 }	t_key;
 
-typedef	struct s_dir
+typedef struct s_dir
 {
-	double	dirX;
-	double	dirY;
-	double	planeX;
-	double	planeY;
+	double	dirx;
+	double	diry;
+	double	planex;
+	double	planey;
 }	t_dir;
 
 typedef struct s_draw
@@ -122,24 +122,24 @@ typedef struct s_imgs
 typedef struct s_player
 {
 	t_imgs	cross;
-	double	posX;
-	double	posY;
-	double	dirX;
-	double	dirY;
-	double	planeX;
-	double	planeY;
-	double	cameraX;
-	double	rayDirX;
-	double	rayDirY;
-	double	sideDistX;
-	double	sideDistY;
-	double	perpWallDist;
-	double deltaDistX;
-	double deltaDistY;
-	int		mapX;
-	int		mapY;
-	int		stepX;
-	int		stepY;
+	double	posx;
+	double	posy;
+	double	dirx;
+	double	diry;
+	double	planex;
+	double	planey;
+	double	camerax;
+	double	raydirx;
+	double	raydiry;
+	double	sidedistx;
+	double	sidedisty;
+	double	perpwalldist;
+	double	deltadistx;
+	double	deltadisty;
+	int		mapx;
+	int		mapy;
+	int		stepx;
+	int		stepy;
 	int		x;
 	int		y;
 	int		side;
@@ -149,8 +149,8 @@ typedef struct s_coods
 {
 	int	x;
 	int	y;
-	int w;
-	int h;
+	int	w;
+	int	h;
 }	t_coords;
 
 typedef struct s_master
@@ -184,7 +184,8 @@ t_imgs			new_file_img(char *path, t_master *s_m);
 t_imgs			ft_img_resize(t_master *s_m, t_imgs img, int h, int w);
 t_coords		ft_coords(int h, int w, int x, int y);
 char			*ft_split_text(char *str, t_master *s_m);
-void			ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, t_coords coords);
+void			ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, \
+	t_coords coords);
 void			ft_set_dir(t_master *s_m, char c, char *str);
 void			put_pixel_img(t_imgs img, int x, int y, int color);
 void			put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);
