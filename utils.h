@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 14:08:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:21:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,7 +214,9 @@ void			ft_put_destroy(t_imgs src, t_imgs dest, int x, int y);
 void			ft_hud(t_master *s_m);
 void			ft_ray(t_master *s_m, t_player *player, char **map);
 void			ft_verline(t_master *s_m, int x, t_draw draw);
+void			ft_cam(int key, t_player *player, double rotSpeed);
 int				ft_exit_menu(t_master *s_m);
+int				ft_onscreen(t_master *s_m);
 int				ft_mouse(int button, int x, int y, void *s_m);
 int				deal_key(int key, t_master *s_m);
 int				ft_check_color(t_master *s_m, char **tab, int i);

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 15:16:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:08:16 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_mouse_menu(int x, int y, t_master *s_m)
 	else if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
 		ft_play(s_m);
 	else if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
-		printf("option\n");
+		ft_printf("option\n");
 	else if (x >= 849 && x <= 1123 && y >= 611 && y <= 691)
 		ft_exit_menu(s_m);
 }

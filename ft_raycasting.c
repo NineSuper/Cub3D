@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 14:33:24 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:52:08 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 	if (s_m->player.hit == 2)
 		color = create_trgb(0, 0, 0, 255);
 	if (s_m->player.side == 1)
-			color = color / 2;
+		color = color / 2;
 	while (draw.drawstart <= draw.drawend)
 	{
 		put_pixel_img(s_m->img, x, draw.drawstart, color);

@@ -6,11 +6,21 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 10:52:55 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 13:53:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:27:47 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+int	ft_onscreen(t_master *s_m)
+{
+	if (s_m->m_x > 0 && s_m->m_x < WIDTH)
+	{
+		if (s_m->m_y > 0 && s_m->m_y < HEIGHT)
+			return (1);
+	}
+	return (0);
+}
 
 int	ft_check_resized(int base)
 {
