@@ -1,15 +1,15 @@
 # 🎮 Cub3D
 
-**Cub3D** est le second projet de **groupe** à faire en duo  durant le cursus [42](https://42.fr/).
+**Cub3D** est le second projet de **groupe** à faire en duo durant le cursus [42](https://42.fr/).
 
 ## 🔭 Roadmap
 
 - Creation du projet ✅
 - Verifier la map ✅
 - Faire un menu utilisateur (choisir la map/quitter le jeu/options, ect...) ✅
-- Faire le ray-casting ❌
-- Faire bouger le joueur ❌
-- Faire bouger la camera avec fleches et la souris ❌
+- Faire le ray-casting ✅
+- Faire bouger le joueur ✅
+- Faire bouger la camera avec fleches et la souris ✅
 - Mettre des textures sur les murs/sols/plafond ❌
 
 ## 👾 Bonus
@@ -18,6 +18,7 @@
 - Minimap ✅
 - Sprites sur la map ❌
 - Systeme de porte (ouverture/fermeture) ❌
+- Sortir un DLC de la MLX ❌
 
 ## 🎮 Lance notre Cub3D !
 
