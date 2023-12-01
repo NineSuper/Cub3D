@@ -21,7 +21,7 @@ HEADER_FILE = utils.h libft/ft_printf/ft_printf.h libft/libft/libft.h libft/gnl/
 OBJ = $(SRC:.c=.o)
 CC = gcc
 
-FLAGS = 
+FLAGS =
 
 # ------------------------------ Couleurs ------------------------------
 
@@ -55,7 +55,7 @@ FCLEANED        =       echo "\n🧼 $(BOLD_YELLOW)Fclean: $(NO_COLOR)Suppressio
 
 NORM			= 		echo "\n📢 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme de tous les fichiers en .c !\n$(BOLD_PURPLE)"
 
-NORM_LIB		= 		echo "\n📢 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme du dossier $(BOLD_PURPLE)libft $(BOLD_YELLOW)!\n$(BOLD_YELLOW)"
+NORM_LIB		= 		echo "\n📢 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme du dossier $(BOLD_CYAN)/libft $(BOLD_YELLOW)!\n$(BOLD_YELLOW)"
 
 NORM_H			=		echo "\n📣 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de la norme du .h\n$(BOLD_PURPLE)"
 

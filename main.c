@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:21:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:41:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	ft_loop(t_master *s_m)
 	mlx_mouse_get_pos(s_m->mlx, s_m->win, &s_m->m_x, &s_m->m_y);
 	if (s_m->screen == 5)
 	{
-		ft_raycast(s_m, s_m->map.map + s_m->map.len);
-		if (s_m->m_x > (WIDTH / 2) + 200 && ft_onscreen(s_m))
+		ft_raycast(s_m);
+		if (s_m->m_x > (WIDTH / 2) + 300 && ft_onscreen(s_m))
 			ft_mouse_play(7, 0, 0, s_m);
-		if (s_m->m_x < (WIDTH / 2) - 200 && ft_onscreen(s_m))
+		if (s_m->m_x < (WIDTH / 2) - 300 && ft_onscreen(s_m))
 			ft_mouse_play(6, 0, 0, s_m);
 	}
 	return (0);

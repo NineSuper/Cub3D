@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/06 09:17:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:26:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 * Check les colors puis les convertir en hexadecimal
 * Check toute la map 
 * tout doit etre entouree de 1
-* Char = '1' '0' 'B' 'P' ('N' | 'S' | 'W' | 'E')
+* Char = '1' '0' 'B' 'D' ('N' | 'S' | 'W' | 'E')
 * UNIQUEMENT une lettre parmis celles-ci : N | S | W | E
 * La sortie : B
-* La porte : P
+* La porte : D
 * tout free une fois fini
 */
 

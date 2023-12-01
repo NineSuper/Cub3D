@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/29 11:49:04 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:45:37 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 	}
 }
 
-void	ft_raycast(t_master *s_m, char **map)
+void	ft_raycast(t_master *s_m)
 {
 	if (s_m->img.m_img)
 		mlx_destroy_image(s_m->mlx, s_m->img.m_img);

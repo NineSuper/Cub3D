@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 14:31:27 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/25 05:40:02 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:39:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_texture(char *NO, char *EA, char *SO, char *WE)
 	return (0);
 }
 
-char	*ft_split_text(char *str, t_master *s_m)
+char	*ft_split_text(char *str)
 {
 	char	**tab;
 	char	*new;

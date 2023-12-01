@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:08:16 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:37:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int	ft_mouse(int button, int x, int y, void *data)
 		ft_mouse_menu(s_m->m_x, s_m->m_y, s_m);
 	if (s_m->screen == 5)
 		ft_mouse_play(button, x, y, s_m);
+	return (0);
 }
 
 int	deal_key(int key, t_master *s_m)
@@ -102,4 +103,5 @@ int	deal_key(int key, t_master *s_m)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
+	return (0);
 }

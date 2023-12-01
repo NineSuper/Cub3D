@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/19 12:02:27 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:45:02 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	imgs_load_menu(t_master *s_m)
 		s_m->menu.menu_o = mlx_xpm_file_to_image(s_m->mlx, MENU_3, &w, &h);
 		s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_4, &w, &h);
 	}
-	w = 1024;
 	load_hud(s_m);
 	s_m->ea = new_file_img(s_m->map.ea + 1, s_m);
 	s_m->so = new_file_img(s_m->map.so + 1, s_m);

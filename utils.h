@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:21:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:28:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,14 +180,16 @@ typedef struct s_master
 }	t_master;
 
 unsigned int	get_pixel_img(t_imgs img, int x, int y);
+double			ft_per_wall(t_player *player);
 t_imgs			new_img(int w, int h, t_master *s_m);
 t_imgs			new_file_img(char *path, t_master *s_m);
 t_imgs			ft_img_resize(t_master *s_m, t_imgs img, int h, int w);
 t_coords		ft_coords(int h, int w, int x, int y);
-char			*ft_split_text(char *str, t_master *s_m);
+char			*ft_split_text(char *str);
 void			ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, \
 	t_coords coords);
 void			ft_set_dir(t_master *s_m, char c, char *str);
+void			ft_init_resize(t_master *s_m);
 void			put_pixel_img(t_imgs img, int x, int y, int color);
 void			put_img_to_img(t_imgs dst, t_imgs srcs, int x, int y);
 void			ft_print_tab(char **tab);
@@ -200,7 +202,7 @@ void			ft_error_map(char *error, t_master *s_m);
 void			free_tab(char **tab);
 void			ft_check_tab(t_master *s_m, t_map *s_map, char **map);
 void			ft_play(t_master *s_m);
-void			ft_raycast(t_master *s_m, char **map);
+void			ft_raycast(t_master *s_m);
 void			ft_minimap(t_master *s_m, char **map);
 void			ft_mac_mouse_menu(int x, int y, t_master *s_m);
 void			img_pix_put(t_imgs *imgs, int x, int y, int color);

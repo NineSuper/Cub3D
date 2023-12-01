@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 15:59:35 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 14:30:43 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:40:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,7 @@ int	color_case(int c)
 		return (create_trgb(0, 0, 162, 255));
 	if (c == 5)
 		return (create_trgb(0, 51, 0, 0));
-}
-
-void	ft_map(t_master *s_m, int x, int y, int c)
-{
-	int	i;
-	int	j;
-	int	w;
-	int	h;
-
-	i = 15;
-	while (++i <= 32)
-	{
-		j = 15;
-		h = i + y * 16;
-		while (++j <= 32)
-		{
-			w = j + x * 16;
-			img_pix_put(&s_m->img, w, h, color_case(c));
-		}
-	}
+	return (0);
 }
 
 void	ft_draw_square(t_master *s_m, int x, int y, int c)
@@ -60,7 +41,7 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 	int	h;
 
 	if (s_m->minimap)
-		ft_map(s_m, x, y, c);
+		return ;
 	else
 	{
 		i = 7;
@@ -74,25 +55,6 @@ void	ft_draw_square(t_master *s_m, int x, int y, int c)
 				img_pix_put(&s_m->img, w, h, color_case(c));
 			}
 		}
-	}
-}
-
-void	ft_border(t_master *s_m)
-{
-	int	x;
-	int	y;
-
-	x = -1;
-	while (++x < 14)
-		ft_draw_square(s_m, x, 0, 5);
-	x = -1;
-	while (++x < 14)
-		ft_draw_square(s_m, x, 10, 5);
-	y = -1;
-	while (++y < 11)
-	{
-		ft_draw_square(s_m, 0, y, 5);
-		ft_draw_square(s_m, 14, y, 5);
 	}
 }
 
