@@ -6,7 +6,7 @@ MLX_PATH=libft/mlx/
 INC_SRCH_PATH := 
 INC_SRCH_PATH += -I$(MLX_PATH)
 
-LFLAGS = -lbsd -L$(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
+LFLAGS = -lbsd -L $(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
 

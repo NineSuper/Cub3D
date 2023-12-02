@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/23 14:31:25 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/02 15:36:25 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void	ft_dda(t_player *player, char **map)
 		}
 		if (map[player->mapy][player->mapx] == '1')
 			player->hit = 1;
-		if (map[player->mapy][player->mapx] == 'D')
-			player->hit = 2;
+		// if (map[player->mapy][player->mapx] == 'D')
+		// 	player->hit = 2;
 	}
 }
 
