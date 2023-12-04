@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/02 15:36:25 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:07:16 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 * Faire Bouger le Joueur
 ? Collision avec les murs
 * Minimap
-? Systeme de porte (ouverture/fermeture)
+? Systeme de porte (ouverture)
 ! width / X = largeur
 ! height / Y = Hauteur
 */
@@ -72,6 +72,12 @@ void	ft_step(t_player *player)
 			player->deltadisty;
 	}
 }
+
+/*
+* Player->hit == 1 : Mur
+* Player->hit == 2 : Portes
+* Player->hit == 3 : Sortie
+*/
 
 void	ft_dda(t_player *player, char **map)
 {

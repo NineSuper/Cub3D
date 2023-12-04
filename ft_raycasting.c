@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/02 15:35:07 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:11:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@
 ? Systeme de porte (ouverture/fermeture)
 ! width / X = largeur
 ! height / Y = Hauteur
-* HIT == 1 (MUR)
-* HIT == 2 (PORTE)
+* Player->hit == 1 : Mur
+* Player->hit == 2 : Portes
+* Player->hit == 3 : Sortie
+
+todo Mettre les textures grâce à ft_verline() et surement modifier le DDA dans ft_math.c
 */
 
 void	ft_verline(t_master *s_m, int x, t_draw draw)
@@ -39,10 +42,7 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 	if (s_m->player.side == 1)
 		color = color / 2;
 	while (draw.drawstart <= draw.drawend)
-	{
-		put_pixel_img(s_m->img, x, draw.drawstart, color);
-		draw.drawstart++;
-	}
+		put_pixel_img(s_m->img, x, draw.drawstart++, color);
 }
 
 void	ft_raycast(t_master *s_m)

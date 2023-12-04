@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/01 10:41:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:10:49 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 /*
 * Check toutes les map : ft_check_map.c -> exit (0) si ERROR
 * Faire un menu : ft_menu.c -> change map dans t_m->map.map
-? Faire le ray-casting : ft_raycast.c
+* Faire le ray-casting : ft_raycast.c
 ? Mettre des textures sur les murs
-? Faire Bouger la camera
-? Faire Bouger le Joueur
+* Faire Bouger la camera
+* Faire Bouger le Joueur
 ? Collision avec les murs
-? Minimap
+* Minimap
 ? Systeme de porte (ouverture/fermeture)
 int s_m->screen	
 			= 1 menu;
@@ -28,6 +28,10 @@ int s_m->screen
 			= 3 option;
 			= 4 chargement;
 			= 5 Jeu;
+
+todo : ft_player_key.c
+todo : ft_raycasting.c (ft_math.c : (DDA))
+todo : Vérifier la norme et mettre les flags
 */
 
 int	ft_loop(t_master *s_m)

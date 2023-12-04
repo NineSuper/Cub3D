@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/24 15:07:11 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:12:10 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@
 * S : 115 
 * D : 100
 * M : 109
+
+todo Collision avec les murs 
+todo (Bonus) Ouvrir des portes
 */
 
 int	ft_press(int key)
@@ -53,6 +56,7 @@ void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 void	ft_key_player(int key, t_master *s_m)
 {
 	t_player	*player;
+	char **map = s_m->map.map + s_m->map.len;
 
 	player = &s_m->player;
 	if (key == 109)
