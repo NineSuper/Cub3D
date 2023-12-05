@@ -62,6 +62,8 @@ NORM_H			=		echo "\n📣 $(BOLD_CYAN)NORMINETTE: $(BOLD_YELLOW)Verification de l
 # ------------------------------ Regles ------------------------------
 MAKEFLAGS += --silent
 
+TOTAL_FILES := $(words $(SRC))
+COMPILED_FILES := 0
 
 $(NAME): comp_start $(OBJ)
 	@$(MAKE) -C $(MLX_PATH)
@@ -107,5 +109,7 @@ fclean:
 re: clean all
 
 %.o: %.c
-	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Compilation des fichiers :$(BOLD_CYAN) %-33.33s\r$(NO_COLOR)" $@
+	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Compilation des fichiers :$(BOLD_CYAN) %-33.33s $(BOLD_YELLOW)[%d/%d]\r$(NO_COLOR)" $? $(COMPILED_FILES) $(TOTAL_FILES)
 	@${CC} ${FLAGS} $(WIN_SIZE) -c $< -o $@
+	@$(eval COMPILED_FILES=$(shell echo $$(($(COMPILED_FILES)+1))))
+	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Compilation des fichiers :$(BOLD_CYAN) %-33.33s $(BOLD_YELLOW)[%d/%d]\r$(NO_COLOR)" $? $(COMPILED_FILES) $(TOTAL_FILES)
