@@ -1,49 +1,57 @@
-# 🎮 Cub3D
+# Cub3d - Projet 42
 
-**Cub3D** est le second projet de **groupe** à faire en duo durant le cursus [42](https://42.fr/).
+Bienvenue dans Cub3d, un projet passionnant de l'école 42 ! 🚀
 
-## 🔭 Roadmap
+## Description
 
-- Creation du projet ✅
-- Verifier la map ✅
-- Faire un menu utilisateur (choisir la map/quitter le jeu/options, ect...) ✅
-- Faire le ray-casting ✅
-- Faire bouger le joueur ✅
-- Faire bouger la camera avec fleches et la souris ✅
-- Mettre des textures sur les murs/sols/plafond ❌
+Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec la bibliothèque graphique MLX de l'école 42. L'objectif principal est de vous plonger dans le domaine de la programmation graphique en créant un moteur de rendu 3D basique.
 
-## 👾 Bonus
+## Fonctionnalités
 
-- Collision avec les murs/sprites ❌
-- Minimap ✅
-- Sprites sur la map ❌
-- Systeme de porte (ouverture/fermeture) ❌
-- Sortir un DLC de la MLX ❌
+- Rendu de la vue en raycasting
+- Déplacement dans l'espace 3D
+- Texture mapping pour les murs
+- Gestion des collisions
+- Mini-map en temps réel
 
-## 🎮 Lance notre Cub3D !
+## Prérequis
 
-Copie le projet
+Assurez-vous d'avoir la bibliothèque graphique MLX installée sur votre système.
 
 ```bash
-  git clone https://github.com/NineSuper/Cub3D
+sudo apt-get install libmlx-dev
 ```
 
-Rentre dans le dossier
+## Installation
+
+Clonez le dépôt Cub3d :
+```bash
+git clone https://www.github.com/NineSuper/Cub3d.git
+```
+
+Compilez le projet :
+```bash
+make
+```
+
+Exécutez Cub3d :
+```bash
+./Cub3d maps/map.cub
+```
+
+## Contrôles
 
 ```bash
-  cd Cub3d
+W : Avancer
+A : Tourner à gauche
+S : Reculer
+D : Tourner à droite
+M : Activer/désactiver la minimap
+Esc : Quitter le jeu
 ```
 
-Compile le projet
-```bash
-   make
-```
+Happy coding! 🚀✨
 
-Lance l'executable
-
-```bash
-  ./Cub3D maps/normal.cub
-```
 ## 📝 Auteurs
 
 - 🎫 [@NineSuper](https://www.github.com/NineSuper)
