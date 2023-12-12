@@ -2,11 +2,11 @@
 
 Bienvenue dans Cub3d, un projet passionnant de l'école 42 ! 🚀
 
-## Description
+## 📚 Description
 
 Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec la bibliothèque graphique MLX de l'école 42. L'objectif principal est de vous plonger dans le domaine de la programmation graphique en créant un moteur de rendu 3D basique.
 
-## Fonctionnalités
+## 🛠️ Fonctionnalités
 
 - Rendu de la vue en raycasting
 - Déplacement dans l'espace 3D
@@ -14,7 +14,7 @@ Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec
 - Gestion des collisions
 - Mini-map en temps réel
 
-## Prérequis
+## 🔧 Prérequis
 
 Assurez-vous d'avoir la bibliothèque graphique MLX installée sur votre système.
 
@@ -22,7 +22,7 @@ Assurez-vous d'avoir la bibliothèque graphique MLX installée sur votre systèm
 sudo apt-get install libmlx-dev
 ```
 
-## Installation
+## 🗳️ Installation
 
 Clonez le dépôt Cub3d :
 ```bash
@@ -39,7 +39,7 @@ Exécutez Cub3d :
 ./Cub3d maps/map.cub
 ```
 
-## Contrôles
+## ⌨️ Contrôles
 
 ```bash
 W : Avancer
