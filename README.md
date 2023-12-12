@@ -1,6 +1,6 @@
 # Cub3d - Projet 42
 
-Bienvenue dans Cub3d, un projet passionnant de l'école 42 ! 🚀
+Bienvenue dans Cub3d 👾, un projet passionnant de l'école 42 ! 🚀
 
 ## 📚 Description
 
@@ -8,11 +8,11 @@ Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec
 
 ## 🛠️ Fonctionnalités
 
-- Rendu de la vue en raycasting
-- Déplacement dans l'espace 3D
-- Texture mapping pour les murs
-- Gestion des collisions
-- Mini-map en temps réel
+- [x] Rendu de la vue en raycasting
+- [x] Déplacement dans l'espace 3D
+- [x] Texture mapping pour les murs
+- [x] Gestion des collisions
+- [x] Mini-map en temps réel
 
 ## 🔧 Prérequis
 
