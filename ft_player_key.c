@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/04 10:12:10 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:39:00 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <math.h>
 
 /*
-? Ft_press(int key) est une fonction lorsqu'on appuis sur 
+? Ft_press(int key) est une fonction lorsqu'on appuis sur
 ? la "key" la valeur sera soit 1 ou 0
 * 65361 : gauche
 * 65363 : droite
@@ -28,12 +28,12 @@
 * 5 Molette bas
 * W : 119
 * Q : 97
-* S : 115 
+* S : 115
 * D : 100
 * M : 109
 
-todo Collision avec les murs 
-todo (Bonus) Ouvrir des portes
+todo Collision avec les murs
+todo (Bonus) Ouvrir des portes (pas obliger de le faire)
 */
 
 int	ft_press(int key)

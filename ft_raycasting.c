@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/04 10:11:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:40:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 * Player->hit == 3 : Sortie
 
 todo Mettre les textures grâce à ft_verline() et surement modifier le DDA dans ft_math.c
+	afin de savoir quel mur le DDA touche
+todo ft_player_key.c
 */
 
 void	ft_verline(t_master *s_m, int x, t_draw draw)

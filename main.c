@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/04 10:10:49 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/04 10:39:14 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ? Collision avec les murs
 * Minimap
 ? Systeme de porte (ouverture/fermeture)
-int s_m->screen	
+int s_m->screen
 			= 1 menu;
 			= 2 map;
 			= 3 option;
@@ -30,8 +30,9 @@ int s_m->screen
 			= 5 Jeu;
 
 todo : ft_player_key.c
-todo : ft_raycasting.c (ft_math.c : (DDA))
+todo : ft_raycasting.c (ft_math.c : (voir DDA))
 todo : Vérifier la norme et mettre les flags
+todo : enlever les commentaires à la fin
 */
 
 int	ft_loop(t_master *s_m)
