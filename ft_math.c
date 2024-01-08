@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 20:46:40 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:35:02 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,44 +105,41 @@ void	ft_dda(t_player *player, char **map)
 
 double	ft_per_wall(t_player *player)
 {
-	double	perp_wall_dist;
-
 	if (player->side == 0)
-		perp_wall_dist = fabs((player->mapx - player->posx \
-			+ (1 - player->stepx) / 2) / player->raydirx);
+	 	player->perpwalldist = fabs((player->mapx - player->posx \
+	 		+ (1 - player->stepx) / 2) / player->raydirx);
 	else
-		perp_wall_dist = fabs((player->mapy - player->posy \
-			+ (1 - player->stepy) / 2) / player->raydiry);
-	return (perp_wall_dist);
+		player->perpwalldist = fabs((player->mapy - player->posy \
+	  		+ (1 - player->stepy) / 2) / player->raydiry);
+	return (player->perpwalldist);
 }
 
 void	ft_texture(t_master *s_m, t_draw draw, int lineheight, int x)
 {
 	t_player	*player;
-	double		wallX;
-	int			textWidth = 512;
+	int			textWidth = s_m->so.h;
+	int			color;
 
 	player = &s_m->player;
 	if (player->side == 0)
-		wallX = player->posy + player->perpwalldist * player->raydiry;
+		player->wallx = player->posy + player->perpwalldist * player->raydiry;
 	else
-		wallX = player->posx + player->perpwalldist * player->raydirx;
-	wallX -= floor(wallX);
-	int	texX = (int)(wallX * (double)textWidth);
+		player->wallx = player->posx + player->perpwalldist * player->raydirx;
+	player->wallx -= floor(player->wallx);
+	player->texx = (int)(player->wallx * (double)textWidth);
 	if (player->side == 0 && player->raydirx > 0)
-		texX = textWidth - texX - 1;
+		player->texx = textWidth - player->texx - 1;
 	if (player->side == 1 && player->raydiry < 0)
-		texX = textWidth - texX - 1;
-	//printf("%d\n", texX);
-	double step = 1.0 * textWidth / lineheight;
-	double texPos = (draw.drawstart - textWidth / 2 + lineheight / 2) * step;
+		player->texx = textWidth - player->texx - 1;
+	player->step = 1.0 * textWidth / lineheight;
+	player->texposx = (draw.drawstart - HEIGHT / 2 + lineheight / 2) * player->step;
 	while (draw.drawstart <= draw.drawend)
 	{
-		int texY = (int)(texPos) & (textWidth - 1);
-		int color = s_m->so.addr[(textWidth * texY)];
-		texPos += step;
-		// printf("%d %d\n", texX, texY);
-		put_pixel_img(s_m->img, x, draw.drawstart++, color);
+		player->texy = (int)(player->texposx) & (textWidth - 1);
+		color = (int)(s_m->so.addr[textWidth * player->texy + player->texx]);
+		put_pixel_img(s_m->img, x, draw.drawstart, (int)(s_m->so.addr[textWidth * player->texy + player->texx]));
+	 	player->texposx += player->step;
+		draw.drawstart++;
 	}
 }
 
@@ -159,11 +156,12 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 		ft_init_ray(player, x);
 		ft_step(player);
 		ft_dda(player, map);
-		lineheight = (int)(HEIGHT / ft_per_wall(player));
-		drawstart = -lineheight / 2 + HEIGHT / 2;
+		ft_per_wall(player);
+		lineheight = (int)(HEIGHT / player->perpwalldist);
+		drawstart = -lineheight / 2 + (HEIGHT / 2);
 		if (drawstart < 0)
 			drawstart = 0;
-		drawend = lineheight / 2 + HEIGHT / 2;
+		drawend = lineheight / 2 + (HEIGHT / 2);
 		if (drawend >= HEIGHT)
 			drawend = HEIGHT - 1;
 		ft_texture(s_m, (t_draw){drawstart, drawend}, lineheight, x);

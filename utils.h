@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 17:32:42 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/08 21:50:17 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,11 @@ typedef struct s_player
 	int		x;
 	int		y;
 	int		side;
+	double	wallx;
+	double	step;
+	double	texposx;
+	int		texy;
+	int		texx;
 }	t_player;
 
 typedef struct s_coods

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 20:47:12 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/08 22:29:22 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,5 @@ int	main(int argc, char **argv)
 	mlx_mouse_hook(s_m->win, ft_mouse, (void *) s_m);
 	mlx_hook(s_m->win, 2, 1L << 0, deal_key, s_m);
 	mlx_loop_hook(s_m->mlx, ft_loop, (void *) s_m);
-	ft_img_resize(s_m, s_m->so, 512, 512);
 	mlx_loop(s_m->mlx);
 }

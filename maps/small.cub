@@ -1,6 +1,6 @@
 NO        /texture/wall/wall_no.xpm
 SO /texture/wall/wall_so.xpm
-WE          /texture/wall/wall_we.xpm 
+WE          /texture/wall/wall_we.xpm
 EA   /texture/wall/wall_ea.xpm
 
 F  128 , 128,  128
@@ -8,11 +8,11 @@ F  128 , 128,  128
 
 111111111111111
 100000000000001
-100000000000W01
+100000000000001
 100000000000001
 100000000000001
 1D1111000010001
 100001000000001
-100001000000001
+100001000000N01
 1B0001000000001
 111111111111111
