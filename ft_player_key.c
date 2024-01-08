@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_player_key.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/04 10:39:00 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:52:54 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 
 todo Collision avec les murs
 todo (Bonus) Ouvrir des portes (pas obliger de le faire)
+? s_m->map.map[][] + s_m->map.len;
 */
 
 int	ft_press(int key)
@@ -50,8 +51,26 @@ void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 		ft_cam(100, &s_m->player, 0.06);
 	if (button == 6)
 		ft_cam(97, &s_m->player, 0.06);
-	//ft_printf("%d\n", button);
 }
+
+int	ft_can_moove_y(t_player *player, char **map, int i)
+{
+	if (map[(int)(player->posy + (player->diry / 10))][(int)(player->posx)] == '1' && i)
+		return (1);
+	else if (map[(int)(player->posy - (player->diry / 10))][(int)(player->posx)] == '1')
+		return (1);
+	return (0);
+}
+
+int	ft_can_moove_x(t_player *player, char **map, int i)
+{
+	if (map[(int)player->posy][(int)(player->posx + (player->dirx / 10))] == '1' && i)
+		return (1);
+	else if (map[(int)player->posy][(int)(player->posx - (player->dirx / 10))] == '1')
+		return (1);
+	return (0);
+}
+
 
 void	ft_key_player(int key, t_master *s_m)
 {
@@ -65,13 +84,17 @@ void	ft_key_player(int key, t_master *s_m)
 		s_m->help = ft_press(s_m->help);
 	if (key == 119)
 	{
-		player->posx += player->dirx / 10;
-		player->posy += player->diry / 10;
+		if (!ft_can_moove_x(player, map, 1))
+			player->posx += player->dirx / 10;
+		if (!ft_can_moove_y(player, map, 1))
+			player->posy += player->diry / 10;
 	}
 	if (key == 115)
 	{
-		player->posx -= player->dirx / 10;
-		player->posy -= player->diry / 10;
+		if (!ft_can_moove_x(player, map, 0))
+			player->posx -= player->dirx / 10;
+		if (!ft_can_moove_y(player, map, 0))
+			player->posy -= player->diry / 10;
 	}
 	if (key == 97)
 		ft_cam(97, player, 0.10);

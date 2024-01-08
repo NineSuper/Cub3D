@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycasting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/04 10:40:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:00:41 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 	if (s_m->player.side == 1)
 		color = color / 2;
 	while (draw.drawstart <= draw.drawend)
+	{
 		put_pixel_img(s_m->img, x, draw.drawstart++, color);
+	}
 }
+
 
 void	ft_raycast(t_master *s_m)
 {
