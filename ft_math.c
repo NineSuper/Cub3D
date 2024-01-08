@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 19:02:41 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/08 20:46:40 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_dda(t_player *player, char **map)
 	while (player->hit == 0)
 	{
 		if (player->sidedistx < player->sidedisty)
-		{	
+		{
 			player->sidedistx += player->deltadistx;
 			player->mapx += player->stepx;
 			player->side = 0;
@@ -120,14 +120,14 @@ void	ft_texture(t_master *s_m, t_draw draw, int lineheight, int x)
 {
 	t_player	*player;
 	double		wallX;
-	int			textWidth = 1024;
+	int			textWidth = 512;
 
 	player = &s_m->player;
 	if (player->side == 0)
 		wallX = player->posy + player->perpwalldist * player->raydiry;
 	else
 		wallX = player->posx + player->perpwalldist * player->raydirx;
-	wallX -= floor((wallX));
+	wallX -= floor(wallX);
 	int	texX = (int)(wallX * (double)textWidth);
 	if (player->side == 0 && player->raydirx > 0)
 		texX = textWidth - texX - 1;
@@ -139,8 +139,8 @@ void	ft_texture(t_master *s_m, t_draw draw, int lineheight, int x)
 	while (draw.drawstart <= draw.drawend)
 	{
 		int texY = (int)(texPos) & (textWidth - 1);
-		unsigned int color = get_pixel_img(s_m->no, 500, 620);
-		//int color = s_m->so.addr[(textWidth * texY + texX)];
+		int color = s_m->so.addr[(textWidth * texY)];
+		texPos += step;
 		// printf("%d %d\n", texX, texY);
 		put_pixel_img(s_m->img, x, draw.drawstart++, color);
 	}
@@ -155,7 +155,7 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 
 	x = -1;
 	while (++x < WIDTH)
-	{	
+	{
 		ft_init_ray(player, x);
 		ft_step(player);
 		ft_dda(player, map);
