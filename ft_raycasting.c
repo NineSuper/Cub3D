@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:14:52 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:53:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 		put_pixel_img(s_m->img, x, draw.drawstart++, color);
 	}
 }
-
 
 void	ft_raycast(t_master *s_m)
 {
