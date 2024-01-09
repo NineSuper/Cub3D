@@ -6,26 +6,12 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 15:34:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 15:54:34 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include <math.h>
-
-/*
-? Savoir l'orientation du joueur
-* Projeter un mur
-* Mettre la couleur sur le ciel/sol
-? Mettre des textures sur les murs
-* Faire Bouger la camera
-* Faire Bouger le Joueur
-? Collision avec les murs
-* Minimap
-? Systeme de porte (ouverture)
-! width / X = largeur
-! height / Y = Hauteur
-*/
 
 void	ft_init_ray(t_player *player, int x)
 {
@@ -73,12 +59,6 @@ void	ft_step(t_player *player)
 	}
 }
 
-/*
-* Player->hit == 1 : Mur
-* Player->hit == 2 : Portes
-* Player->hit == 3 : Sortie
-*/
-
 void	ft_dda(t_player *player, char **map)
 {
 	player->hit = 0;
@@ -98,8 +78,6 @@ void	ft_dda(t_player *player, char **map)
 		}
 		if (map[player->mapy][player->mapx] == '1')
 			player->hit = 1;
-		// if (map[player->mapy][player->mapx] == 'D')
-		// 	player->hit = 2;
 	}
 }
 
@@ -115,7 +93,7 @@ double	ft_per_wall(t_player *player)
 void	ft_texture(t_master *s_m, t_draw draw, int x)
 {
 	t_player	*player;
-	unsigned int			color;
+	int 		y;
 
 	s_m->so.addr = mlx_get_data_addr(s_m->so.m_img, &s_m->so.bpp, &s_m->so.l_len, &s_m->so.end);
 	if (player->side == 0)
@@ -130,7 +108,7 @@ void	ft_texture(t_master *s_m, t_draw draw, int x)
 		player->texx = s_m->so.w - player->texx - 1;
 	player->step = 1.0 * s_m->so.h / player->lineheight;
 	player->texpos = (draw.drawstart - HEIGHT / 2 + player->lineheight / 2) * player->step;
-	int y = draw.drawstart;
+	y = draw.drawstart;
 	while (y < draw.drawend)
 	{
 		player->texy = (int)player->texpos & (s_m->so.h - 1);
