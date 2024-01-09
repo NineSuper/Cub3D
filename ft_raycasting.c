@@ -3,36 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycasting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 17:00:41 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:14:52 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include <math.h>
-
-/*
-? Savoir l'orientation du joueur
-* Projeter un mur
-* Mettre la couleur sur le ciel/sol
-? Mettre des textures sur les murs
-* Faire Bouger la camera
-* Faire Bouger le Joueur
-? Collision avec les murs
-* Minimap
-? Systeme de porte (ouverture/fermeture)
-! width / X = largeur
-! height / Y = Hauteur
-* Player->hit == 1 : Mur
-* Player->hit == 2 : Portes
-* Player->hit == 3 : Sortie
-
-todo Mettre les textures grâce à ft_verline() et surement modifier le DDA dans ft_math.c
-	afin de savoir quel mur le DDA touche
-todo ft_player_key.c
-*/
 
 void	ft_verline(t_master *s_m, int x, t_draw draw)
 {

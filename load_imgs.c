@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/01 11:45:02 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:16:28 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,8 @@ void	imgs_load_menu(t_master *s_m)
 	s_m->so = new_file_img(s_m->map.so + 1, s_m);
 	s_m->no = new_file_img(s_m->map.no + 1, s_m);
 	s_m->we = new_file_img(s_m->map.we + 1, s_m);
+	s_m->ea = ft_img_resize(s_m, s_m->ea, 512, 512);
+	s_m->no = ft_img_resize(s_m, s_m->no, 512, 512);
+	s_m->we = ft_img_resize(s_m, s_m->we, 512, 512);
+	s_m->so = ft_img_resize(s_m, s_m->so, 512, 512);
 }
