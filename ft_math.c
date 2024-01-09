@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 15:54:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:48 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,9 @@ double	ft_per_wall(t_player *player)
 	return (player->perpwalldist);
 }
 
-void	ft_texture(t_master *s_m, t_draw draw, int x)
+void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)
 {
-	t_player	*player;
-	int 		y;
+	int	y;
 
 	s_m->so.addr = mlx_get_data_addr(s_m->so.m_img, &s_m->so.bpp, &s_m->so.l_len, &s_m->so.end);
 	if (player->side == 0)
@@ -139,9 +138,6 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 		drawend = (player->lineheight / 2) + (HEIGHT / 2);
 		if (drawend >= HEIGHT)
 			drawend = HEIGHT - 1;
-		if (s_m->help)
-			ft_verline(s_m, x, (t_draw){drawstart, drawend});
- 		else
- 			ft_texture(s_m, (t_draw){drawstart, drawend}, x);
+ 		ft_texture(s_m, (t_draw){drawstart, drawend}, x, &s_m->player);
 	}
 }
