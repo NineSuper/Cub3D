@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:16:59 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:49:18 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include <math.h>
 
 void	ft_init_ray(t_player *player, int x)
 {
@@ -36,26 +35,26 @@ void	ft_step(t_player *player)
 	if (player->raydirx < 0)
 	{
 		player->stepx = -1;
-		player->sidedistx = (player->posx - player->mapx) *
-			player->deltadistx;
+		player->sidedistx = (player->posx - player->mapx)
+			* player->deltadistx;
 	}
 	else
 	{
 		player->stepx = 1;
-		player->sidedistx = (player->mapx + 1.0 - player->posx) *
-			player->deltadistx;
+		player->sidedistx = (player->mapx + 1.0 - player->posx)
+			* player->deltadistx;
 	}
 	if (player->raydiry < 0)
 	{
 		player->stepy = -1;
-		player->sidedisty = (player->posy - player->mapy) *
-			player->deltadisty;
+		player->sidedisty = (player->posy - player->mapy)
+			* player->deltadisty;
 	}
 	else
 	{
 		player->stepy = 1;
-		player->sidedisty = (player->mapy + 1.0 - player->posy) *
-			player->deltadisty;
+		player->sidedisty = (player->mapy + 1.0 - player->posy)
+			* player->deltadisty;
 	}
 }
 
@@ -90,33 +89,6 @@ double	ft_per_wall(t_player *player)
 	return (player->perpwalldist);
 }
 
-void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)
-{
-	int	y;
-
-	s_m->ea.addr = mlx_get_data_addr(s_m->ea.m_img, &s_m->ea.bpp, &s_m->ea.l_len, &s_m->ea.end);
-	if (player->side == 0)
-		player->wallx = player->posy + player->perpwalldist * player->raydiry;
-	else
-	player->wallx = player->posx + player->perpwalldist * player->raydirx;
-	player->wallx -= floor(player->wallx);
-	player->texx = (int)(player->wallx * (double)(s_m->ea.w));
-	if (player->side == 0 && player->raydirx > 0)
-		player->texx = s_m->ea.w - player->texx - 1;
-	if (player->side == 1 && player->raydiry < 0)
-		player->texx = s_m->ea.w - player->texx - 1;
-	player->step = 1.0 * s_m->ea.h / player->lineheight;
-	player->texpos = (draw.drawstart - HEIGHT / 2 + player->lineheight / 2) * player->step;
-	y = draw.drawstart;
-	while (y < draw.drawend)
-	{
-		player->texy = (int)player->texpos & (s_m->ea.h - 1);
-		player->texpos += player->step;
-		put_pixel_img(s_m->img, x, y, get_pixel_img(s_m->ea, player->texx, player->texy));
-		y++;
-	}
-}
-
 void	ft_ray(t_master *s_m, t_player *player, char **map)
 {
 	int	x;
@@ -124,7 +96,6 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 	int	drawend;
 
 	x = -1;
-	int	j = 0;
 	while (++x < WIDTH)
 	{
 		ft_init_ray(player, x);
@@ -138,6 +109,7 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 		drawend = (player->lineheight / 2) + (HEIGHT / 2);
 		if (drawend >= HEIGHT)
 			drawend = HEIGHT - 1;
- 		ft_texture(s_m, (t_draw){drawstart, drawend}, x, &s_m->player);
+		ft_wall_sheets(player, s_m);
+		ft_texture(s_m, (t_draw){drawstart, drawend}, x, &s_m->player);
 	}
 }

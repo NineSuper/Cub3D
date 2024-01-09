@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:01:47 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:39:40 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "libft/gnl/get_next_line.h"
 # include "libft/mlx/mlx.h"
 # include "libft/mlx/mlx_int.h"
+# include <math.h>
 /*		String		*/
 # define TEXT_LOAD "Chargement des textures.."
 # define MAP_LOAD "Chargement de la map"
@@ -225,6 +226,8 @@ void			ft_hud(t_master *s_m);
 void			ft_ray(t_master *s_m, t_player *player, char **map);
 void			ft_verline(t_master *s_m, int x, t_draw draw);
 void			ft_cam(int key, t_player *player, double rotSpeed);
+void			ft_wall_sheets(t_player *player, t_master *s_m);
+void			ft_texture(t_master *s_m, t_draw draw, int x, t_player *player);
 int				ft_exit_menu(t_master *s_m);
 int				ft_onscreen(t_master *s_m);
 int				ft_mouse(int button, int x, int y, void *s_m);
