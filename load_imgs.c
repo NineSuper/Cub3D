@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:16:28 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:14:17 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,20 @@ void	load_hud(t_master *s_m)
 	s_m->cursor = new_file_img(CURSOR, s_m);
 }
 
+t_imgs	ft_resize_load(t_master *s_m, t_imgs src)
+{
+	t_imgs	temp;
+
+	if (src.h != 512 || src.w != 512)
+	{
+		temp = src;
+		src = ft_img_resize(s_m, src, 512, 512);
+		ft_destroy_img(s_m->mlx, src.m_img);
+		return (temp);
+	}
+	return (src);
+}
+
 void	imgs_load_menu(t_master *s_m)
 {
 	int	w;
@@ -60,8 +74,8 @@ void	imgs_load_menu(t_master *s_m)
 	s_m->so = new_file_img(s_m->map.so + 1, s_m);
 	s_m->no = new_file_img(s_m->map.no + 1, s_m);
 	s_m->we = new_file_img(s_m->map.we + 1, s_m);
-	s_m->ea = ft_img_resize(s_m, s_m->ea, 512, 512);
-	s_m->no = ft_img_resize(s_m, s_m->no, 512, 512);
-	s_m->we = ft_img_resize(s_m, s_m->we, 512, 512);
-	s_m->so = ft_img_resize(s_m, s_m->so, 512, 512);
+	s_m->ea = ft_resize_load(s_m, s_m->ea);
+	s_m->no = ft_resize_load(s_m, s_m->no);
+	s_m->we = ft_resize_load(s_m, s_m->we);
+	s_m->so = ft_resize_load(s_m, s_m->so);
 }
