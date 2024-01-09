@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:48 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:16:59 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,25 +94,25 @@ void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)
 {
 	int	y;
 
-	s_m->so.addr = mlx_get_data_addr(s_m->so.m_img, &s_m->so.bpp, &s_m->so.l_len, &s_m->so.end);
+	s_m->ea.addr = mlx_get_data_addr(s_m->ea.m_img, &s_m->ea.bpp, &s_m->ea.l_len, &s_m->ea.end);
 	if (player->side == 0)
 		player->wallx = player->posy + player->perpwalldist * player->raydiry;
 	else
 	player->wallx = player->posx + player->perpwalldist * player->raydirx;
 	player->wallx -= floor(player->wallx);
-	player->texx = (int)(player->wallx * (double)(s_m->so.w));
+	player->texx = (int)(player->wallx * (double)(s_m->ea.w));
 	if (player->side == 0 && player->raydirx > 0)
-		player->texx = s_m->so.w - player->texx - 1;
+		player->texx = s_m->ea.w - player->texx - 1;
 	if (player->side == 1 && player->raydiry < 0)
-		player->texx = s_m->so.w - player->texx - 1;
-	player->step = 1.0 * s_m->so.h / player->lineheight;
+		player->texx = s_m->ea.w - player->texx - 1;
+	player->step = 1.0 * s_m->ea.h / player->lineheight;
 	player->texpos = (draw.drawstart - HEIGHT / 2 + player->lineheight / 2) * player->step;
 	y = draw.drawstart;
 	while (y < draw.drawend)
 	{
-		player->texy = (int)player->texpos & (s_m->so.h - 1);
+		player->texy = (int)player->texpos & (s_m->ea.h - 1);
 		player->texpos += player->step;
-		put_pixel_img(s_m->img, x, y, get_pixel_img(s_m->so, player->texx, player->texy));
+		put_pixel_img(s_m->img, x, y, get_pixel_img(s_m->ea, player->texx, player->texy));
 		y++;
 	}
 }
