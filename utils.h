@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 21:50:17 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 11:59:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,12 @@ typedef struct s_player
 	double	perpwalldist;
 	double	deltadistx;
 	double	deltadisty;
+	double	wallx;
+	double	step;
+	double	texposx;
+	int		lineheight;
+	int		texy;
+	int		texx;
 	int		hit;
 	int		mapx;
 	int		mapy;
@@ -144,11 +150,6 @@ typedef struct s_player
 	int		x;
 	int		y;
 	int		side;
-	double	wallx;
-	double	step;
-	double	texposx;
-	int		texy;
-	int		texx;
 }	t_player;
 
 typedef struct s_coods
