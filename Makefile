@@ -3,7 +3,7 @@ INCLIB=$(INC)/../lib
 
 MLX_PATH=libft/mlx/
 
-INC_SRCH_PATH := 
+INC_SRCH_PATH :=
 INC_SRCH_PATH += -I$(MLX_PATH)
 
 LFLAGS = -lbsd -L $(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
@@ -41,7 +41,7 @@ NO_COLOR        =       \033[0m
 
 HEADER_NAME		=		$(HEADER_TOP) $(HEADER_TOP_MID) $(HEADER_MID)$(HEADER_BOT)
 
-HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)$(NAME) $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & ...\n\n"
+HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)$(NAME) $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & lumontgo\n\n"
 
 MLX_READY		=		echo "\n\n📥 $(BOLD)Compilation de la $(BOLD_YELLOW)Mlx$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
@@ -102,7 +102,7 @@ clean:
 	$(CLEANED)
 	rm -f $(NAME) $(OBJ) *~ core *.core
 
-fclean: 
+fclean:
 	rm -f $(NAME) $(OBJ) *~ core *.core
 	$(FCLEANED)
 
