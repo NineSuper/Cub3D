@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/08/23 17:39:02 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 11:26:35 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 * Check les colors puis les convertir en hexadecimal
 * Check toute la map 
 * tout doit etre entouree de 1
-* Char = '1' '0' 'B' 'P' ('N' | 'S' | 'W' | 'E')
+* Char = '1' '0' 'B' 'D' ('N' | 'S' | 'W' | 'E')
 * UNIQUEMENT une lettre parmis celles-ci : N | S | W | E
 * La sortie : B
-* La porte : P
+* La porte : D
 * tout free une fois fini
 */
 
@@ -36,7 +36,7 @@ void	ft_check_arg(t_map *s_map, t_master *s_m, char **tab)
 	while (tab[++i])
 		j += ft_msg(tab[i], s_m);
 	ft_printf("--------------------------------\n");
-	j += check_texture(s_map->NO, s_map->EA, s_map->SO, s_map->WE);
+	j += check_texture(s_map->no, s_map->ea, s_map->so, s_map->we);
 	if (j != 4 || ft_check_color(s_m, s_m->map.map, -1))
 	{	
 		free_tab(s_map->map);

@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:24:25 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/07/24 15:23:44 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:39:17 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	get_rgb(char *str)
 	return (color);
 }
 
-int	color_arg(t_master *s_m, char *str, char c)
+int	color_arg(char *str, char c)
 {
 	char	**tab;
 	int		i;
@@ -75,9 +75,9 @@ int	check_arg_c(t_master *s_m, char *str, char c)
 	if (j != 2)
 		return (-1);
 	if (c == 'F')
-		s_m->map.c_f = color_arg(s_m, str + 1, 'F');
+		s_m->map.c_f = color_arg(str + 1, 'F');
 	if (c == 'C')
-		s_m->map.c_c = color_arg(s_m, str + 1, 'C');
+		s_m->map.c_c = color_arg(str + 1, 'C');
 	if (s_m->map.c_f == -1 || s_m->map.c_c == -1)
 		return (0);
 	return (1);
@@ -101,4 +101,5 @@ int	ft_check_color(t_master *s_m, char **tab, int i)
 	}
 	if (j != 2)
 		return (1);
+	return (0);
 }

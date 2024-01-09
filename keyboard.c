@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 14:21:17 by tde-los-         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:37:29 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,6 @@ void	ft_key_menu(int key, t_master *s_m)
 	{
 		if (s_m->menu.choose == 1)
 			ft_play(s_m);
-		/*
-		if (s_m->menu.choose == 2)
-	 	 	? option
-		*/
 		if (s_m->menu.choose == 3)
 			ft_exit_menu(s_m);
 	}
@@ -77,11 +73,11 @@ void	ft_mouse_menu(int x, int y, t_master *s_m)
 {
 	if (s_m->width < 1920)
 		ft_mac_mouse_menu(x, y, s_m);
-	if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
+	else if (x >= 863 && x <= 1128 && y >= 359 && y <= 443)
 		ft_play(s_m);
-	if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
-		printf("option\n");
-	if (x >= 849 && x <= 1123 && y >= 611 && y <= 691)
+	else if (x >= 868 && x <= 1123 && y >= 490 && y <= 571)
+		ft_printf("option\n");
+	else if (x >= 849 && x <= 1123 && y >= 611 && y <= 691)
 		ft_exit_menu(s_m);
 }
 
@@ -92,11 +88,11 @@ int	ft_mouse(int button, int x, int y, void *data)
 	s_m = data;
 	s_m->m_x = x;
 	s_m->m_y = y;
-	printf("%d %d\n", x, y);
 	if (s_m->screen == 1)
 		ft_mouse_menu(s_m->m_x, s_m->m_y, s_m);
 	if (s_m->screen == 5)
 		ft_mouse_play(button, x, y, s_m);
+	return (0);
 }
 
 int	deal_key(int key, t_master *s_m)
@@ -107,7 +103,5 @@ int	deal_key(int key, t_master *s_m)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
-	else
-		ft_printf("s_m->screen: %d\n", s_m->screen);
-	ft_printf("KEY : [%d]\n", key);
+	return (0);
 }

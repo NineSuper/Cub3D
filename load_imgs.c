@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/09/05 14:19:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:16:28 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ void	imgs_load_mac(t_master *s_m)
 	s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_8, &w, &h);
 }
 
+void	load_hud(t_master *s_m)
+{
+	s_m->skyfloor = new_img(WIDTH, HEIGHT, s_m);
+	s_m->player.cross = new_file_img(CROSS, s_m);
+	s_m->cursor = new_file_img(CURSOR, s_m);
+}
+
 void	imgs_load_menu(t_master *s_m)
 {
 	int	w;
@@ -48,9 +55,13 @@ void	imgs_load_menu(t_master *s_m)
 		s_m->menu.menu_o = mlx_xpm_file_to_image(s_m->mlx, MENU_3, &w, &h);
 		s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_4, &w, &h);
 	}
-	w = 1024;
-	s_m->EA = mlx_xpm_file_to_image(s_m->mlx, s_m->map.EA, &w, &w);
-	s_m->SO = mlx_xpm_file_to_image(s_m->mlx, s_m->map.SO, &w, &w);
-	s_m->NO = mlx_xpm_file_to_image(s_m->mlx, s_m->map.NO, &w, &w);
-	s_m->WE = mlx_xpm_file_to_image(s_m->mlx, s_m->map.WE, &w, &w);
+	load_hud(s_m);
+	s_m->ea = new_file_img(s_m->map.ea + 1, s_m);
+	s_m->so = new_file_img(s_m->map.so + 1, s_m);
+	s_m->no = new_file_img(s_m->map.no + 1, s_m);
+	s_m->we = new_file_img(s_m->map.we + 1, s_m);
+	s_m->ea = ft_img_resize(s_m, s_m->ea, 512, 512);
+	s_m->no = ft_img_resize(s_m, s_m->no, 512, 512);
+	s_m->we = ft_img_resize(s_m, s_m->we, 512, 512);
+	s_m->so = ft_img_resize(s_m, s_m->so, 512, 512);
 }
