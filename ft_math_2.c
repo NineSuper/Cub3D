@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:45:33 by lumontgo          #+#    #+#             */
-/*   Updated: 2024/01/09 17:47:26 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:56:21 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 void	ft_wall_sheets(t_player *player, t_master *s_m)
 {
-	if (player->side == 0)
+	if (player->side == 0 && player->hit == 1)
 	{
 		if (player->raydirx > 0)
 			player->target = s_m->ea;
 		else
 			player->target = s_m->we;
 	}
-	else if (player->side == 1)
+	else if (player->side == 1 && player->hit == 1)
 	{
 		if (player->raydiry > 0)
 			player->target = s_m->no;
 		else
 			player->target = s_m->so;
 	}
+	else if (player->hit == 2)
+		player->target = s_m->door;
+	else if (player->hit == 3)
+		player->target = s_m->exit;
 }
 
 void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)

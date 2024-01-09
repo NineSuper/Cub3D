@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:39:40 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:49:49 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@
 # define MENU_8 "texture/menu/menu_8.xpm"
 # define CROSS	"texture/crosshair/green.xpm"
 # define CURSOR "texture/cursor.xpm"
+# define DOOR "texture/wall/door.xpm"
+# define EXIT "texture/wall/exit.xpm"
 /*		Color		*/
 # define C_GREEN "\033[1;32m"
 # define C_RED "\033[1;41m"
@@ -172,6 +174,8 @@ typedef struct s_master
 	t_imgs		img;
 	t_imgs		cursor;
 	t_imgs		skyfloor;
+	t_imgs		door;
+	t_imgs		exit;
 	t_imgs		ea;
 	t_imgs		no;
 	t_imgs		so;

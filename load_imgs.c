@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_imgs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:14:17 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:59:20 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ void	imgs_load_menu(t_master *s_m)
 	s_m->so = new_file_img(s_m->map.so + 1, s_m);
 	s_m->no = new_file_img(s_m->map.no + 1, s_m);
 	s_m->we = new_file_img(s_m->map.we + 1, s_m);
+	s_m->door = new_file_img(DOOR, s_m);
+	s_m->exit = new_file_img(EXIT, s_m);
+	s_m->door = ft_resize_load(s_m, s_m->door);
+	s_m->exit = ft_resize_load(s_m, s_m->exit);
 	s_m->ea = ft_resize_load(s_m, s_m->ea);
 	s_m->no = ft_resize_load(s_m, s_m->no);
 	s_m->we = ft_resize_load(s_m, s_m->we);

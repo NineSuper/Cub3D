@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:49:18 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:43:00 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ void	ft_dda(t_player *player, char **map)
 		}
 		if (map[player->mapy][player->mapx] == '1')
 			player->hit = 1;
+		if (map[player->mapy][player->mapx] == 'D')
+			player->hit = 2;
+		if (map[player->mapy][player->mapx] == 'B')
+			player->hit = 3;
 	}
 }
 
