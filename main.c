@@ -6,34 +6,11 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:58:29 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/08 22:29:22 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 01:56:39 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-
-/*
-* Check toutes les map : ft_check_map.c -> exit (0) si ERROR
-* Faire un menu : ft_menu.c -> change map dans t_m->map.map
-* Faire le ray-casting : ft_raycast.c
-? Mettre des textures sur les murs
-* Faire Bouger la camera
-* Faire Bouger le Joueur
-? Collision avec les murs
-* Minimap
-? Systeme de porte (ouverture/fermeture)
-int s_m->screen
-			= 1 menu;
-			= 2 map;
-			= 3 option;
-			= 4 chargement;
-			= 5 Jeu;
-
-todo : ft_player_key.c
-todo : ft_raycasting.c (ft_math.c : (voir DDA))
-todo : Vérifier la norme et mettre les flags
-todo : enlever les commentaires à la fin
-*/
 
 int	ft_loop(t_master *s_m)
 {

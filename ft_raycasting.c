@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:05:02 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:53:34 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 23:19:42 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ void	ft_verline(t_master *s_m, int x, t_draw draw)
 
 void	ft_raycast(t_master *s_m)
 {
+	char	**map;
+
+	map = s_m->map.map + s_m->map.len;
 	if (s_m->img.m_img)
 		mlx_destroy_image(s_m->mlx, s_m->img.m_img);
 	s_m->img = new_img(WIDTH, HEIGHT, s_m);
@@ -40,4 +43,6 @@ void	ft_raycast(t_master *s_m)
 	mlx_put_image_to_window(s_m->mlx, s_m->win, s_m->img.m_img, 0, 0);
 	if (!s_m->help)
 		ft_text(s_m);
+	if (map[(int)s_m->player.posy][(int)s_m->player.posx] == 'B')
+		ft_exit_menu(s_m);
 }

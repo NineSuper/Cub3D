@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 18:49:49 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 00:39:41 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,6 +190,7 @@ typedef struct s_master
 	int			height;
 	int			help;
 	int			hud;
+	int			error;
 }	t_master;
 
 unsigned int	get_pixel_img(t_imgs img, int x, int y);
@@ -199,6 +200,7 @@ t_imgs			new_file_img(char *path, t_master *s_m);
 t_imgs			ft_img_resize(t_master *s_m, t_imgs img, int h, int w);
 t_coords		ft_coords(int h, int w, int x, int y);
 char			*ft_split_text(char *str);
+char			*ft_space(char *str);
 void			ft_rplace(t_master *s_m, t_imgs src, t_imgs dest, \
 	t_coords coords);
 void			ft_set_dir(t_master *s_m, char c, char *str);

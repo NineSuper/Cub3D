@@ -6,45 +6,11 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:31:48 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/12/01 10:37:29 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/09 23:25:11 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-
-/*
-* 65361 : gauche
-* 65363 : droite
-* 65362 : haut
-* 65364 : bas
-* 65293 : entrer
-* 65307 : echap
-* 1 Click gauche
-* 3 Click Droite
-* 4 Molette haut
-* 5 Molette bas
-* W : 119
-* Q : 97
-* S : 115 
-* D : 100
-* M 109
-* Key hook en fonction de l'ecran sur lequels en se trouve :
-
-! 		s_m->screen = 1 : menu
-? fleche du haut : imgs X++
-? fleche du bas : imgs X--
-? Entrer : selectionner X element
-
-* detecter la souris ou elle se trouve :
-? si elle se trouver sur : play image->menu->play
-?						 : option image->menu->option
-?						 : quit image->menu->quit
-? sinon : image->menu->default
-
-! si click souris : si souris sur element X alors : image->X
-
-!	s_m->screen = 2 : option
-*/
 
 void	ft_key_menu(int key, t_master *s_m)
 {

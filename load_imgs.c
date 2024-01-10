@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_imgs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 18:59:20 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/09 23:12:43 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_imgs	ft_resize_load(t_master *s_m, t_imgs src)
 	if (src.h != 512 || src.w != 512)
 	{
 		temp = src;
-		src = ft_img_resize(s_m, src, 512, 512);
+		temp = ft_img_resize(s_m, src, 512, 512);
 		ft_destroy_img(s_m->mlx, src.m_img);
 		return (temp);
 	}

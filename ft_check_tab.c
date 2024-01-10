@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:04:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2023/11/22 13:15:07 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 01:39:55 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_char_map(t_master *s_m, char *str)
 	}
 	while (str[++i])
 	{
+		if (str[i] == ' ')
+			str[i] = '1';
 		if (str[i] == 'N' || str[i] == 'S' || str[i] == 'E' || str[i] == 'W')
 		{
 			ft_set_dir(s_m, str[i], str + i);
@@ -51,19 +53,12 @@ int	ft_char_map(t_master *s_m, char *str)
 			break ;
 		}
 		else if (str[i] != '1' && str[i] != '0' && \
-			str[i] != 'D' && str[i] != ' ' && str[i] != 'B')
+			str[i] != 'D' && str[i] != 'B')
 			return (1);
 	}
 	ft_printf("\033[1;33m%s\033[0m\n", str);
 	return (0);
 }
-
-/*
-? check autour du '0' en carré 8 si le char n'est pas un espace
-111
-101
-111
-*/
 
 void	ft_check_tab(t_master *s_m, t_map *s_map, char **map)
 {
