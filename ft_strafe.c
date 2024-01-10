@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strafe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:29:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 12:00:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:31:54 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	ft_key_d(t_master *s_m, char **map)
 
 void	ft_other_key(int key, t_master *s_m, char **map)
 {
+	if (key == 101)
+		ft_open_door(s_m, map);
 	if (key == 104)
 		s_m->help = ft_press(s_m->help);
 	if (key == 97)

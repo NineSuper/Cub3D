@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 12:34:31 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:33:35 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_key
 	int	q;
 	int	s;
 	int	d;
+	int e;
 }	t_key;
 
 typedef struct s_dir
@@ -241,6 +242,7 @@ void			ft_verline(t_master *s_m, int x, t_draw draw);
 void			ft_cam(int key, t_player *player, double rotSpeed);
 void			ft_wall_sheets(t_player *player, t_master *s_m);
 void			ft_texture(t_master *s_m, t_draw draw, int x, t_player *player);
+void			ft_open_door(t_master *s_m, char **map);
 void			ft_other_key(int key, t_master *s_m, char **map);
 int				ft_press(int key);
 int				ft_exit_menu(t_master *s_m);

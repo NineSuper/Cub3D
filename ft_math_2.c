@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:45:33 by lumontgo          #+#    #+#             */
-/*   Updated: 2024/01/09 18:56:21 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:34:19 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,17 @@ void	ft_wall_sheets(t_player *player, t_master *s_m)
 		player->target = s_m->door;
 	else if (player->hit == 3)
 		player->target = s_m->exit;
+}
+
+void	ft_open_door(t_master *s_m, char **map)
+{
+	printf("im trying to open the door\n");
+	if(s_m->player.hit == 2)
+	{
+		int doorx = (int)s_m->player.posx;
+		int doory = (int)s_m->player.posy;
+		map[doory][doorx] = '0';
+	}
 }
 
 void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)
