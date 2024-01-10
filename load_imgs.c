@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   load_imgs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 19:02:05 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 23:14:42 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-
-/*
-* menu_d -> menu default
-* menu_p -> menu_default button play
-* menu_q -> menu_default button option
-* menu_o -> menu_default button quit
-*/
 
 void	imgs_load_mac(t_master *s_m)
 {
