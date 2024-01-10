@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:45:33 by lumontgo          #+#    #+#             */
-/*   Updated: 2024/01/10 16:44:43 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:40:47 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,29 @@ void	ft_wall_sheets(t_player *player, t_master *s_m)
 		player->target = s_m->exit;
 }
 
+void	ft_open(int doory, int doorx, char **map)
+{
+	if (map[doory][doorx] == 'D')
+		map[doory][doorx] = '0';
+}
+
 void	ft_open_door(t_master *s_m, char **map)
 {
-	printf("im trying to open the door\n");
-	if(s_m->player.hit == 2)
-	{
-		printf("im here\n");
-		int doorx = (int)s_m->player.posx;
-		int doory = (int)s_m->player.posy;
-		map[doory][doorx] = '0';
-	}
+	int doorx;
+	int doory;
+	
+	doorx = (int)s_m->player.posx + 1;
+	doory = (int)s_m->player.posy;
+	ft_open(doory, doorx, map);
+	doorx = (int)s_m->player.posx;
+	doory = (int)s_m->player.posy + 1;
+	ft_open(doory, doorx, map);
+	doorx = (int)s_m->player.posx;
+	doory = (int)s_m->player.posy - 1;
+	ft_open(doory, doorx, map);
+	doorx = (int)s_m->player.posx - 1;
+	doory = (int)s_m->player.posy;
+	ft_open(doory, doorx, map);
 }
 
 void	ft_texture(t_master *s_m, t_draw draw, int x, t_player *player)
