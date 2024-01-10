@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:41:26 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 16:21:47 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:45:05 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,6 @@ void	ft_ray(t_master *s_m, t_player *player, char **map)
 		if (drawend >= HEIGHT)
 			drawend = HEIGHT - 1;
 		ft_wall_sheets(player, s_m);
-		ft_texture(s_m, (t_draw){drawstart, drawend}, x, &s_m->player, map);
+		ft_texture(s_m, (t_draw){drawstart, drawend}, x, &s_m->player);
 	}
 }

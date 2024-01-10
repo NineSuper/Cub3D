@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:45:33 by lumontgo          #+#    #+#             */
-/*   Updated: 2024/01/10 16:34:19 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:44:43 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_open_door(t_master *s_m, char **map)
 	printf("im trying to open the door\n");
 	if(s_m->player.hit == 2)
 	{
+		printf("im here\n");
 		int doorx = (int)s_m->player.posx;
 		int doory = (int)s_m->player.posy;
 		map[doory][doorx] = '0';
