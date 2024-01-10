@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 11:32:42 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:34:31 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,13 @@ typedef struct s_player
 	int		y;
 	int		side;
 }	t_player;
+
+typedef	struct s_fill
+{
+	int	x;
+	int	y;
+}	t_fill;
+
 
 typedef struct s_coods
 {
