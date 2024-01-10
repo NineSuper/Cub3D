@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 19:00:33 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:02:05 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,5 @@ void	imgs_load_menu(t_master *s_m)
 		s_m->menu.menu_q = mlx_xpm_file_to_image(s_m->mlx, MENU_4, &w, &h);
 	}
 	load_hud(s_m);
-	imgs_load_menu2(sm);
+	imgs_load_menu2(s_m);
 }
