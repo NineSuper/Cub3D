@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:59:47 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 00:39:41 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:32:42 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,6 +234,8 @@ void			ft_verline(t_master *s_m, int x, t_draw draw);
 void			ft_cam(int key, t_player *player, double rotSpeed);
 void			ft_wall_sheets(t_player *player, t_master *s_m);
 void			ft_texture(t_master *s_m, t_draw draw, int x, t_player *player);
+void			ft_other_key(int key, t_master *s_m, char **map);
+int				ft_press(int key);
 int				ft_exit_menu(t_master *s_m);
 int				ft_onscreen(t_master *s_m);
 int				ft_mouse(int button, int x, int y, void *s_m);

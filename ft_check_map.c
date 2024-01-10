@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 02:16:54 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:15:44 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void	ft_read_map(int fd, t_map *s_map, t_master *s_m)
 	while (size != 0)
 	{
 		size = read(fd, buff, 1);
+		if (!size)
+			break ;
 		temp_map = gnl_ft_strjoin(temp_map, buff);
 	}
 	close (fd);

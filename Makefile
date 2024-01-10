@@ -14,7 +14,7 @@ SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c \
 	ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c \
 	ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c \
 	ft_utils_2.c ft_text.c ft_img_2.c ft_resize_mlx.c ft_hud.c ft_math.c ft_camera.c \
-	ft_math_2.c
+	ft_math_2.c ft_strafe.c
 
 LIB = libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c
 HEADER_FILE = utils.h libft/ft_printf/ft_printf.h libft/libft/libft.h libft/gnl/get_next_line.h

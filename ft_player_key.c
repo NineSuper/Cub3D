@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_player_key.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/09 17:48:50 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:34:04 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	ft_key_player(int key, t_master *s_m)
 	map = s_m->map.map + s_m->map.len;
 	if (key == 109)
 		s_m->minimap = ft_press(s_m->minimap);
-	if (key == 104)
-		s_m->help = ft_press(s_m->help);
 	if (key == 119)
 	{
 		if (!ft_can_moove_x(&s_m->player, map, 1))
@@ -76,8 +74,10 @@ void	ft_key_player(int key, t_master *s_m)
 		if (!ft_can_moove_y(&s_m->player, map, 0))
 			s_m->player.posy -= s_m->player.diry / 10;
 	}
-	if (key == 97)
+	if (key == 65361)
 		ft_cam(97, &s_m->player, 0.10);
-	if (key == 100)
+	if (key == 65363)
 		ft_cam(100, &s_m->player, 0.10);
+	else
+		ft_other_key(key, s_m, map);
 }
