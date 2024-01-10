@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:45:33 by lumontgo          #+#    #+#             */
-/*   Updated: 2024/01/10 17:40:47 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:59:28 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	ft_open(int doory, int doorx, char **map)
 
 void	ft_open_door(t_master *s_m, char **map)
 {
-	int doorx;
-	int doory;
-	
+	int	doorx;
+	int	doory;
+
 	doorx = (int)s_m->player.posx + 1;
 	doory = (int)s_m->player.posy;
 	ft_open(doory, doorx, map);

@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:29:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 16:31:54 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:56:47 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ void	ft_key_a(t_master *s_m, char **map)
 
 	player = &s_m->player;
 	if (map[(int)player->posy] \
-		[(int)(player->posx + (player->diry / 10))] != '1')
+		[(int)(player->posx + (player->diry / 10))] != '1' \
+		&& map[(int)player->posy] \
+		[(int)(player->posx + (player->diry / 10))] != 'D')
 		s_m->player.posx += s_m->player.diry / 10;
 	if (map[(int)(s_m->player.posy - (s_m->player.dirx / 10))] \
-		[(int)(player->posx)] != '1')
+		[(int)(player->posx)] != '1' \
+		&& map[(int)(s_m->player.posy - (s_m->player.dirx / 10))] \
+		[(int)(player->posx)] != 'D')
 		s_m->player.posy -= s_m->player.dirx / 10;
 }
 
@@ -31,10 +35,14 @@ void	ft_key_d(t_master *s_m, char **map)
 
 	player = &s_m->player;
 	if (map[(int)player->posy] \
-		[(int)(player->posx - (player->diry / 10))] != '1')
+		[(int)(player->posx - (player->diry / 10))] != '1' \
+		&& map[(int)player->posy] \
+		[(int)(player->posx - (player->diry / 10))] != 'D')
 		s_m->player.posx -= s_m->player.diry / 10;
 	if (map[(int)(s_m->player.posy + (s_m->player.dirx / 10))] \
-		[(int)(player->posx)] != '1')
+		[(int)(player->posx)] != '1' \
+		&& map[(int)(s_m->player.posy + (s_m->player.dirx / 10))] \
+		[(int)(player->posx)] != 'D')
 		s_m->player.posy += s_m->player.dirx / 10;
 }
 

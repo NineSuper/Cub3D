@@ -6,7 +6,7 @@
 /*   By: lumontgo <lumontgo@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:20 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 16:34:29 by lumontgo         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:39:05 by lumontgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,30 @@ void	ft_mouse_play(int button, int x, int y, t_master *s_m)
 
 int	ft_can_moove_y(t_player *player, char **map, int i)
 {
-	if (map[(int)(player->posy + (player->diry / 10))] \
-		[(int)(player->posx)] == '1' && i)
+	if ((map[(int)(player->posy + (player->diry / 10))] \
+		[(int)(player->posx)] == '1' \
+			|| map[(int)(player->posy + (player->diry / 10))] \
+				[(int)(player->posx)] == 'D') && i)
 		return (1);
-	else if (map[(int)(player->posy - (player->diry / 10))] \
-		[(int)(player->posx)] == '1')
+	else if ((map[(int)(player->posy - (player->diry / 10))] \
+		[(int)(player->posx)] == '1' \
+		|| map[(int)(player->posy \
+		- (player->diry / 10))][(int)(player->posx)] == 'D'))
 		return (1);
 	return (0);
 }
 
 int	ft_can_moove_x(t_player *player, char **map, int i)
 {
-	if (map[(int)player->posy] \
-		[(int)(player->posx + (player->dirx / 10))] == '1' && i)
+	if ((map[(int)player->posy] \
+		[(int)(player->posx + (player->dirx / 10))] == '1' \
+		|| map[(int)player->posy][(int)(player->posx \
+		+ (player->dirx / 10))] == '1') && i)
 		return (1);
 	else if (map[(int)player->posy] \
-		[(int)(player->posx - (player->dirx / 10))] == '1')
+		[(int)(player->posx - (player->dirx / 10))] == '1' \
+		|| map[(int)player->posy] \
+		[(int)(player->posx - (player->dirx / 10))] == 'D')
 		return (1);
 	return (0);
 }
