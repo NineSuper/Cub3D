@@ -56,3 +56,5 @@ Happy coding! 🚀✨
 
 - 🎫 [@NineSuper](https://www.github.com/NineSuper)
 - 👾 [@Luke](https://github.com/BiGZ31)
+
+- [![tde-los-'s 42 cub3d Score](https://badge42.coday.fr/api/v2/clpo61f0c167701t692asdwoa/project/3424221)](https://github.com/Coday-meric/badge42)
