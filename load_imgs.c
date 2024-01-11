@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:41:11 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 23:14:42 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:13:43 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ t_imgs	ft_resize_load(t_master *s_m, t_imgs src)
 {
 	t_imgs	temp;
 
-	if (src.h != 512 || src.w != 512)
+	if (src.h != 1024 || src.w != 1024)
 	{
 		temp = src;
-		temp = ft_img_resize(s_m, src, 512, 512);
+		temp = ft_img_resize(s_m, src, 1024, 1024);
 		ft_destroy_img(s_m->mlx, src.m_img);
 		return (temp);
 	}

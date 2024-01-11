@@ -6,7 +6,7 @@
 /*   By: tde-los- <tde-los-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:49 by tde-los-          #+#    #+#             */
-/*   Updated: 2024/01/10 16:37:00 by tde-los-         ###   ########.fr       */
+/*   Updated: 2024/01/11 09:00:08 by tde-los-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,61 +89,11 @@ void	ft_read_map(int fd, t_map *s_map, t_master *s_m)
 	ft_check_arg(s_map, s_m, s_map->map);
 }
 
-void	ft_flood_fill(char **map, t_fill fill, t_master *s_m, int len)
-{
-	if (!map[fill.y] || fill.y < 0 || fill.x < 0 || s_m->error == 1)
-		return ;
-	if (map[fill.y][fill.x] == '\0')
-	{
-		s_m->error = 1;
-		return ;
-	}
-	if (map[fill.y][fill.x] == '1' || map[fill.y][fill.x] == 'X' || fill.x > (int)ft_strlen(map[fill.y]))
-		return ;
-	//check_around(s_m, map, fill.x, fill.y);
-	map[fill.y][fill.x] = 'X';
-	ft_flood_fill(map, (t_fill){fill.x + 1, fill.y}, s_m, len);
-	ft_flood_fill(map, (t_fill){fill.x, fill.y + 1}, s_m, len);
-	ft_flood_fill(map, (t_fill){fill.x - 1, fill.y}, s_m, len);
-	ft_flood_fill(map, (t_fill){fill.x, fill.y - 1}, s_m, len);
-	(void)s_m;
-}
-
-void	ft_recursive(t_master *s_m)
-{
-	t_fill	fill;
-	char	**map;
-	int		y;
-	int		x;
-
-	y = 0;
-	map = s_m->map.map + s_m->map.len;
-	while (map[y])
-	{
-		x = 0;
-		while (map[y][x])
-		{
-			if (map[y][x] == 'P')
-			{
-				fill.x = x;
-				fill.y = y;
-			}
-			x++;
-		}
-		y++;
-	}
-	ft_flood_fill(map, fill, s_m, y);
-	ft_print_tab(map);
-}
-
 void	ft_check_map(t_master *s_m, char *map)
 {
 	s_m->map.level = map;
 	s_m->map.fd = open(s_m->map.level, O_RDONLY);
 	ft_read_map(s_m->map.fd, &s_m->map, s_m);
 	ft_check_tab(s_m, &s_m->map, s_m->map.map);
-	//ft_recursive(s_m);
-	if (s_m->error == 1)
-		ft_exit_menu(s_m);
 	ft_menu(s_m);
 }
