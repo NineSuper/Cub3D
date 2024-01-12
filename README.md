@@ -43,9 +43,13 @@ Exécutez Cub3d :
 
 ```bash
 W : Avancer
-A : Tourner à gauche
+A : Aller à gauche
 S : Reculer
-D : Tourner à droite
+D : Aller à droite
+
+◀︎ Regarder à gauche
+▶︎ Regarder à droite
+
 M : Activer/désactiver la minimap
 Esc : Quitter le jeu
 ```
