@@ -19,7 +19,7 @@ Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec
 Assurez-vous d'avoir la bibliothèque graphique MLX installée sur votre système.
 
 ```bash
-sudo apt-get install libx11-dev
+sudo apt-get install libx11-dev libxext-dev
 ```
 
 ## 🗳️ Installation
