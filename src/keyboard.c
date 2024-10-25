@@ -63,11 +63,20 @@ int	ft_mouse(int button, int x, int y, void *data)
 
 int	deal_key(int key, t_master *s_m)
 {
+	if (key < 255)
+		s_m->key.key_table[key] = 1;
 	if (key == 65307)
 		ft_exit_menu(s_m);
 	if (s_m->screen == 1)
 		ft_key_menu(key, s_m);
 	if (s_m->screen == 5)
 		ft_key_player(key, s_m);
+	return (0);
+}
+
+int	key_up(int key, t_master *s_m)
+{
+	if (key < 255)
+		s_m->key.key_table[key] = 0;
 	return (0);
 }

@@ -11,23 +11,23 @@ LFLAGS = -lbsd -L $(MLX_PATH) -lmlx -L$(INCLIB) -lXext -lX11 -lm
 
 NAME = Cub3D
 
-SRC = main.c ft_menu.c ft_bar_loader.c load_imgs.c keyboard.c ft_exit.c \
-	ft_check_map.c ft_utils.c ft_check_color.c ft_texture.c ft_check_tab.c \
-	ft_play.c ft_raycasting.c ft_minimap.c ft_macos.c ft_new_img.c ft_player_key.c \
-	ft_utils_2.c ft_text.c ft_img_2.c ft_resize_mlx.c ft_hud.c ft_math.c ft_camera.c \
-	ft_math_2.c ft_strafe.c
+SRC_DIR = src
+OBJ_DIR = obj
+HEADER_DIR = includes
+
+SRC = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 LIB = libft/ft_printf/*.c libft/libft/*.c libft/gnl/*.c
-HEADER_FILE = utils.h libft/ft_printf/ft_printf.h libft/libft/libft.h libft/gnl/get_next_line.h
+HEADER_FILE = $(wildcard $(SRC_DIR)/*.h) utils.h libft/ft_printf/ft_printf.h libft/libft/libft.h libft/gnl/get_next_line.h
 
-OBJ = $(SRC:.c=.o)
 CC = gcc
 
 FLAGS = -Wall -Werror -Wextra
 
 # ------------------------------ Couleurs ------------------------------
 
-BOLD_RED	=	\033[1;31m
+BOLD_RED		=		\033[1;31m
 
 BOLD_PURPLE     =       \033[1;35m
 
@@ -35,23 +35,23 @@ BOLD_CYAN       =       \033[1;36m
 
 BOLD_YELLOW     =       \033[1;33m
 
-BOLD		=	\033[1m
+BOLD			=		\033[1m
 
 NO_COLOR        =       \033[0m
 
 # ------------------------------ Messages ------------------------------
 
-HEADER_NAME	=	$(HEADER_TOP) $(HEADER_TOP_MID) $(HEADER_MID)$(HEADER_BOT)
+HEADER_NAME		=	$(HEADER_TOP) $(HEADER_TOP_MID) $(HEADER_MID)$(HEADER_BOT)
 
-HEADER_COMP     =       echo "\n👾 $(BOLD_PURPLE)$(NAME) $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & lumontgo\n\n"
+HEADER_COMP		=	echo "\n👾 $(BOLD_PURPLE)$(NAME) $(NO_COLOR)$(BOLD)by $(BOLD_RED)tde-los- & lumontgo\n\n"
 
-MLX_READY	=	echo "\n\n📥 $(BOLD)Compilation de la $(BOLD_YELLOW)Mlx$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
+MLX_READY		=	echo "\n\n📥 $(BOLD)Compilation de la $(BOLD_YELLOW)Mlx$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
-COMP_START      =       printf "\n🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Debut de compilation...\r$(NO_COLOR)"
+COMP_START		=	printf "\n🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Debut de compilation...\r$(NO_COLOR)"
 
-EXE_READY       =       echo "\n\n🎮 $(BOLD)Compilation de $(BOLD_PURPLE)$(NAME)$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
+EXE_READY		=	echo "\n\n🎮 $(BOLD)Compilation de $(BOLD_PURPLE)$(NAME)$(NO_COLOR) $(BOLD)reussi !$(NO_COLOR)\n"
 
-CLEANED         =       echo "\n💧 $(BOLD_YELLOW)Clean: $(NO_COLOR)Suppression des fichiers .o et de l'executable \n"
+CLEANED			=	echo "\n💧 $(BOLD_YELLOW)Clean: $(NO_COLOR)Suppression des fichiers .o et de l'executable \n"
 
 FCLEANED        =       echo "\n🧼 $(BOLD_YELLOW)Fclean: $(NO_COLOR)Suppression des fichiers .o et de l'executable \n"
 
@@ -110,7 +110,7 @@ fclean:
 
 re: clean all
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@printf "🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)$(BOLD)Compilation des fichiers :$(BOLD_CYAN) %-33.33s $(BOLD_YELLOW)[%3d%%] \r$(NO_COLOR)" $? $(shell expr \( $(COMPILED_FILES) \) \* 100 / $(TOTAL_FILES))
 	@$(CC) $(FLAGS) ${WIN_SIZE} -c $< -o $@
 	@$(eval COMPILED_FILES=$(shell echo $$(($(COMPILED_FILES)+1))))

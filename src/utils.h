@@ -21,11 +21,11 @@
 #  define HEIGHT 1080
 # endif
 /*      Libft       */
-# include "libft/libft/libft.h"
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/gnl/get_next_line.h"
-# include "libft/mlx/mlx.h"
-# include "libft/mlx/mlx_int.h"
+# include "../libft/libft/libft.h"
+# include "../libft/ft_printf/ft_printf.h"
+# include "../libft/gnl/get_next_line.h"
+# include "../libft/mlx/mlx.h"
+# include "../libft/mlx/mlx_int.h"
 # include <math.h>
 /*		String		*/
 # define TEXT_LOAD "Chargement des textures.."
@@ -59,11 +59,12 @@
 
 typedef struct s_key
 {
-	int	w;
-	int	q;
-	int	s;
-	int	d;
-	int e;
+	char	key_table[255];
+	int		w;
+	int		q;
+	int		s;
+	int		d;
+	int		e;
 }	t_key;
 
 typedef struct s_dir
@@ -255,5 +256,6 @@ int				ft_msg(char *str, t_master *s_m);
 int				check_texture(char *NO, char *EA, char *SO, char *WE);
 int				ft_check_x_y(int x, char c);
 int				ft_check_resized(int base);
+int				key_up(int key, t_master *s_m);
 
 #endif
