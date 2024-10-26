@@ -4,7 +4,7 @@ Bienvenue dans Cub3d 👾, un projet passionnant de l'école 42 ! 🚀
 
 ## 📚 Description
 
-Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec la bibliothèque graphique MLX de l'école 42. L'objectif principal est de vous plonger dans le domaine de la programmation graphique en créant un moteur de rendu 3D basique.
+Cub3d est une réplique simplifiée du célèbre jeu Wolfenstein 3D, créé avec la bibliothèque graphique [MLX](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html) de l'école 42. L'objectif principal est de vous plonger dans le domaine de la programmation graphique en créant un moteur de rendu 3D basique.
 
 ## 🛠️ Fonctionnalités
 
